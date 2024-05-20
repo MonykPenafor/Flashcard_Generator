@@ -1,0 +1,57 @@
+﻿/* Defina suas regras CSS aqui */
+
+
+.fixed-left {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    background-color: #333;
+    color: #fff;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    height: 70px;
+}
+
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-nav {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0;
+}
+
+.nav-link {
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-icon{
+    width: 100px;
+    height: 100px;
+
+}
+
+.navbar bg-dark fixed-top d-flex, h1 {
+    color:white;
+}
