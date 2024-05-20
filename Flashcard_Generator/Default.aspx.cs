@@ -13,5 +13,14 @@ namespace Flashcard_Generator
 		{
 
 		}
+
+		//REDIRECT TO THE GENERATOR PAGE
+		protected void goToGenerator(object sender, EventArgs e)
+		{
+			Response.Redirect("FlashcardGenerator.aspx");
+		}
+
+
+
 	}
 }

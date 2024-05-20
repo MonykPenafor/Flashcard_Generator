@@ -1,5 +1,29 @@
-﻿/* Defina suas regras CSS aqui */
+﻿/* fixed top */
 
+.fixed-top {
+    position: fixed;
+    top: 0;
+    height: 70px;
+}
+
+
+.nav-icon {
+    width: 50px;
+    height: 50px;
+    top: 8px;
+    left: 20px;
+    position: fixed;
+}
+
+.navbar bg-dark fixed-top d-flex, h1 {
+    color: white;
+    left: 90px;
+    position: fixed;
+}
+
+
+
+/* fixed left */
 
 .fixed-left {
     position: fixed;
@@ -11,24 +35,8 @@
     color: #fff;
 }
 
-.fixed-top {
-    position: fixed;
-    top: 0;
-    height: 70px;
-}
 
-
-.navbar-brand {
-    display: flex;
-    align-items: center;
-    padding: 10px 20px;
-}
-
-.navbar-nav {
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-}
+/* vertical nav bar */
 
 .nav-item {
     margin: 0;
@@ -46,12 +54,44 @@
     background-color: rgba(255, 255, 255, 0.2);
 }
 
-.nav-icon{
-    width: 100px;
-    height: 100px;
 
+
+/*Main Content*/
+
+
+#mainContainer {
+    margin-top: 90px;
+    margin-left: 220px;
+    margin-right: 220px;
+    padding: 20px;
 }
 
-.navbar bg-dark fixed-top d-flex, h1 {
-    color:white;
+#flashcard-label {
+    font-size: 50px;
 }
+
+#MainContent_txtFocusEnglish.flashcard-textBox.paola.penafor.monyk {
+    width: 100%;
+    height: 600px;
+}
+
+
+
+
+
+
+
+
+/*
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar-nav {
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+}*/
+
