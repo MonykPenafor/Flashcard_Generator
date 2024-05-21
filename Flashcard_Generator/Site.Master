@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/languages.ico" rel="shortcut icon" type="image" />
     <link href="Assets\Style\Style.css" rel="stylesheet" type="text/css" />
 
 </head>
