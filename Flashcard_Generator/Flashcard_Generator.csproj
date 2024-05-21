@@ -155,6 +155,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
+    <Content Include="FlashcardDisplay.aspx" />
     <Content Include="FlashcardGenerator.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -241,6 +242,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FlashcardDisplay.aspx.cs">
+      <DependentUpon>FlashcardDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlashcardDisplay.aspx.designer.cs">
+      <DependentUpon>FlashcardDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="FlashcardGenerator.aspx.cs">
       <DependentUpon>FlashcardGenerator.aspx</DependentUpon>

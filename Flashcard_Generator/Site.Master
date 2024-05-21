@@ -64,7 +64,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer>
+            <footer style="text-align:center;">
                 <p>&copy; <%: DateTime.Now.Year %> - Flashcard Generator by Monyk Paola Penafor</p>
             </footer>
         </div>

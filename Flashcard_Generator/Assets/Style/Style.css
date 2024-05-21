@@ -66,16 +66,21 @@
     padding: 20px;
 }
 
-#flashcard-label {
-    font-size: 50px;
+.flashcard-label {
+    font-size: 15px;
 }
 
-#MainContent_txtFocusEnglish.flashcard-textBox.paola.penafor.monyk {
-    width: 100%;
-    height: 600px;
+.flashcard-textBox.paola.penafor.monyk {
+    width: 90%;
+    height: 100px;
 }
 
-
+.btn.btn-danger.btn-center {
+    width: 20%;
+    align-self: center;
+    margin-top: 10px;
+    margin-left: 36%;
+}
 
 
 

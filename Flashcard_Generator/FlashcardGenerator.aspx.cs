@@ -17,7 +17,14 @@ namespace Flashcard_Generator
 		//CREATE THE FLASHCARDS
 		protected void CreateFlashcards(object sender, EventArgs e)
 		{
-			Response.Redirect("Default.aspx");
+
+			//connect to database and do the work
+			//
+			//show message that flashcards generated correctly
+			//
+			//redirects to visualize	
+
+			Response.Redirect("FlashcardsDisplay.aspx");
 		}
 	}
 }
