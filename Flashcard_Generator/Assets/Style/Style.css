@@ -19,7 +19,10 @@
     color: white;
     left: 90px;
     position: fixed;
+    margin-bottom: 0;
+    align-items:center;
 }
+
 
 
 
@@ -33,10 +36,38 @@
     height: 100vh;
     background-color: #333;
     color: #fff;
+    align-items: start;
+    padding:0;
 }
 
 
-/* vertical nav bar */
+
+/* nav bar */
+img.user-img {
+    height: 20px;
+    width: 20px;
+}
+
+
+li.nav-item.user-block.user-info {
+    height: 200px;
+    align-items: center;
+    align-content: center;
+    background-color: #0094ff;
+    
+}
+
+a.nav-link.user-block.user-info {
+    height: 200px;
+    align-items: center;
+    align-content: center;
+    display: block
+    
+}
+
+a.nav-link.user-block.user-info:hover {
+    background-color: lightseagreen;
+}
 
 .nav-item {
     margin: 0;
@@ -48,6 +79,7 @@
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease-in-out;
+    width: 200px;
 }
 
 .nav-link:hover {
@@ -56,8 +88,8 @@
 
 
 
-/*Main Content*/
 
+/*Main Content*/
 
 #mainContainer {
     margin-top: 90px;
@@ -66,37 +98,51 @@
     padding: 20px;
 }
 
+
+
+/* Form Groups */
+
 .flashcard-label {
     font-size: 15px;
+    width: 180px;
+    background-color: #2C2C2C;
+    color: white;
+    height: 100px;
+    padding: 11px;
+    display: block;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
-.flashcard-textBox.paola.penafor.monyk {
-    width: 90%;
+.flashcard-textBox.mymemo.big-textBox.form-control {
+    border-radius: 0rem;
     height: 100px;
 }
 
-.btn.btn-danger.btn-center {
-    width: 20%;
-    align-self: center;
-    margin-top: 10px;
-    margin-left: 36%;
+.flashcard-textBox.mymemo.big-textBox {
+    width: 90%;
+    height: 100px;
+
 }
 
-
-
-
-
-
-/*
-.navbar-brand {
+.form-group.label-memo {
     display: flex;
-    align-items: center;
-    padding: 10px 20px;
+    margin: 3px;
+    border-radius: 0rem;
 }
 
-.navbar-nav {
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-}*/
+.multiline-textbox {
+    height: 100px;
+    resize: none;
+    overflow-y: auto;
+}
 
+
+
+/* buttons */
+
+.btn.btn-danger.btn-center, .btn.btn-primary.btn-center {
+    width: 150px;
+    margin-top: 15px;
+    margin-left: 45%;
+}

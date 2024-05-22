@@ -24,7 +24,7 @@ namespace Flashcard_Generator
 			//
 			//redirects to visualize	
 
-			Response.Redirect("FlashcardsDisplay.aspx");
+			Response.Redirect("FlashcardDisplay.aspx");
 		}
 	}
 }

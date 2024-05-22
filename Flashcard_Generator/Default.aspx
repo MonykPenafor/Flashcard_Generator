@@ -4,7 +4,7 @@
 
     <div class="container">
 
-        <asp:Button ID="btnGenerator" runat="server" Text="Generator" CssClass="btn btn-primary" OnClick="goToGenerator" />
+        <asp:Button ID="btnGenerator" runat="server" Text="Generator" CssClass="btn btn-primary btn-center" OnClick="goToGenerator" />
 
     </div>
 

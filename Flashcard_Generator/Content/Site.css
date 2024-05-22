@@ -1,9 +1,10 @@
-﻿/* Wrapping element */
+﻿
+/* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    margin-top: 90px;
-    margin-left: 220px;
-    margin-right: 220px;
+    margin-top: 100px;
+    margin-left: 270px;
+    margin-right: 270px;
     padding: 20px;
 }
 
@@ -11,7 +12,7 @@
 input,
 select,
 textarea {
-    max-width: 88%;
+    max-width: 100%;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -21,3 +22,9 @@ textarea {
     }
 }
 
+
+@media (min-width: 1400px) {
+    .container.container-fullscreen {
+        max-width: 80%;
+    }
+}

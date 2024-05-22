@@ -15,84 +15,102 @@ namespace Flashcard_Generator
 	{
 
 		/// <summary>
-		/// ddlDropdown control.
+		/// txtUsername control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList ddlDropdown;
+		protected global::System.Web.UI.WebControls.TextBox txtUsername;
 
 		/// <summary>
-		/// txtTitle control.
+		/// txtIdiom control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtTitle;
+		protected global::System.Web.UI.WebControls.TextBox txtIdiom;
 
 		/// <summary>
-		/// txtFocusEnglish control.
+		/// TextIdiom2 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtFocusEnglish;
+		protected global::System.Web.UI.WebControls.TextBox TextIdiom2;
 
 		/// <summary>
-		/// tt1 control.
+		/// txtCategory control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox tt1;
+		protected global::System.Web.UI.WebControls.TextBox txtCategory;
 
 		/// <summary>
-		/// tt2 control.
+		/// txtVocabularyMyLanguage control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox tt2;
+		protected global::System.Web.UI.WebControls.TextBox txtVocabularyMyLanguage;
 
 		/// <summary>
-		/// tt3 control.
+		/// txtTranslation control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox tt3;
+		protected global::System.Web.UI.WebControls.TextBox txtTranslation;
 
 		/// <summary>
-		/// tt4 control.
+		/// txtTip control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox tt4;
+		protected global::System.Web.UI.WebControls.TextBox txtTip;
 
 		/// <summary>
-		/// tt5 control.
+		/// txtVocLanguageLearning control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox tt5;
+		protected global::System.Web.UI.WebControls.TextBox txtVocLanguageLearning;
 
 		/// <summary>
-		/// btnCreateFlashcards control.
+		/// txtWordOrPhrase control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnCreateFlashcards;
+		protected global::System.Web.UI.WebControls.TextBox txtWordOrPhrase;
+
+		/// <summary>
+		/// txtSimplified control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtSimplified;
+
+		/// <summary>
+		/// Button1 control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Button Button1;
 	}
 }
