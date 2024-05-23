@@ -71,3 +71,13 @@ C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flash
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.csproj.CopyComplete
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.dll
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.pdb
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BCrypt.Net-Next.dll
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\System.Buffers.dll
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\System.Memory.dll
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\System.Numerics.Vectors.dll
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BCrypt.Net-Next.xml
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\System.Buffers.xml
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\System.Memory.xml
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\System.Numerics.Vectors.xml
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\System.Runtime.CompilerServices.Unsafe.xml

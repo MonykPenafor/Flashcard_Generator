@@ -36,8 +36,8 @@ namespace Flashcard_Generator
 			}
 
 
-			//// Hashing the password
-			//string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
+			// Hashing the password
+			string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
 
 
 			string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
@@ -50,8 +50,8 @@ namespace Flashcard_Generator
 				{
 					cmd.Parameters.AddWithValue("@Username", username);
 					cmd.Parameters.AddWithValue("@Email", email);
-					cmd.Parameters.AddWithValue("@Password", password);
-					//cmd.Parameters.AddWithValue("@Password", hashedPassword); // Note the use of the hashed password
+					//cmd.Parameters.AddWithValue("@Password", password);
+					cmd.Parameters.AddWithValue("@Password", hashedPassword); // Note the use of the hashed password
 
 
 					try
