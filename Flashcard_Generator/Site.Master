@@ -48,10 +48,12 @@
         <nav class="navbar bg-dark fixed-left">
             <div class="justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                <li class="nav-item user-block user-info"><a class="nav-link user-block user-info" runat="server" href="~/"><img src="Assets/Icons/profile-user.png" class="user-img" />  USER</a></li>
-                <li class="nav-item"><a class="nav-link" runat="server" href="~/">Flashcards</a></li>
-                <li class="nav-item"><a class="nav-link" runat="server" href="~/About">Play</a></li>
-                <li class="nav-item"><a class="nav-link" runat="server" href="~/Contact">Notes</a></li>
+                    <li class="nav-item user-block user-info"><a class="nav-link user-block user-info" 
+                    runat="server" href="~/">USER</a></li>
+
+                    <li class="nav-item"><a class="nav-link" runat="server" href="~/">Home page</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="FlashcardGenerator.aspx">Create Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="FlashcardDisplay.aspx">Flashcards</a></li>
                 </ul>
             </div>
         </nav>

@@ -1,7 +1,7 @@
 ﻿
 <%@ Page Title="Flashcard Generator" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FlashcardGenerator.aspx.cs" Inherits="Flashcard_Generator.FlashcardGenerator" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+<asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container">
 
@@ -14,19 +14,13 @@
         <div class="form-group">
             <label for="txtUsername">USERNAME:</label>
             <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
 
-        <div class="form-group">
             <label for="txtIdiom" >IDIOM:</label>
             <asp:TextBox ID="txtIdiom" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
 
-        <div class="form-group">
             <label for="txtIdiom" >IDIOM TARGET:</label>
             <asp:TextBox ID="TextIdiom2" runat="server" CssClass="form-control"></asp:TextBox>
-        </div>
 
-        <div class="form-group">
             <label for="txtCategory">FLASHCARD SET TITLE:</label>
             <asp:TextBox ID="txtCategory" runat="server" CssClass="form-control"></asp:TextBox>
         </div>
