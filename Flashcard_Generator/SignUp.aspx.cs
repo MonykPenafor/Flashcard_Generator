@@ -7,10 +7,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 namespace Flashcard_Generator
 {
-	public partial class _Default : Page
+	public partial class SignUp : Page
 	{
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
@@ -19,7 +21,7 @@ namespace Flashcard_Generator
 
 
 		//SIGN UP 
-		protected void signUp(object sender, EventArgs e)
+		protected void btnSignUp_Click(object sender, EventArgs e)
 		{
 
 
@@ -81,22 +83,7 @@ namespace Flashcard_Generator
 				}
 			}
 
-
 		}
-	
 
-
-
-
-
-
-	////REDIRECT TO THE GENERATOR PAGE
-	//protected void goToGenerator(object sender, EventArgs e)
-	//{
-	//	Response.Redirect("FlashcardGenerator.aspx");
-	//}
-
-
-
-}
+	}
 }

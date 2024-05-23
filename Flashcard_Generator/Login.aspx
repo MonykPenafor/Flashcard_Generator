@@ -10,7 +10,7 @@
         <asp:Label ID="lblMessage" runat="server" Text="" CssClass="error-message"/>
 
         <div class="form-group login-form">
-            <label for="txtUsername">Username or Email:</label>
+            <label for="txtUser">Username or Email:</label>
             <asp:TextBox ID="txtUser" runat="server" CssClass="form-control"></asp:TextBox>
 
             <label for="txtPassword" >Password:</label>
@@ -20,7 +20,7 @@
 
 
         
-        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary btn-center" OnClick="login"/>
+        <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary btn-center" OnClick="btnLogin_Click"/>
 
 
 
