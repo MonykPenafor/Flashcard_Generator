@@ -44,35 +44,28 @@
 
 /* nav bar */
 
-li.nav-item.user-block.user-info {
-    align-items: center;
-    align-content: center;
-    background-color: #0094ff;
-    
-}
-
-a.nav-link.user-block.user-info {
-    align-items: center;
-    align-content: center;
-    display: block
-    
-}
-
-a.nav-link.user-block.user-info:hover {
-    background-color: cornflowerblue;
+img.a-icon{
+width:30px;
+height:30px;
 }
 
 .nav-item {
     margin: 0;
 }
 
+
+.nav-link.nav-user{
+    justify-content: center;
+}
+
 .nav-link {
     padding: 10px 20px;
-    display: block;
+    display: flex;
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease-in-out;
     width: 200px;
+    align-items: center;
 }
 
 .nav-link:hover {

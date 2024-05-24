@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
 
     <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/languages.ico" rel="shortcut icon" type="image" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image" />
     <link href="Assets\Style\Style.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -48,8 +48,11 @@
         <nav class="navbar bg-dark fixed-left">
             <div class="justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item user-block user-info"><a class="nav-link user-block user-info" 
-                    runat="server" href="Login.aspx">USER</a></li>
+
+                
+                    <li class="nav-item">
+                    <a id="navUser" class="nav-link nav-user" runat="server" href="Login.aspx"><img src="Assets/Icons/user.png" class="a-icon"/></a>
+                    </li>
 
                     <li class="nav-item"><a class="nav-link" runat="server" href="SignUp">SignUp page</a></li>
                     <li class="nav-item"><a class="nav-link" runat="server" href="FlashcardGenerator.aspx">Create Flashcards</a></li>
