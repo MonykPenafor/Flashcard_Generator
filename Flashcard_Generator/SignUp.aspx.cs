@@ -23,12 +23,9 @@ namespace Flashcard_Generator
 		//SIGN UP 
 		protected void btnSignUp_Click(object sender, EventArgs e)
 		{
-
-
 			string username = txtUsername.Text;
 			string email = txtEmail.Text;
 			string password = txtPassword.Text;
-
 
 			// checking fields are not null/empty
 			if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
@@ -36,7 +33,6 @@ namespace Flashcard_Generator
 				lblMessage.Text = "All fields are required!";
 				return;
 			}
-
 
 			// Hashing the password
 			string hashedPassword = BCrypt.Net.BCrypt.HashPassword(password);
@@ -52,14 +48,12 @@ namespace Flashcard_Generator
 				{
 					cmd.Parameters.AddWithValue("@Username", username);
 					cmd.Parameters.AddWithValue("@Email", email);
-					//cmd.Parameters.AddWithValue("@Password", password);
-					cmd.Parameters.AddWithValue("@Password", hashedPassword); // Note the use of the hashed password
+					cmd.Parameters.AddWithValue("@Password", hashedPassword);
 
 
 					try
 					{
 						cmd.ExecuteNonQuery();
-						lblMessage.Text = "User registered successfully!";
 						Response.Redirect("FlashcardGenerator.aspx");
 					}
 					catch (SqlException ex)

@@ -9,78 +9,61 @@
 
         <p>- FILL THE BOXES LIKE IN THE EXAMPLE... </p>
 
-
-
         <div class="form-group">
-            <label for="txtUsername">USERNAME:</label>
-            <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
+            <label for="txtUser">USERNAME:</label>
+            <asp:TextBox ID="txtUser" runat="server" CssClass="form-control">paola</asp:TextBox>
 
-            <label for="txtIdiom" >IDIOM:</label>
-            <asp:TextBox ID="txtIdiom" runat="server" CssClass="form-control"></asp:TextBox>
+            <label for="txtSourceLanguage">SOURCE LANGUAGE:</label>
+            <asp:TextBox ID="txtSourceLanguage" runat="server" CssClass="form-control" maxlength="30"></asp:TextBox>
 
-            <label for="txtIdiom" >IDIOM TARGET:</label>
-            <asp:TextBox ID="TextIdiom2" runat="server" CssClass="form-control"></asp:TextBox>
+            <label for="txtTargetLanguage">TARGET LANGUAGE:</label>
+            <asp:TextBox ID="TextIdiom2" runat="server" CssClass="form-control" maxlength="30"></asp:TextBox>
 
             <label for="txtCategory">FLASHCARD SET TITLE:</label>
-            <asp:TextBox ID="txtCategory" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtCategory" runat="server" CssClass="form-control" maxlength="30"></asp:TextBox>
         </div>
-        
-        
-
-
-<%--        <%var memos_ids = new string[] {"txtVocabularyMyLanguag","txtTranslatio","txtTi","txtVocLanguageLearnin","txtWordOrPhras","txtSimplifie"};
-            var labels = new string[] {"FOCUS (ENGLISH):","WORD/PHRASE (ENGLSIH):","TIPS:","FOCUS (LANGUAGE STUDYING):","WORD/PHRASE (LANGUAGE STUDYING):","PRONUNCIATION/SIMPLIFICATION:"};
-            
-
-                string divTemplate = @"<div class='form-group label-memo'> <label for='{0}' class='flashcard-label'>{1}</label>
-                <asp:TextBox ID='{0}' runat='server' CssClass='flashcard-textBox paola penafor monyk form-control multiline-textbox' TextMode='MultiLine'></asp:TextBox>
-                </div>";
-
-            foreach (string memoId in memos_ids)
-            {
-                int index = Array.IndexOf(memos_ids, memoId);
-                string div = string.Format(divTemplate, memoId, labels[index]);
-
-                // Adicione a div gerada ao HTML (ex: usando Response.Write)
-                Response.Write(div);
-            }
-          %>--%>
 
 
 
         <div class="form-group label-memo">
-            <label for="txtVocabularyMyLanguage" class="flashcard-label">FOCUS (ENGLISH):</label>
-            <asp:TextBox ID="txtVocabularyMyLanguage" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" TextMode="MultiLine"></asp:TextBox>
+            <label for="txtVocabularySource" class="flashcard-label">FOCUS (ENGLISH):</label>
+            <asp:TextBox ID="txtVocabularySource" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
+            TextMode="MultiLine" maxlength="50"></asp:TextBox>
         </div>        
         
+        <div class="form-group label-memo">
+            <label for="txtVocabularyTarget" class="flashcard-label">FOCUS (LANGUAGE STUDYING):</label>
+            <asp:TextBox ID="txtVocabularyTarget" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
+            TextMode="MultiLine"  maxlength="50"></asp:TextBox>
+        </div>     
+
         <div class="form-group label-memo">
             <label for="txtTranslation" class="flashcard-label">WORD/PHRASE (ENGLSIH):</label>
-            <asp:TextBox ID="txtTranslation" runat="server" CssClass="flashcard-textBox mymemo big-textBox form-control multiline-textbox" TextMode="MultiLine"></asp:TextBox>
-        </div>        
-
-        <div class="form-group label-memo">
-            <label for="txtTip" class="flashcard-label">TIPS:</label>
-            <asp:TextBox ID="txtTip" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" TextMode="MultiLine"></asp:TextBox>
-        </div>        
-        
-        <div class="form-group label-memo">
-            <label for="txtVocLanguageLearning" class="flashcard-label">FOCUS (LANGUAGE STUDYING):</label>
-            <asp:TextBox ID="txtVocLanguageLearning" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" TextMode="MultiLine"></asp:TextBox>
-        </div>        
+            <asp:TextBox ID="txtTranslation" runat="server" CssClass="flashcard-textBox mymemo big-textBox form-control multiline-textbox" 
+            TextMode="MultiLine"></asp:TextBox>
+        </div>       
 
         <div class="form-group label-memo">
             <label for="txtWordOrPhrase" class="flashcard-label">WORD/PHRASE (LANGUAGE STUDYING):</label>
-            <asp:TextBox ID="txtWordOrPhrase" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" TextMode="MultiLine"></asp:TextBox>
-        </div>        
-        
+            <asp:TextBox ID="txtWordOrPhrase" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
+            TextMode="MultiLine"></asp:TextBox>
+        </div>   
+
         <div class="form-group label-memo">
             <label for="txtSimplified" class="flashcard-label">PRONUNCIATION / SIMPLIFICATION:</label>
-            <asp:TextBox ID="txtSimplified" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" TextMode="MultiLine"></asp:TextBox>
-        </div>        
+            <asp:TextBox ID="txtSimplified" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
+            TextMode="MultiLine"></asp:TextBox>
+        </div>       
+
+        <div class="form-group label-memo">
+            <label for="txtTip" class="flashcard-label">TIPS:</label>
+            <asp:TextBox ID="txtTip" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
+            TextMode="MultiLine"></asp:TextBox>
+        </div>   
 
 
 
-        <asp:Button ID="Button1" runat="server" Text="CREATE" CssClass="btn btn-danger btn-center" OnClick="CreateFlashcards" />
+        <asp:Button ID="btnCreateFlashcards" runat="server" Text="CREATE" CssClass="btn btn-danger btn-center" OnClick="btnCreateFlashcards_Click" />
     
     </div>
 </asp:Content>

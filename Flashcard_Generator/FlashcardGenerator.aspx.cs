@@ -15,7 +15,7 @@ namespace Flashcard_Generator
 		}
 
 		//CREATE THE FLASHCARDS
-		protected void CreateFlashcards(object sender, EventArgs e)
+		protected void btnCreateFlashcards_Click(object sender, EventArgs e)
 		{
 
 			//connect to database and do the work

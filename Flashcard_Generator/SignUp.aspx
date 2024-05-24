@@ -14,13 +14,13 @@
 
         <div class="form-group login-form">
             <label for="txtUsername">Username:</label>
-            <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" maxlength="20"></asp:TextBox>
 
             <label for="txtEmail" >Email:</label>
-            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control"></asp:TextBox>
+            <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" maxlength="80"></asp:TextBox>
 
             <label for="txtPassword" >Password:</label>
-            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" maxlength="20"></asp:TextBox>
         </div>
 
 
