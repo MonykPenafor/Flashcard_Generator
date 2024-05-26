@@ -33,13 +33,31 @@ namespace Flashcard_Generator
 		protected global::System.Web.UI.WebControls.TextBox txtSourceLanguage;
 
 		/// <summary>
-		/// TextIdiom2 control.
+		/// rfvSourceLanguage control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox TextIdiom2;
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSourceLanguage;
+
+		/// <summary>
+		/// txtTargetLanguage control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtTargetLanguage;
+
+		/// <summary>
+		/// rfvTargetLanguage control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTargetLanguage;
 
 		/// <summary>
 		/// txtCategory control.
@@ -49,6 +67,33 @@ namespace Flashcard_Generator
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.TextBox txtCategory;
+
+		/// <summary>
+		/// rfvCategory control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCategory;
+
+		/// <summary>
+		/// ddlLanguageProficiency control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList ddlLanguageProficiency;
+
+		/// <summary>
+		/// ddlPrivacySetting control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.DropDownList ddlPrivacySetting;
 
 		/// <summary>
 		/// txtVocabularySource control.
@@ -103,6 +148,15 @@ namespace Flashcard_Generator
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.TextBox txtTip;
+
+		/// <summary>
+		/// lblMessage control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblMessage;
 
 		/// <summary>
 		/// btnCreateFlashcards control.
