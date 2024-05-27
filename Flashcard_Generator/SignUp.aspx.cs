@@ -76,8 +76,6 @@ namespace Flashcard_Generator
 					}
 				}
 			}
-
 		}
-
 	}
 }

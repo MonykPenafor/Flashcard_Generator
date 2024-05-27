@@ -15,15 +15,15 @@
 
 
             <label for="txtSourceLanguage">SOURCE LANGUAGE:</label>
-            <asp:TextBox ID="txtSourceLanguage" runat="server" CssClass="form-control" maxlength="30"></asp:TextBox>
+            <asp:TextBox ID="txtSourceLanguage" runat="server" CssClass="form-control" maxlength="30" placeholder="English"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvSourceLanguage" runat="server" ControlToValidate="txtSourceLanguage" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
 
             <label for="txtTargetLanguage">TARGET LANGUAGE:</label>
-            <asp:TextBox ID="txtTargetLanguage" runat="server" CssClass="form-control" maxlength="30"></asp:TextBox>
+            <asp:TextBox ID="txtTargetLanguage" runat="server" CssClass="form-control" maxlength="30" placeholder="Japanese"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvTargetLanguage" runat="server" ControlToValidate="txtTargetLanguage" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
 
             <label for="txtCategory">FLASHCARD SET TITLE:</label>
-            <asp:TextBox ID="txtCategory" runat="server" CssClass="form-control" maxlength="30"></asp:TextBox>
+            <asp:TextBox ID="txtCategory" runat="server" CssClass="form-control" maxlength="30" placeholder="Verbs"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="txtCategory" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
 
             <label for="ddlLanguageProficiency">Language Proficiency:</label>
@@ -50,37 +50,37 @@
         <div class="form-group label-memo">
             <label for="txtVocabularySource" class="flashcard-label">FOCUS (ENGLISH):</label>
             <asp:TextBox ID="txtVocabularySource" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
-            TextMode="MultiLine" maxlength="50"></asp:TextBox>
+            TextMode="MultiLine" maxlength="50" placeholder='"to eat", "to drink", "to watch", "to write", "to read", "to run", "to talk", "to listen", "to stand", "to sleep"'></asp:TextBox>
         </div>        
         
         <div class="form-group label-memo">
             <label for="txtVocabularyTarget" class="flashcard-label">FOCUS (LANGUAGE STUDYING):</label>
             <asp:TextBox ID="txtVocabularyTarget" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
-            TextMode="MultiLine"  maxlength="50"></asp:TextBox>
+            TextMode="MultiLine"  maxlength="50" placeholder='"食べる", "飲む", "見る", "書く", "読む", "走る", "話す", "聞く", "立つ", "寝る"'></asp:TextBox>
         </div>     
 
         <div class="form-group label-memo">
             <label for="txtTranslation" class="flashcard-label">WORD/PHRASE (ENGLSIH):</label>
             <asp:TextBox ID="txtTranslation" runat="server" CssClass="flashcard-textBox mymemo big-textBox form-control multiline-textbox" 
-            TextMode="MultiLine"></asp:TextBox>
+            TextMode="MultiLine" placeholder='"I eat an apple", "He drinks coffee", "She watches a movie", "I write a letter", "He reads a book", "She runs every morning", "I talk with my friends", "He listens to music", "I stand up immediately", "She goes to sleep early"'></asp:TextBox>
         </div>       
 
         <div class="form-group label-memo">
             <label for="txtWordOrPhrase" class="flashcard-label">WORD/PHRASE (LANGUAGE STUDYING):</label>
             <asp:TextBox ID="txtWordOrPhrase" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
-            TextMode="MultiLine"></asp:TextBox>
+            TextMode="MultiLine" placeholder='"私はりんごを食べる", "彼はコーヒーを飲む", "彼女は映画を見る", "私は手紙を書く", "彼は本を読む", "彼女は毎朝走る", "私は友達と話す", "彼は音楽を聞く", "私はすぐに立つ", "彼女は早く寝る"'></asp:TextBox>
         </div>   
 
         <div class="form-group label-memo">
             <label for="txtSimplified" class="flashcard-label">PRONUNCIATION / SIMPLIFICATION:</label>
             <asp:TextBox ID="txtSimplified" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
-            TextMode="MultiLine"></asp:TextBox>
+            TextMode="MultiLine" placeholder='"わたしはりんごをたべる", "かれはコーヒーをのむ", "かのじょはえいがをみる", "わたしはてがみをかく", "かれはほんをよむ", "かのじょはまいあさはしる", "わたしはともだちとはなす", "かれはおんがくをきく", "わたしはすぐにたつ", "かのじょははやくねる"'></asp:TextBox>
         </div>       
 
         <div class="form-group label-memo">
             <label for="txtTip" class="flashcard-label">TIPS:</label>
             <asp:TextBox ID="txtTip" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
-            TextMode="MultiLine"></asp:TextBox>
+            TextMode="MultiLine" placeholder='"食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences.", "飲む: Remember to use the correct context; can also mean to take (medicine).", "見る: Can be used for watching, seeing, or looking. Usage depends on context.", "書く: Often combined with nouns to specify what is being written, e.g., 手紙を書く."...'></asp:TextBox>
         </div>   
 
         

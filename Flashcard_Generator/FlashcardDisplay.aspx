@@ -6,59 +6,99 @@
 
         <h3>FLASHCARDS CREATED SO FAR:</h3>
 
-        <asp:GridView ID="FlashcardGridView" runat="server" AutoGenerateColumns="False" CssClass="table table-striped">
-            <Columns>
-                <asp:BoundField DataField="Question" HeaderText="Question" />
-                <asp:BoundField DataField="Answer" HeaderText="Answer" />
-                <asp:BoundField DataField="Question" HeaderText="Question" />
-                <asp:BoundField DataField="Answer" HeaderText="Answer" />
-                <asp:BoundField DataField="Question" HeaderText="Question" />
-                <asp:BoundField DataField="Answer" HeaderText="Answer" />
-                <asp:BoundField DataField="Question" HeaderText="Question" />
-                <asp:BoundField DataField="Answer" HeaderText="Answer" />
-            </Columns>
-        </asp:GridView>
 
 
         <asp:Table ID="FlashcardTable" runat="server" CssClass="table table-striped">
             <asp:TableHeaderRow>
-                <asp:TableHeaderCell>select</asp:TableHeaderCell>
                 <asp:TableHeaderCell></asp:TableHeaderCell>
-                <asp:TableHeaderCell>Group</asp:TableHeaderCell>
-                <asp:TableHeaderCell>Focus english</asp:TableHeaderCell>
-                <asp:TableHeaderCell>translation</asp:TableHeaderCell>
-                <asp:TableHeaderCell>tips</asp:TableHeaderCell>
-                <asp:TableHeaderCell>focus</asp:TableHeaderCell>
-                <asp:TableHeaderCell>phrase</asp:TableHeaderCell>
-                <asp:TableHeaderCell>simplification</asp:TableHeaderCell>
-                
-                <asp:TableHeaderCell>edit</asp:TableHeaderCell>
-                <asp:TableHeaderCell>delete</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Languages</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Category</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Vocabulary / Translation</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Usage / Pronunciation / Translation</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Tips</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Level</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Visibility</asp:TableHeaderCell>
+                <asp:TableHeaderCell>Created at</asp:TableHeaderCell>
+                <asp:TableHeaderCell>   an edit logo </asp:TableHeaderCell>
                 
 
             </asp:TableHeaderRow>
+ 
             <asp:TableRow>
 
-                <asp:TableCell><asp:CheckBox ID="selectBox" runat="server"/></asp:TableCell>
-                <asp:TableCell>just</asp:TableCell>
-                <asp:TableCell>a example</asp:TableCell>
-                <asp:TableCell>of how i want </asp:TableCell>
-                <asp:TableCell>it to be</asp:TableCell>
-                <asp:TableCell>i hope it</asp:TableCell>
-                <asp:TableCell>works because</asp:TableCell>
-                <asp:TableCell>this is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool projectthis is a cool project</asp:TableCell>
-                <asp:TableCell>pencil</asp:TableCell>
+                <asp:TableCell><asp:CheckBox ID="CheckBox4" runat="server"/></asp:TableCell>
+                <asp:TableCell> japanese<br/>english </asp:TableCell>
+                <asp:TableCell>verbs</asp:TableCell>
+                <asp:TableCell>食べる<br/>to eat </asp:TableCell>
+                <asp:TableCell>私はりんごを食べる<br/>わたしはりんごをたべる<br/>I eat an apple</asp:TableCell>
+                <asp:TableCell>食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences.</asp:TableCell>
+                <asp:TableCell>A2</asp:TableCell>
+                <asp:TableCell>Public</asp:TableCell>
+                <asp:TableCell>2023</asp:TableCell>
+                <asp:TableCell><asp:ImageButton ID="ImageButton4" runat="server" ImageUrl="~/Assets/Icons/edit.png" CssClass="edit edit-button"/></asp:TableCell>
 
-                <asp:TableCell>
-                    <asp:ImageButton ID="btnEdit" runat="server" ImageUrl="~/Assets/Icons/edit.png" />
-                </asp:TableCell>
+            </asp:TableRow>
+            <asp:TableRow>
 
-                <asp:TableCell>
-                    <asp:ImageButton ID="btnDelete" runat="server" ImageUrl="~/Assets/Icons/bin.png" />
-                </asp:TableCell>
+                <asp:TableCell><asp:CheckBox ID="CheckBox5" runat="server"/></asp:TableCell>
+                <asp:TableCell> japanese<br/>english </asp:TableCell>
+                <asp:TableCell>verbs</asp:TableCell>
+                <asp:TableCell>食べる<br/>to eat </asp:TableCell>
+                <asp:TableCell>私はりんごを食べる<br/>わたしはりんごをたべる<br/>I eat an apple</asp:TableCell>
+                <asp:TableCell>食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences.</asp:TableCell>
+                <asp:TableCell>A2</asp:TableCell>
+                <asp:TableCell>Public</asp:TableCell>
+                <asp:TableCell>2023</asp:TableCell>
+                <asp:TableCell><asp:ImageButton ID="ImageButton6" runat="server" ImageUrl="~/Assets/Icons/edit.png" CssClass="edit edit-button"/></asp:TableCell>
+
+            </asp:TableRow>
+            <asp:TableRow>
+
+                <asp:TableCell><asp:CheckBox ID="CheckBox6" runat="server"/></asp:TableCell>
+                <asp:TableCell> japanese<br/>english </asp:TableCell>
+                <asp:TableCell>verbs</asp:TableCell>
+                <asp:TableCell>食べる<br/>to eat </asp:TableCell>
+                <asp:TableCell>私はりんごを食べる<br/>わたしはりんごをたべる<br/>I eat an apple</asp:TableCell>
+                <asp:TableCell>食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences.</asp:TableCell>
+                <asp:TableCell>A2</asp:TableCell>
+                <asp:TableCell>Public</asp:TableCell>
+                <asp:TableCell>2023</asp:TableCell>
+                <asp:TableCell><asp:ImageButton ID="ImageButton7" runat="server" ImageUrl="~/Assets/Icons/edit.png" CssClass="edit edit-button"/></asp:TableCell>
+
+            </asp:TableRow>
+            <asp:TableRow>
+
+                <asp:TableCell><asp:CheckBox ID="CheckBox7" runat="server"/></asp:TableCell>
+                <asp:TableCell> japanese<br/>english </asp:TableCell>
+                <asp:TableCell>verbs</asp:TableCell>
+                <asp:TableCell>食べる<br/>to eat </asp:TableCell>
+                <asp:TableCell>私はりんごを食べる<br/>わたしはりんごをたべる<br/>I eat an apple</asp:TableCell>
+                <asp:TableCell>食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences.</asp:TableCell>
+                <asp:TableCell>A2</asp:TableCell>
+                <asp:TableCell>Public</asp:TableCell>
+                <asp:TableCell>2023</asp:TableCell>
+                <asp:TableCell><asp:ImageButton ID="ImageButton8" runat="server" ImageUrl="~/Assets/Icons/edit.png" CssClass="edit edit-button"/></asp:TableCell>
+
+            </asp:TableRow>
+            <asp:TableRow>
+
+                <asp:TableCell><asp:CheckBox ID="CheckBox8" runat="server"/></asp:TableCell>
+                <asp:TableCell> japanese<br/>english </asp:TableCell>
+                <asp:TableCell>verbs</asp:TableCell>
+                <asp:TableCell>食べる<br/>to eat </asp:TableCell>
+                <asp:TableCell>私はりんごを食べる<br/>わたしはりんごをたべる<br/>I eat an apple</asp:TableCell>
+                <asp:TableCell>食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences.</asp:TableCell>
+                <asp:TableCell>A2</asp:TableCell>
+                <asp:TableCell>Public</asp:TableCell>
+                <asp:TableCell>2023</asp:TableCell>
+                <asp:TableCell><asp:ImageButton ID="ImageButton9" runat="server" ImageUrl="~/Assets/Icons/edit.png" CssClass="edit edit-button"/></asp:TableCell>
 
             </asp:TableRow>
         </asp:Table>
+
+        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/Assets/Icons/bin.png" CssClass="edit edit-button"/>
+
+
 
     
     </div>

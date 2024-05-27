@@ -4,27 +4,19 @@
 
     <div class="container">
 
-
         <h3>LOGIN TO SEE YOUR FLASHCARDS</h3>
 
         <asp:Label ID="lblMessage" runat="server" Text="" CssClass="error-message"/>
 
         <div class="form-group login-form">
             <label for="txtUser">Username or Email:</label>
-            <asp:TextBox ID="txtUser" runat="server" CssClass="form-control" maxlength="10"></asp:TextBox>
+            <asp:TextBox ID="txtUser" runat="server" CssClass="form-control" maxlength="20"></asp:TextBox>
 
             <label for="txtPassword" >Password:</label>
-            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password"></asp:TextBox>
+            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" maxlength="20"></asp:TextBox>
         </div>
 
-
-
-        
         <asp:Button ID="btnLogin" runat="server" Text="Login" CssClass="btn btn-primary btn-center" OnClick="btnLogin_Click"/>
-
-
-
-<%--        <asp:Button ID="btnGenerator" runat="server" Text="Generator" CssClass="btn btn-primary btn-center" OnClick="goToGenerator" />--%>
 
     </div>
 
