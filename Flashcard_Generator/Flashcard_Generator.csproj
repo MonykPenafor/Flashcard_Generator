@@ -237,6 +237,7 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Flashcard.cs" />
     <Compile Include="FlashcardDisplay.aspx.cs">
       <DependentUpon>FlashcardDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

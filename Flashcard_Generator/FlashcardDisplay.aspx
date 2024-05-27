@@ -19,7 +19,7 @@
                 <asp:TableHeaderCell>Level</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Visibility</asp:TableHeaderCell>
                 <asp:TableHeaderCell>Created at</asp:TableHeaderCell>
-                <asp:TableHeaderCell>   an edit logo </asp:TableHeaderCell>
+                <asp:TableHeaderCell>editbtn</asp:TableHeaderCell>
                 
 
             </asp:TableHeaderRow>
@@ -95,10 +95,8 @@
 
             </asp:TableRow>
         </asp:Table>
-
-        <asp:ImageButton ID="ImageButton5" runat="server" ImageUrl="~/Assets/Icons/bin.png" CssClass="edit edit-button"/>
-
-
+                
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-primary btn-center" OnClick="btnDelete_Click"/>
 
     
     </div>

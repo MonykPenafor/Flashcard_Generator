@@ -7,11 +7,19 @@ using System.Web.UI.WebControls;
 
 namespace Flashcard_Generator
 {
-	public partial class FlashcardDisplay : System.Web.UI.Page
+	public partial class FlashcardDisplay : Page
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
 
+		}
+
+
+
+
+		protected void btnDelete_Click(object sender, EventArgs e)
+		{
+			
 		}
 	}
 }
