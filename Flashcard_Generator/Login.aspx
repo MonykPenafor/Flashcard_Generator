@@ -10,7 +10,7 @@
 
         <div class="form-group login-form">
             <label for="txtUser">Username or Email:</label>
-            <asp:TextBox ID="txtUser" runat="server" CssClass="form-control" maxlength="20"></asp:TextBox>
+            <asp:TextBox ID="txtUser" runat="server" CssClass="form-control" maxlength="80"></asp:TextBox>
 
             <label for="txtPassword" >Password:</label>
             <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" maxlength="20"></asp:TextBox>
