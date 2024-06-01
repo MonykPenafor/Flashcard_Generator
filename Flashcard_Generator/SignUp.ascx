@@ -13,7 +13,7 @@
         <asp:TextBox ID="txtUsername" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
 
         <label for="txtEmail">Email:</label>
-        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" MaxLength="80"></asp:TextBox>
+        <asp:TextBox ID="txtEmail" runat="server" CssClass="form-control" MaxLength="30"></asp:TextBox>
 
         <label for="txtPassword">Password:</label>
         <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" TextMode="Password" MaxLength="20"></asp:TextBox>
