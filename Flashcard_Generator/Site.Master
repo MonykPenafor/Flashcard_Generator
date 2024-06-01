@@ -12,7 +12,7 @@
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image" />
     <link href="Assets\Style\Style.css" rel="stylesheet" type="text/css" />
 
@@ -40,7 +40,7 @@
 
 
         <div class="navbar bg-dark fixed-top">
-            <img src="Assets/Icons/translate.png" class="nav-icon" />
+            <a href="Home.aspx"><img src="Assets/Icons/translate.png" class="nav-icon" /></a>
             <h1>FLASHCARD GENERATOR</h1>
         </div>
 
@@ -48,15 +48,13 @@
         <nav class="navbar bg-dark fixed-left">
             <div class="justify-content-between">
                 <ul class="navbar-nav flex-grow-1">
-
-                
                     <li class="nav-item">
-                    <a id="navUser" class="nav-link nav-user" runat="server" href="Login.aspx"><img src="Assets/Icons/user.png" class="a-icon"/></a>
+                        <a id="navUser" class="nav-link nav-user" runat="server" href="~/Home.aspx">
+                            <img src="Assets/Icons/user.png" class="a-icon" />
+                        </a>
                     </li>
-
-                    <li class="nav-item"><a class="nav-link" runat="server" href="SignUp">SignUp page</a></li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="FlashcardGenerator.aspx">Create Flashcards</a></li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="FlashcardDisplay.aspx">Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardGenerator.aspx">Create Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardDisplay.aspx">Flashcards</a></li>
                 </ul>
             </div>
         </nav>
@@ -68,7 +66,7 @@
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
-            <footer style="text-align:center;">
+            <footer style="text-align: center;">
                 <p>&copy; <%: DateTime.Now.Year %> - Flashcard Generator by Monyk Paola Penafor</p>
             </footer>
         </div>

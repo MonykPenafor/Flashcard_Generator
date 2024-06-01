@@ -125,18 +125,25 @@ height:30px;
 
 
 
-/* buttons */                  
+/* buttons */
 
-.btn.btn-danger.btn-center, .btn.btn-primary.btn-center{
-    width: 150px;
-    margin-top: 15px;
-    margin-left: 45%;
+.btn.btn-danger.btn-center, .btn.btn-primary.btn-center, .btn.btn-primary {
+    width: 250px;
+}
+
+.btn-word{
+    color: dodgerblue;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    padding: 0;
+
 }
 
 
 
 
- /* login forms */
+/* login forms */
 .form-group.login-form {
     width: 250px;
     margin-top: 15px;
@@ -156,6 +163,12 @@ height:30px;
 }
 
 
-
+.col.panel-register {
+    border: solid;
+    border-color: #b9b9b9;
+    border-width: thin;
+    border-radius: 0.4rem;
+    margin-right: 50px;
+}
 
 

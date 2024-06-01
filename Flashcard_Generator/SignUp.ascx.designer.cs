@@ -11,7 +11,7 @@ namespace Flashcard_Generator
 {
 
 
-	public partial class SignUp
+	public partial class SignUp1
 	{
 
 		/// <summary>

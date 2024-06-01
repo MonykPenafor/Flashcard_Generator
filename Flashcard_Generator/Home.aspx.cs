@@ -13,5 +13,16 @@ namespace Flashcard_Generator
 		{
 
 		}
+
+		protected void btnRegister_Click(object sender, EventArgs e)
+		{
+			pnlLogin.Visible = false;
+			pnlSignUp.Visible = true;
+		}
+		protected void btnLogin_Click(object sender, EventArgs e)
+		{
+			pnlSignUp.Visible = false;
+			pnlLogin.Visible = true;
+		}
 	}
 }
