@@ -52,6 +52,8 @@
                         <a id="navUser" class="nav-link nav-user" runat="server" href="~/Home.aspx">
                             <img src="Assets/Icons/user.png" class="a-icon" />
                         </a>
+                        <asp:Label ID="lblLoggedInUser" runat="server" Text=""/>
+                        <asp:Label ID="lblCreationDate" runat="server" Text=""/>
                     </li>
                     <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardGenerator.aspx">Create Flashcards</a></li>
                     <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardDisplay.aspx">Flashcards</a></li>

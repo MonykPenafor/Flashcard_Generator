@@ -31,12 +31,11 @@ namespace Flashcard_Generator
 			Password = password;
 		}
 
-		public User(int id, string username, string email, string password, DateTime createdAt, DateTime updatedAt)
+		public User(int id, string username, string email, DateTime createdAt, DateTime updatedAt)
 		{
 			Id = id;
 			Username = username;
 			Email = email;
-			Password = password;
 			CreatedAt = createdAt;
 			UpdatedAt = updatedAt;
 		}

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace Flashcard_Generator
 {
@@ -13,6 +14,7 @@ namespace Flashcard_Generator
 		{
 			connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
 		}
+
 
 
 		public string SignUp(User user)
@@ -87,6 +89,12 @@ namespace Flashcard_Generator
 
 						if (isPasswordValid)
 						{
+							// Get user information from database
+							User fullUserInfo = GetUserByUsernameOrEmail(user.Username ?? user.Email); // if Username not null, use Username, otherwise use Email
+
+							// Store user information in session
+							HttpContext.Current.Session["LoggedInUser"] = fullUserInfo;
+
 							return "true";
 						}
 						else
@@ -101,5 +109,39 @@ namespace Flashcard_Generator
 				}
 			}
 		}
+
+
+
+		public User GetUserByUsernameOrEmail(string usernameOrEmail)
+		{
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
+				string query = "SELECT Id_user, Username, Email, Created_At, Updated_At FROM Users WHERE Username = @UsernameOrEmail OR Email = @UsernameOrEmail";
+
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					cmd.Parameters.AddWithValue("@UsernameOrEmail", usernameOrEmail);
+
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						if (reader.Read())
+						{
+							return new User(
+								Convert.ToInt32(reader["Id_user"]),
+								reader["Username"].ToString(),
+								reader["Email"].ToString(),
+								Convert.ToDateTime(reader["Created_At"]),
+								Convert.ToDateTime(reader["Updated_At"])
+							);
+						}
+					}
+				}
+			}
+
+			return null; // User not found
+		}
+
+
 	}
 }

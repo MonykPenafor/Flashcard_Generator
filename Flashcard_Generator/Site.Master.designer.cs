@@ -24,6 +24,24 @@ namespace Flashcard_Generator
 		protected global::System.Web.UI.HtmlControls.HtmlAnchor navUser;
 
 		/// <summary>
+		/// lblLoggedInUser control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblLoggedInUser;
+
+		/// <summary>
+		/// lblCreationDate control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblCreationDate;
+
+		/// <summary>
 		/// MainContent control.
 		/// </summary>
 		/// <remarks>

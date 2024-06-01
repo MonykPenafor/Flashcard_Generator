@@ -11,7 +11,14 @@ namespace Flashcard_Generator
 	public partial class SiteMaster : MasterPage
 	{
 		protected void Page_Load(object sender, EventArgs e)
-		{
+		{	
+			User user = (User)Session["LoggedInUser"];		
+
+			if (user != null) 
+			{ 
+				lblLoggedInUser.Text = user.Username;
+				lblCreationDate.Text = user.CreatedAt.ToString();
+			}
 
 		}
 
