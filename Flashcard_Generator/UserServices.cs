@@ -16,7 +16,6 @@ namespace Flashcard_Generator
 		}
 
 
-
 		public string SignUp(User user)
 		{
 			string hashedPassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
@@ -35,6 +34,7 @@ namespace Flashcard_Generator
 					try
 					{
 						var result = cmd.ExecuteNonQuery();
+						StoreUserInSession(user);
 						return "true";
 						
 					}
@@ -56,7 +56,6 @@ namespace Flashcard_Generator
 				}
 			}
 		}
-
 
 
 		public string Login(User user)
@@ -89,12 +88,7 @@ namespace Flashcard_Generator
 
 						if (isPasswordValid)
 						{
-							// Get user information from database
-							User fullUserInfo = GetUserByUsernameOrEmail(user.Username ?? user.Email); // if Username not null, use Username, otherwise use Email
-
-							// Store user information in session
-							HttpContext.Current.Session["LoggedInUser"] = fullUserInfo;
-
+							StoreUserInSession(user);
 							return "true";
 						}
 						else
@@ -110,6 +104,15 @@ namespace Flashcard_Generator
 			}
 		}
 
+
+		public void StoreUserInSession(User user)
+		{
+			// Get user information from database
+			User fullUserInfo = GetUserByUsernameOrEmail(user.Username ?? user.Email); // if Username not null, use Username, otherwise use Email
+
+			// Store user information in session
+			HttpContext.Current.Session["LoggedInUser"] = fullUserInfo;
+		}
 
 
 		public User GetUserByUsernameOrEmail(string usernameOrEmail)
