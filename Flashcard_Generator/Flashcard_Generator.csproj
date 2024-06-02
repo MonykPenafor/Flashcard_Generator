@@ -253,6 +253,7 @@
     <Compile Include="FlashcardGenerator.aspx.designer.cs">
       <DependentUpon>FlashcardGenerator.aspx</DependentUpon>
     </Compile>
+    <Compile Include="FlashcardServices.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

@@ -10,9 +10,6 @@
         <p>- FILL THE BOXES LIKE IN THE EXAMPLE... </p>
 
         <div class="form-group">
-            <label for="txtUser">USERNAME:</label>
-            <asp:TextBox ID="txtUser" runat="server" CssClass="form-control">paola</asp:TextBox>
-
 
             <label for="txtSourceLanguage">SOURCE LANGUAGE:</label>
             <asp:TextBox ID="txtSourceLanguage" runat="server" CssClass="form-control" maxlength="30" placeholder="English"></asp:TextBox>

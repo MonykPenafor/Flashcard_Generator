@@ -12,12 +12,15 @@ namespace Flashcard_Generator
 		public DateTime UpdatedAt { get; }
 
 
+		//for signup method
 		public User(string username, string email, string password)
 		{
 			Username = username;
 			Email = email;
 			Password = password;
 		}
+
+		//for login method
 		public User(string usernameOrEmail, string password)
 		{
 			if (usernameOrEmail.Contains("@"))
@@ -31,6 +34,7 @@ namespace Flashcard_Generator
 			Password = password;
 		}
 
+		//to create the session.user
 		public User(int id, string username, string email, DateTime createdAt, DateTime updatedAt)
 		{
 			Id = id;

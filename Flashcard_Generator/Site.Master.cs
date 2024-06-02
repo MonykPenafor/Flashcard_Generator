@@ -22,7 +22,5 @@ namespace Flashcard_Generator
 
 		}
 
-
-
 	}
 }

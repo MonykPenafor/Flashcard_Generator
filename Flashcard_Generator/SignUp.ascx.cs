@@ -22,6 +22,18 @@ namespace Flashcard_Generator
 				return;
 			}
 
+			if (username.Contains("@")) 
+			{
+				lblMessage.Text = "Username can not contain '@'!";
+				return;
+			}
+
+			if (!email.Contains("@"))
+			{
+				lblMessage.Text = "Write a valid E-mail!";
+				return;
+			}
+
 			UserServices userServices = new UserServices();
 			User user = new User(username, email, password);
 

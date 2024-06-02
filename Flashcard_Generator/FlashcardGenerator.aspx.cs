@@ -19,71 +19,56 @@ namespace Flashcard_Generator
 		//CREATE THE FLASHCARDS
 		protected void btnCreateFlashcards_Click(object sender, EventArgs e)
 		{
-			string[] separators = new string[] { "\",\"", "\", \"", "\""};
+			string[] separators = new string[] { "\",\"", "\", \"", "\"" };
+
+			User user = (User)Session["LoggedInUser"];
 
 
-			//string username = txtUser.Text;
 			string sourceLanguage = txtSourceLanguage.Text;
 			string targetLanguage = txtTargetLanguage.Text;
 			string category = txtCategory.Text;
-			string[] sourceVocabulary = txtVocabularySource.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-			string[] targetVocabulary = txtVocabularyTarget.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-			string[] exampleSentence = txtWordOrPhrase.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-			string[] translation = txtTranslation.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+			string[] wordSource = txtVocabularySource.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+			string[] wordTarget = txtVocabularyTarget.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+			string[] exampleSentenceTarget = txtWordOrPhrase.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+			string[] exampleSentenceSource = txtTranslation.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 			string[] tips = txtTip.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 			string[] pronunciation = txtSimplified.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 			string proficiency = ddlLanguageProficiency.SelectedValue;
 			bool isPublic = bool.Parse(ddlPrivacySetting.SelectedValue);
 
-			var numberOfFlashcards = sourceVocabulary.Length;
+			var numberOfFlashcards = wordSource.Length;
 
-			string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
+			FlashcardServices flashcardServices = new FlashcardServices();
 
-			using (SqlConnection con = new SqlConnection(connectionString))
+			for (int i = 0; i < numberOfFlashcards; i++)
 			{
-				con.Open();
+				Flashcard flashcard = new Flashcard(
+					user,
+					sourceLanguage,
+					targetLanguage,
+					category,
+					wordSource[i],
+					wordTarget[i],
+					exampleSentenceSource[i],
+					exampleSentenceTarget[i],
+					pronunciation[i],
+					tips[i],
+					proficiency,
+					isPublic
+				);
 
-				for (int i = 0; i < numberOfFlashcards; i++)
+				string created = flashcardServices.CreateFlashcard(flashcard);
+
+				if (created != "ok")
 				{
-
-					string query = "INSERT INTO Flashcards (id_user, source_language, target_language, category, word_source, word_target, example_sentence_source, example_sentence_target, pronunciation, tips, proficiency, is_public) " +
-											"VALUES (@UserId, @sourceLanguage, @targetLanguage, @category, @sourceVocabulary, @targetVocabulary, @translation, @exampleSentence, @pronunciation, @tips, @proficiency, @isPublic)";
-					using (SqlCommand cmd = new SqlCommand(query, con))
-					{
-						cmd.Parameters.AddWithValue("@UserId", 1);
-						cmd.Parameters.AddWithValue("@sourceLanguage", sourceLanguage);
-						cmd.Parameters.AddWithValue("@targetLanguage", targetLanguage);
-						cmd.Parameters.AddWithValue("@category", category);
-						cmd.Parameters.AddWithValue("@sourceVocabulary", sourceVocabulary[i]);
-						cmd.Parameters.AddWithValue("@targetVocabulary", targetVocabulary[i]);
-						cmd.Parameters.AddWithValue("@exampleSentence", exampleSentence[i]);
-						cmd.Parameters.AddWithValue("@translation", translation[i]);
-						cmd.Parameters.AddWithValue("@tips", tips[i]);
-						cmd.Parameters.AddWithValue("@pronunciation", pronunciation[i]);
-						cmd.Parameters.AddWithValue("@proficiency", proficiency);
-						cmd.Parameters.AddWithValue("@isPublic", isPublic);
-
-						try
-						{
-							cmd.ExecuteNonQuery();
-						}
-						catch (SqlException ex)
-						{
-							lblMessage.Text = $"Failed!: {ex}";
-						}
-						catch (Exception ex)
-						{
-
-							lblMessage.Text = $"Failed!: {ex}";
-						}
-					}
+					lblMessage.Text = created;
+					return;
 				}
-				lblMessage.Text = $"Set criado com sucesso";
-				Response.Redirect("FlashcardDisplay.aspx");
-
 
 			}
 
+			lblMessage.Text = $"The Set was created";
+			Response.Redirect("FlashcardDisplay.aspx");
 		}
 	}
 }
