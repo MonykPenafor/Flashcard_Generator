@@ -24,24 +24,6 @@ namespace Flashcard_Generator
 		protected global::System.Web.UI.WebControls.Table FlashcardTable;
 
 		/// <summary>
-		/// CheckBox4 control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.CheckBox CheckBox4;
-
-		/// <summary>
-		/// ImageButton4 control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.ImageButton ImageButton4;
-
-		/// <summary>
 		/// btnDelete control.
 		/// </summary>
 		/// <remarks>

@@ -49,15 +49,22 @@ width:30px;
 height:30px;
 }
 
+.user-label{
+    justify-content: center;
+
+}
+
+
 .nav-item {
     margin: 0;
 }
 
-
-.nav-link.nav-user{
+/*
+a.nav-link.nav-user{
     justify-content: center;
+    display: grid;
 }
-
+*/
 .nav-link {
     padding: 10px 20px;
     display: flex;

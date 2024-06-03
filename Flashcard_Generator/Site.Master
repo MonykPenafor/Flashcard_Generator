@@ -46,17 +46,18 @@
 
 
         <nav class="navbar bg-dark fixed-left">
-            <div class="justify-content-between">
-                <ul class="navbar-nav flex-grow-1">
+            <div>
+                <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a id="navUser" class="nav-link nav-user" runat="server" href="~/Home.aspx">
+                        <a id="navUser" class="nav-link nav-user justify-content-center" runat="server" href="~/Home.aspx">
                             <img src="Assets/Icons/user.png" class="a-icon" />
                         </a>
-                        <asp:Label ID="lblLoggedInUser" runat="server" Text=""/>
-                        <asp:Label ID="lblCreationDate" runat="server" Text=""/>
+                        <asp:Label ID="lblLoggedInUser" runat="server" Text="" CssClass="justify-content-between"/> <br />
+                        <asp:Label ID="lblCreationDate" runat="server" Text="" CssClass="user-label"/>
                     </li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardGenerator.aspx">Create Flashcards</a></li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardDisplay.aspx">Flashcards</a></li>
+                    <li class="nav-item" ><a class="nav-link" runat="server" href="~/FlashcardGenerator.aspx" id="restricted" visible="false">Create Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardDisplay.aspx" visible="true">Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardDisplay.aspx">Study</a></li>
                 </ul>
             </div>
         </nav>

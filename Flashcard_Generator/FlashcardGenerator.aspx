@@ -12,16 +12,16 @@
         <div class="form-group">
 
             <label for="txtSourceLanguage">SOURCE LANGUAGE:</label>
-            <asp:TextBox ID="txtSourceLanguage" runat="server" CssClass="form-control" maxlength="30" placeholder="English"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvSourceLanguage" runat="server" ControlToValidate="txtSourceLanguage" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
-
+            <asp:TextBox ID="txtSourceLanguage" runat="server" CssClass="form-control" maxlength="30" placeholder="English"></asp:TextBox>
+            
             <label for="txtTargetLanguage">TARGET LANGUAGE:</label>
-            <asp:TextBox ID="txtTargetLanguage" runat="server" CssClass="form-control" maxlength="30" placeholder="Japanese"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvTargetLanguage" runat="server" ControlToValidate="txtTargetLanguage" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
-
+            <asp:TextBox ID="txtTargetLanguage" runat="server" CssClass="form-control" maxlength="30" placeholder="Japanese"></asp:TextBox>
+            
             <label for="txtCategory">FLASHCARD SET TITLE:</label>
-            <asp:TextBox ID="txtCategory" runat="server" CssClass="form-control" maxlength="30" placeholder="Verbs"></asp:TextBox>
             <asp:RequiredFieldValidator ID="rfvCategory" runat="server" ControlToValidate="txtCategory" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
+            <asp:TextBox ID="txtCategory" runat="server" CssClass="form-control" maxlength="30" placeholder="Verbs"></asp:TextBox>
 
             <label for="ddlLanguageProficiency">Language Proficiency:</label>
             <asp:DropDownList ID="ddlLanguageProficiency" runat="server" CssClass="form-control">

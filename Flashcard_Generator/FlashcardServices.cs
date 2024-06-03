@@ -4,17 +4,18 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.UI.WebControls;
+using System.Web.UI;
 
 namespace Flashcard_Generator
 {
 	public class FlashcardServices
 	{
 
+		string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
 
 		public string CreateFlashcard(Flashcard flashcard)
 		{
-			string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
-
 			using (SqlConnection con = new SqlConnection(connectionString))
 			{
 				con.Open();
@@ -57,6 +58,93 @@ namespace Flashcard_Generator
 			}
 
 		}
+
+
+
+
+
+
+
+		public List<Flashcard> GetPublicFlashcards()
+		{
+			var flashcards = new List<Flashcard>();
+
+			UserServices userServices = new UserServices();
+
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
+				
+				string query = @"SELECT 
+									f.id_flashcard,
+									u.username,
+									f.source_language,
+									f.target_language,
+									f.category,
+									f.word_source,
+									f.word_target,
+									f.example_sentence_source,
+									f.example_sentence_target,
+									f.pronunciation,
+									f.tips,
+									f.proficiency,
+									f.is_public,
+									f.created_at,
+									f.updated_at
+								FROM FLASHCARDS f
+								JOIN USERS u ON f.id_user = u.id_user
+								WHERE f.is_public = 1";
+
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					try
+					{
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+							while (reader.Read())
+							{
+								string username = reader.GetString(1);
+								User user = userServices.GetUserByUsernameOrEmail(username);
+
+								var flashcard = new Flashcard(
+									reader.GetInt32(0),  // Id
+									user,
+									reader.GetString(2),  // SourceLanguage
+									reader.GetString(3),  // TargetLanguage
+									reader.IsDBNull(4) ? null : reader.GetString(4),  // Category
+									reader.GetString(5),  // WordSource
+									reader.GetString(6),  // WordTarget
+									reader.GetString(7),  // ExampleSentenceSource
+									reader.GetString(8),  // ExampleSentenceTarget
+									reader.IsDBNull(9) ? null : reader.GetString(9),  // Pronunciation
+									reader.IsDBNull(10) ? null : reader.GetString(10),  // Tips
+									reader.IsDBNull(11) ? null : reader.GetString(11),  // Proficiency
+									reader.GetBoolean(12),  // IsPublic
+									reader.GetDateTime(13),  // CreatedAt
+									reader.GetDateTime(14)   // UpdatedAt
+								);
+
+								flashcards.Add(flashcard);
+							}
+						}
+					}
+					catch (SqlException ex)
+					{
+						Console.WriteLine($"SQL Error: {ex.Message}");
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine($"Error: {ex.Message}");
+					}
+				}
+
+
+			}
+
+			return flashcards;
+
+		}
+
 
 
 

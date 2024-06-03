@@ -18,6 +18,7 @@ namespace Flashcard_Generator
 			{ 
 				lblLoggedInUser.Text = user.Username;
 				lblCreationDate.Text = user.CreatedAt.ToString();
+				restricted.Visible = true;
 			}
 
 		}

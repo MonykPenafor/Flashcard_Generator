@@ -4,7 +4,7 @@ namespace Flashcard_Generator
 {
 	public class Flashcard
 	{
-		private int Id { get; }
+		private int Id { get; set; }
 		public User User { get; set; }
 		public string SourceLanguage { get; set; }
 		public string TargetLanguage { get; set; }
@@ -17,11 +17,11 @@ namespace Flashcard_Generator
 		public string Tips { get; set; }
 		public string Proficiency { get; set; }
 		public bool IsPublic { get; set; }
-		private DateTime CreatedAt { get; }
-		private DateTime UpdatedAt { get; }
+		public DateTime CreatedAt { get; set; }
+		public DateTime UpdatedAt { get; set; }
 
 
-		//to create the flashcards
+		//to insert the flashcards into the database
 		public Flashcard(
 			User user,
 			string sourceLanguage,
@@ -49,5 +49,43 @@ namespace Flashcard_Generator
 			Proficiency = proficiency;
 			IsPublic = isPublic;
 		}
+
+
+
+		//to get the flashcards from the database
+		public Flashcard(
+			int id,
+			User user,
+			string sourceLanguage,
+			string targetLanguage,
+			string category,
+			string wordSource,
+			string wordTarget,
+			string exampleSentenceSource,
+			string exampleSentenceTarget,
+			string pronunciation,
+			string tips,
+			string proficiency,
+			bool isPublic,
+			DateTime createdAt,
+			DateTime updatedAt)
+		{
+			Id = id;
+			User = user;
+			SourceLanguage = sourceLanguage;
+			TargetLanguage = targetLanguage;
+			Category = category;
+			WordSource = wordSource;
+			WordTarget = wordTarget;
+			ExampleSentenceSource = exampleSentenceSource;
+			ExampleSentenceTarget = exampleSentenceTarget;
+			Pronunciation = pronunciation;
+			Tips = tips;
+			Proficiency = proficiency;
+			IsPublic = isPublic;
+			CreatedAt = createdAt;
+			UpdatedAt = updatedAt;
+		}
+
 	}
 }

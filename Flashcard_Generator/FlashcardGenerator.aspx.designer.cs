@@ -15,15 +15,6 @@ namespace Flashcard_Generator
 	{
 
 		/// <summary>
-		/// txtSourceLanguage control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtSourceLanguage;
-
-		/// <summary>
 		/// rfvSourceLanguage control.
 		/// </summary>
 		/// <remarks>
@@ -33,13 +24,13 @@ namespace Flashcard_Generator
 		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvSourceLanguage;
 
 		/// <summary>
-		/// txtTargetLanguage control.
+		/// txtSourceLanguage control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtTargetLanguage;
+		protected global::System.Web.UI.WebControls.TextBox txtSourceLanguage;
 
 		/// <summary>
 		/// rfvTargetLanguage control.
@@ -51,13 +42,13 @@ namespace Flashcard_Generator
 		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTargetLanguage;
 
 		/// <summary>
-		/// txtCategory control.
+		/// txtTargetLanguage control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtCategory;
+		protected global::System.Web.UI.WebControls.TextBox txtTargetLanguage;
 
 		/// <summary>
 		/// rfvCategory control.
@@ -67,6 +58,15 @@ namespace Flashcard_Generator
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvCategory;
+
+		/// <summary>
+		/// txtCategory control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtCategory;
 
 		/// <summary>
 		/// ddlLanguageProficiency control.
