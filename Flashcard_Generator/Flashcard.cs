@@ -66,9 +66,10 @@ namespace Flashcard_Generator
 			string pronunciation,
 			string tips,
 			string proficiency,
-			bool isPublic,
-			DateTime createdAt,
-			DateTime updatedAt)
+			bool isPublic
+			//DateTime createdAt,
+			//DateTime updatedAt
+		)
 		{
 			Id = id;
 			User = user;
@@ -83,8 +84,8 @@ namespace Flashcard_Generator
 			Tips = tips;
 			Proficiency = proficiency;
 			IsPublic = isPublic;
-			CreatedAt = createdAt;
-			UpdatedAt = updatedAt;
+			//CreatedAt = createdAt;
+			//UpdatedAt = updatedAt;
 		}
 
 	}

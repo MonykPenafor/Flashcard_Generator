@@ -119,9 +119,9 @@ namespace Flashcard_Generator
 									reader.IsDBNull(9) ? null : reader.GetString(9),  // Pronunciation
 									reader.IsDBNull(10) ? null : reader.GetString(10),  // Tips
 									reader.IsDBNull(11) ? null : reader.GetString(11),  // Proficiency
-									reader.GetBoolean(12),  // IsPublic
-									reader.GetDateTime(13),  // CreatedAt
-									reader.GetDateTime(14)   // UpdatedAt
+									reader.GetBoolean(12)  // IsPublic
+									//reader.GetDateTime(13),  // CreatedAt
+									//reader.GetDateTime(14)   // UpdatedAt
 								);
 
 								flashcards.Add(flashcard);

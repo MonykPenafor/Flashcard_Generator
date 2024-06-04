@@ -66,15 +66,15 @@ namespace Flashcard_Generator
 				levelCell.Text = flashcard.Proficiency;
 				row.Cells.Add(levelCell);
 
-				// Created at cell
-				TableCell createdAtCell = new TableCell();
-				createdAtCell.Text = flashcard.CreatedAt.ToString("yyyy-MM-dd");
-				row.Cells.Add(createdAtCell);
+				//// Created at cell
+				//TableCell createdAtCell = new TableCell();
+				//createdAtCell.Text = flashcard.CreatedAt.ToString("yyyy-MM-dd");
+				//row.Cells.Add(createdAtCell);
 
-				// Updated at cell
-				TableCell updatedAtCell = new TableCell();
-				updatedAtCell.Text = flashcard.UpdatedAt.ToString("yyyy-MM-dd");
-				row.Cells.Add(updatedAtCell);
+				//// Updated at cell
+				//TableCell updatedAtCell = new TableCell();
+				//updatedAtCell.Text = flashcard.UpdatedAt.ToString("yyyy-MM-dd");
+				//row.Cells.Add(updatedAtCell);
 
 				// Edit button cell
 				TableCell editButtonCell = new TableCell();
@@ -82,12 +82,18 @@ namespace Flashcard_Generator
 				editButton.ImageUrl = "~/Assets/Icons/edit.png";
 				editButton.CssClass = "edit edit-button";
 				//editButton.Click += (s, e) => EditFlashcard(flashcard.Id); // Implement EditFlashcard method
-				//editButtonCell.Controls.Add(editButton);
+				editButtonCell.Controls.Add(editButton);
 				row.Cells.Add(editButtonCell);
 
 				FlashcardTable.Rows.Add(row);
 			}
 		}
+
+
+
+
+
+
 
 		protected void btnDelete_Click(object sender, EventArgs e)
 		{

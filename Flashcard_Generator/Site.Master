@@ -57,7 +57,7 @@
                     </li>
                     <li class="nav-item" ><a class="nav-link" runat="server" href="~/FlashcardGenerator.aspx" id="restricted" visible="false">Create Flashcards</a></li>
                     <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardDisplay.aspx" visible="true">Flashcards</a></li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardDisplay.aspx">Study</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardsGroupDisplay.aspx">Study</a></li>
                 </ul>
             </div>
         </nav>
