@@ -27,13 +27,17 @@ namespace Flashcard_Generator
 			List<string> languagesCombination = flashcardServices.GetLanguagesCombinationsByUser(user);
 
 
-
-			foreach (string language in languagesCombination) 
+			foreach (string languages in languagesCombination) 
 			{
-				Label categoryLabel = new Label();
-				categoryLabel.Text = language + "<br/>";
-				categoryGroups.Controls.Add(categoryLabel);
+				Label languagesH3 = new Label();
+				languagesH3.CssClass = "lbl-category-groups";
+				languagesH3.Text = "<br/> <br/><br/> <br/>" + languages + "<br/> <br/>";
+				categoryGroups.Controls.Add(languagesH3);
 
+				Button btu = new Button();
+				btu.CssClass = "btn-flashcard-group";
+				btu.Text = languages;
+				categoryGroups.Controls.Add(btu);
 			}
 
 		}
