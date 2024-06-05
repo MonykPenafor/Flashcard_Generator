@@ -139,72 +139,47 @@ namespace Flashcard_Generator
 			return flashcards;
 
 		}
-		
-		
-		//public List<string> GetCategoryGroupsByLanguages(string sourceLanguage, string targetLanguage)
-		//{
-
-		//	using (SqlConnection con = new SqlConnection(connectionString))
-		//	{
-		//		con.Open();
-
-		//		string query = "SELECT Category FROM Flashcards WHERE source_language = @sourceLanguage AND target_language = @targetLanguage GROUP BY source_language, target_language, category";
-
-		//		using (SqlCommand cmd = new SqlCommand(query, con))
-		//		{
-
-		//			cmd.Parameters.AddWithValue("@sourceLanguage", sourceLanguage);
-		//			cmd.Parameters.AddWithValue("@targetLanguage", targetLanguage);
-
-		//			try
-		//			{
-		//				using (SqlDataReader reader = cmd.ExecuteReader())
-		//				{
-		//					while (reader.Read())
-		//					{
-		//						string username = reader.GetString(1);
-		//						User user = userServices.GetUserByUsernameOrEmail(username);
-
-		//						var flashcard = new Flashcard(
-		//							reader.GetInt32(0),  // Id
-		//							user,
-		//							reader.GetString(2),  // SourceLanguage
-		//							reader.GetString(3),  // TargetLanguage
-		//							reader.IsDBNull(4) ? null : reader.GetString(4),  // Category
-		//							reader.GetString(5),  // WordSource
-		//							reader.GetString(6),  // WordTarget
-		//							reader.GetString(7),  // ExampleSentenceSource
-		//							reader.GetString(8),  // ExampleSentenceTarget
-		//							reader.IsDBNull(9) ? null : reader.GetString(9),  // Pronunciation
-		//							reader.IsDBNull(10) ? null : reader.GetString(10),  // Tips
-		//							reader.IsDBNull(11) ? null : reader.GetString(11),  // Proficiency
-		//							reader.GetBoolean(12)  // IsPublic
-		//												   //reader.GetDateTime(13),  // CreatedAt
-		//												   //reader.GetDateTime(14)   // UpdatedAt
-		//						);
-
-		//						flashcards.Add(flashcard);
-		//					}
-		//				}
-		//			}
-		//			catch (SqlException ex)
-		//			{
-		//				Console.WriteLine($"SQL Error: {ex.Message}");
-		//			}
-		//			catch (Exception ex)
-		//			{
-		//				Console.WriteLine($"Error: {ex.Message}");
-		//			}
-		//		}
 
 
-		//	}
+		public List<string> GetLanguagesCombinationsByUser(User user)
+		{	
+			List<string> languages = new List<string>();
 
-		//	return flashcards;
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
 
-		//}
+				string query = "SELECT source_language, target_language FROM Flashcards WHERE id_user = @id_user GROUP BY source_language, target_language";
 
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					cmd.Parameters.AddWithValue("@id_user", user.Id);
 
+					try
+					{
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+							while (reader.Read())
+							{
+								var sourceLanguage = reader.GetString(0);
+								var targetLanguage = reader.GetString(1);
+
+								languages.Add(sourceLanguage + " / " + targetLanguage);
+							}
+						}
+					}
+					catch (SqlException ex)
+					{
+						Console.WriteLine($"SQL Error: {ex.Message}");
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine($"Error: {ex.Message}");
+					}
+				}
+			}
+			return languages;
+		}
 
 
 	}

@@ -4,7 +4,6 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container" id="cntnrCategoryGroups">
-
     <h2>My flashcards</h2>
 
         <div class="flashcard-group-container">
@@ -20,5 +19,16 @@
 
     </div>
 
+    <asp:PlaceHolder runat="server" id="categoryGroups">
+
+
+    </asp:PlaceHolder>
+
 </asp:Content>
+
+
+
+
+
+
 
