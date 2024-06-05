@@ -15,11 +15,10 @@ namespace Flashcard_Generator
 			LoadFlashcards();
 		}
 
-
 		protected void LoadFlashcards()
 		{
 			FlashcardServices flashcardServices = new FlashcardServices();
-			List<Flashcard> flashcards = flashcardServices.GetPublicFlashcards();
+			List<Flashcard> flashcards = flashcardServices.GetAllPublicFlashcards();
 
 			foreach (Flashcard flashcard in flashcards)
 			{
@@ -38,7 +37,7 @@ namespace Flashcard_Generator
 
 				// Languages cell
 				TableCell languagesCell = new TableCell();
-				languagesCell.Text = $"{flashcard.SourceLanguage}<br/>{flashcard.TargetLanguage}";
+				languagesCell.Text = $"{flashcard.TargetLanguage}<br/>{flashcard.SourceLanguage}";
 				row.Cells.Add(languagesCell);
 
 				// Category cell
@@ -48,12 +47,12 @@ namespace Flashcard_Generator
 
 				// Vocabulary / Translation cell
 				TableCell vocabularyCell = new TableCell();
-				vocabularyCell.Text = $"{flashcard.WordSource}<br/>{flashcard.WordTarget}";
+				vocabularyCell.Text = $"{flashcard.WordTarget}<br/>{flashcard.WordSource}";
 				row.Cells.Add(vocabularyCell);
 
 				// Usage / Pronunciation / Translation cell
 				TableCell usageCell = new TableCell();
-				usageCell.Text = $"{flashcard.ExampleSentenceSource}<br/>{flashcard.Pronunciation}<br/>{flashcard.ExampleSentenceTarget}";
+				usageCell.Text = $"{flashcard.ExampleSentenceTarget}<br/>{flashcard.Pronunciation}<br/>{flashcard.ExampleSentenceSource}";
 				row.Cells.Add(usageCell);
 
 				// Tips cell

@@ -11,88 +11,61 @@ namespace Flashcard_Generator
 {
 
 
-	public partial class Home
+	public partial class ExploreFlashcardGroups
 	{
 
 		/// <summary>
-		/// pnlLoginSignUp control.
+		/// btnFlashcardGroup control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel pnlLoginSignUp;
+		protected global::System.Web.UI.WebControls.Button btnFlashcardGroup;
 
 		/// <summary>
-		/// pnlLogin control.
+		/// Button1 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel pnlLogin;
+		protected global::System.Web.UI.WebControls.Button Button1;
 
 		/// <summary>
-		/// LoginPanel control.
+		/// Button2 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::Flashcard_Generator.Login1 LoginPanel;
+		protected global::System.Web.UI.WebControls.Button Button2;
 
 		/// <summary>
-		/// btnRegister control.
+		/// Button3 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnRegister;
+		protected global::System.Web.UI.WebControls.Button Button3;
 
 		/// <summary>
-		/// pnlSignUp control.
+		/// Button4 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel pnlSignUp;
+		protected global::System.Web.UI.WebControls.Button Button4;
 
 		/// <summary>
-		/// SignUpPanel control.
+		/// Button5 control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::Flashcard_Generator.SignUp1 SignUpPanel;
-
-		/// <summary>
-		/// btnLogin control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnLogin;
-
-		/// <summary>
-		/// pnlProfile control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Panel pnlProfile;
-
-		/// <summary>
-		/// btnLogOut control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnLogOut;
+		protected global::System.Web.UI.WebControls.Button Button5;
 	}
 }

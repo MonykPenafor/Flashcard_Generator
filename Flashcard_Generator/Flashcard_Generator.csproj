@@ -167,6 +167,7 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="ExploreFlashcardGroups.aspx" />
     <Content Include="FlashcardDisplay.aspx" />
     <Content Include="FlashcardGenerator.aspx" />
     <Content Include="FlashcardsGroupDisplay.aspx" />
@@ -232,6 +233,7 @@
     <Content Include="SignUp.ascx" />
     <Content Include="Site.Master" />
     <Content Include="Study.aspx" />
+    <Content Include="UserFlashcardGroups.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -240,6 +242,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ExploreFlashcardGroups.aspx.cs">
+      <DependentUpon>ExploreFlashcardGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ExploreFlashcardGroups.aspx.designer.cs">
+      <DependentUpon>ExploreFlashcardGroups.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Flashcard.cs" />
     <Compile Include="FlashcardDisplay.aspx.cs">
       <DependentUpon>FlashcardDisplay.aspx</DependentUpon>
@@ -310,6 +319,13 @@
       <DependentUpon>Study.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
+    <Compile Include="UserFlashcardGroups.aspx.cs">
+      <DependentUpon>UserFlashcardGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserFlashcardGroups.aspx.designer.cs">
+      <DependentUpon>UserFlashcardGroups.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserServices.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

@@ -1,10 +1,10 @@
-﻿<%@ Page Title="Groups of Flashcards" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FlashcardsGroupDisplay.aspx.cs" Inherits="Flashcard_Generator.FlashcardsGroupDisplay" %>
+﻿<%@ Page Title="Explore flashcards" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ExploreFlashcardGroups.aspx.cs" Inherits="Flashcard_Generator.ExploreFlashcardGroups" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container" id="cntrCategoryGroups">
+    <div class="container" id="cntnrCategoryGroups">
 
-    <h2>My flashcards</h2>
+    <h2>Explore flashcards</h2>
 
         <div class="flashcard-group-container">
             English/Japanese:
@@ -28,6 +28,5 @@
         </div>
 
     </div>
-
 
 </asp:Content>

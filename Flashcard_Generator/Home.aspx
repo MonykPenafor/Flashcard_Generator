@@ -6,6 +6,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
+<asp:Panel runat="server" ID="pnlLoginSignUp" Visible="true">
     <div class="row">
         <div class="col"></div>
 
@@ -21,5 +22,15 @@
             </asp:Panel>
         </div>
     </div>
+</asp:Panel>
+
+
+<asp:Panel runat="server" ID="pnlProfile" Visible="false">
+    <div class="container">
+        <h1>profile analysis</h1>
+        <asp:Button runat="server" ID="btnLogOut" Text="Log Out" CssClass="btn-word" OnClick="btnLogOut_Click"/>
+    </div>
+</asp:Panel>
+
 
 </asp:Content>

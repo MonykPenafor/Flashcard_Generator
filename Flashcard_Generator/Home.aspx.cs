@@ -11,7 +11,13 @@ namespace Flashcard_Generator
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			User user = (User)Session["LoggedInUser"];
 
+			if (user != null)
+			{
+				pnlProfile.Visible = true;
+				pnlLoginSignUp.Visible = false;
+			}
 		}
 
 		protected void btnRegister_Click(object sender, EventArgs e)
@@ -24,5 +30,12 @@ namespace Flashcard_Generator
 			pnlSignUp.Visible = false;
 			pnlLogin.Visible = true;
 		}
+
+		protected void btnLogOut_Click(object sender, EventArgs e)
+		{
+			Session["LoggedInUser"] = null;
+			Response.Redirect("Home.aspx");
+		}
+
 	}
 }

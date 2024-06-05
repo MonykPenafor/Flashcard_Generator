@@ -49,24 +49,19 @@
         <nav class="navbar bg-dark fixed-left">
             <div>
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a id="navUser" class="nav-link nav-user d-flex flex-column align-items-center" runat="server" href="~/Home.aspx">
-                            <div class="col text-center">
-                                <div class="row"><img src="Assets/Icons/user.png" class="a-icon mx-auto" /></div>
-                                <div class="row"><asp:Label ID="lblLoggedInUser" runat="server" Text=""/></div>
-                                <%--<div class="row"><asp:Label ID="lblCreationDate" runat="server" Text="" CssClass="user-label" /></div>--%>
-                            </div>
-                        </a>
+                    <li class="nav-item"><a id="navUser" class="nav-link nav-user d-flex flex-column align-items-center" runat="server" href="~/Home.aspx">
+                        <div class="col text-center">
+                            <div class="row"><img src="Assets/Icons/user.png" class="a-icon mx-auto" /></div>
+                            <div class="row"><asp:Label ID="lblLoggedInUser" runat="server" Text=""/></div>
+                        </div></a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardsGroupDisplay.aspx" id="MyFlashcardsPage" visible="false">My Flashcards</a></li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardDisplay.aspx" visible="true">Explore Flashcards</a></li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardGenerator.aspx" id="CreateFlashcardsPage" visible="false">Create Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="UserFlashcardGroups.aspx" id="MyFlashcardsPage" visible="false">My Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="ExploreFlashcardGroups.aspx" >Explore Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardGenerator.aspx" id="FlashcardGeneratorPage" visible="false">Create Flashcards</a></li>
                     <li class="nav-item"><a class="nav-link" runat="server" href="~/Study.aspx">Study</a></li>
                 </ul>
             </div>
         </nav>
-
-
 
 
         <div class="container body-content container-fullscreen">
