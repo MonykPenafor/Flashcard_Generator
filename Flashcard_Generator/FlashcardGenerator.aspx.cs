@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -19,22 +20,20 @@ namespace Flashcard_Generator
 		//CREATE THE FLASHCARDS
 		protected void btnCreateFlashcards_Click(object sender, EventArgs e)
 		{
-			string[] separators = new string[] { "\",\"", "\", \"", "\"" };
-
 			User user = (User)Session["LoggedInUser"];
-
 
 			string sourceLanguage = txtSourceLanguage.Text;
 			string targetLanguage = txtTargetLanguage.Text;
 			string category = txtCategory.Text;
-			string[] wordSource = txtVocabularySource.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-			string[] wordTarget = txtVocabularyTarget.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-			string[] exampleSentenceTarget = txtWordOrPhrase.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-			string[] exampleSentenceSource = txtTranslation.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-			string[] tips = txtTip.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
-			string[] pronunciation = txtSimplified.Text.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+			string[] wordSource = CreateArrayOfStrings(txtVocabularySource.Text);
+			string[] wordTarget = CreateArrayOfStrings(txtVocabularyTarget.Text);
+			string[] exampleSentenceTarget = CreateArrayOfStrings(txtWordOrPhrase.Text);
+			string[] exampleSentenceSource = CreateArrayOfStrings(txtTranslation.Text);
+			string[] tips = CreateArrayOfStrings(txtTip.Text);
+			string[] pronunciation = CreateArrayOfStrings(txtSimplified.Text);
 			string proficiency = ddlLanguageProficiency.SelectedValue;
 			bool isPublic = bool.Parse(ddlPrivacySetting.SelectedValue);
+
 
 			var numberOfFlashcards = wordSource.Length;
 
@@ -70,5 +69,39 @@ namespace Flashcard_Generator
 			lblMessage.Text = $"The Set was created";
 			Response.Redirect("FlashcardDisplay.aspx");
 		}
+
+
+
+
+
+
+		protected string[] CreateArrayOfStrings(string userInput) 
+		{
+			string[] separatedStrings = userInput.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
+
+			List<string> stringList = new List<string>();
+
+			foreach (string item in separatedStrings)
+			{
+				string itemCleaned = item.Trim().Trim('"');
+				stringList.Add(itemCleaned);
+			}
+
+
+			return stringList.ToArray();
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
 	}
 }

@@ -44,16 +44,17 @@
 
 
 
+
         <div class="form-group label-memo">
             <label for="txtVocabularySource" class="flashcard-label">FOCUS (ENGLISH):</label>
             <asp:TextBox ID="txtVocabularySource" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
-            TextMode="MultiLine" maxlength="50" placeholder='"to eat", "to drink", "to watch", "to write", "to read", "to run", "to talk", "to listen", "to stand", "to sleep"'></asp:TextBox>
+            TextMode="MultiLine" placeholder='"to eat", "to drink", "to watch", "to write", "to read", "to run", "to talk", "to listen", "to stand", "to sleep"'></asp:TextBox>
         </div>        
         
         <div class="form-group label-memo">
             <label for="txtVocabularyTarget" class="flashcard-label">FOCUS (LANGUAGE STUDYING):</label>
             <asp:TextBox ID="txtVocabularyTarget" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox" 
-            TextMode="MultiLine"  maxlength="50" placeholder='"食べる", "飲む", "見る", "書く", "読む", "走る", "話す", "聞く", "立つ", "寝る"'></asp:TextBox>
+            TextMode="MultiLine" placeholder='"食べる", "飲む", "見る", "書く", "読む", "走る", "話す", "聞く", "立つ", "寝る"'></asp:TextBox>
         </div>     
 
         <div class="form-group label-memo">

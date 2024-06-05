@@ -15,12 +15,12 @@
     position: fixed;
 }
 
-.navbar bg-dark fixed-top d-flex, h1 {
+.navbar.bg-dark.fixed-top.d-flex, h1.title {
     color: white;
     left: 90px;
     position: fixed;
     margin-bottom: 0;
-    align-items:center;
+    align-items: center;
 }
 
 
@@ -44,8 +44,12 @@
 
 /* nav bar */
 
+div.row.user {
+    padding: 0;
+}
+
 img.a-icon{
-width:30px;
+width:55px;
 height:30px;
 }
 
@@ -59,12 +63,7 @@ height:30px;
     margin: 0;
 }
 
-/*
-a.nav-link.nav-user{
-    justify-content: center;
-    display: grid;
-}
-*/
+
 .nav-link {
     padding: 10px 20px;
     display: flex;
@@ -93,7 +92,7 @@ a.nav-link.nav-user{
 
 
 
-/* Form Groups */
+/* Form Groups in create flashcards*/
 
 .flashcard-label {
     font-size: 15px;
@@ -132,25 +131,6 @@ a.nav-link.nav-user{
 
 
 
-/* buttons */
-
-.btn.btn-danger.btn-center, .btn.btn-primary.btn-center, .btn.btn-primary {
-    width: 250px;
-
-}
-
-.btn-word{
-    color: dodgerblue;
-    background-color: white;
-    border: none;
-    font-weight: bold;
-    padding: 0;
-
-}
-
-
-
-
 /* login forms */
 .form-group.login-form {
     width: 250px;
@@ -180,6 +160,26 @@ a.nav-link.nav-user{
 
 
 
+
+/* buttons */
+
+.btn.btn-danger.btn-center, .btn.btn-primary.btn-center, .btn.btn-primary {
+    width: 250px;
+
+}
+
+.btn-word{
+    color: dodgerblue;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    padding: 0;
+
+}
+
+
+
+
 /*display groups*/
 div.flashcard-group-container .btn-flashcard-group {
     width: 170px;
@@ -195,3 +195,5 @@ div.flashcard-group-container .btn-flashcard-group {
     box-shadow: -5px 5px 1px 0px rgba(0, 0, 0, 0.3);
     margin: 5px;
 }
+
+

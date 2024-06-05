@@ -231,6 +231,7 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="SignUp.ascx" />
     <Content Include="Site.Master" />
+    <Content Include="Study.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -300,6 +301,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Study.aspx.cs">
+      <DependentUpon>Study.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Study.aspx.designer.cs">
+      <DependentUpon>Study.aspx</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserServices.cs" />

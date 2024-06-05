@@ -17,8 +17,9 @@ namespace Flashcard_Generator
 			if (user != null) 
 			{ 
 				lblLoggedInUser.Text = user.Username;
-				lblCreationDate.Text = user.CreatedAt.ToString();
-				restricted.Visible = true;
+				//lblCreationDate.Text = user.CreatedAt.ToString("dd/MM/yy");
+				CreateFlashcardsPage.Visible = true;
+				MyFlashcardsPage.Visible = true;
 			}
 
 		}
