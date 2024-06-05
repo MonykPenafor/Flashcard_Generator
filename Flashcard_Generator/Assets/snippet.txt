@@ -1,6 +1,6 @@
 Read the Example:
 
-Number of flashcards: 10
+Number of flashcards: 20
 Source Language: English
 Target Language: Japanese
 Topic: Adjectives
@@ -34,10 +34,11 @@ Tips About the Word in the Source Language:
 
 
 I developed an app to generate flashcards, you give the source and target language information and it generates, 
-please help me create some flashcards like in the example above, i will give you the variables:
+but it has to be between '"' and separated by ";" like in th examples, please help me create some flashcards like in the example above, 
+i will give you the variables:
 
-Number of flashcards: 10
+Number of flashcards: 5
 Source Language: Portugues
 Target Language: Chinese
-Topic: Adjectives
+Topic: verbs
 Proficiency Level: A2

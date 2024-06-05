@@ -19,6 +19,8 @@ namespace Flashcard_Generator
 			Response.Redirect("FlashcardDisplay.aspx");
         }
 
+
+
 		protected void GenerateFlashcardGroups()
 		{
 			FlashcardServices flashcardServices = new FlashcardServices();
@@ -26,24 +28,26 @@ namespace Flashcard_Generator
 			
 			List<string> languagesCombination = flashcardServices.GetLanguagesCombinationsByUser(user);
 
-
-			foreach (string languages in languagesCombination) 
+			for (int i = 0; i < languagesCombination.Count; i = i+2)
 			{
-				Label languagesH3 = new Label();
-				languagesH3.CssClass = "lbl-category-groups";
-				languagesH3.Text = "<br/> <br/><br/> <br/>" + languages + "<br/> <br/>";
-				categoryGroups.Controls.Add(languagesH3);
+				string sourceLanguage = languagesCombination[i];
+				string targetLanguage = languagesCombination[i+1];
 
-				Button btu = new Button();
-				btu.CssClass = "btn-flashcard-group";
-				btu.Text = languages;
-				categoryGroups.Controls.Add(btu);
+				Label languageTitle = new Label();
+				languageTitle.CssClass = "lbl-category-groups";
+				languageTitle.Text = "<br/><br/>" + sourceLanguage +" / "+ targetLanguage + ":<br/>";
+				categoryGroups.Controls.Add(languageTitle);
+
+				List<string> categoryGroupsByLanguages = flashcardServices.GetCategoryGroupsByLanguagesAndUser(user, sourceLanguage, targetLanguage);
+
+				for (int n = 0; n < categoryGroupsByLanguages.Count; n++)
+				{
+					Button btnCategory = new Button();
+					btnCategory.CssClass = "btn-flashcard-group";
+					btnCategory.Text = categoryGroupsByLanguages[n];
+					categoryGroups.Controls.Add(btnCategory);
+				}
 			}
-
 		}
-
-
-
-
-    }
+	}
 }

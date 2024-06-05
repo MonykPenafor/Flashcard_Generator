@@ -164,7 +164,8 @@ namespace Flashcard_Generator
 								var sourceLanguage = reader.GetString(0);
 								var targetLanguage = reader.GetString(1);
 
-								languages.Add(sourceLanguage + " / " + targetLanguage);
+								languages.Add(sourceLanguage);
+								languages.Add(targetLanguage);
 							}
 						}
 					}
@@ -182,5 +183,44 @@ namespace Flashcard_Generator
 		}
 
 
+		public List<string> GetCategoryGroupsByLanguagesAndUser(User user, string sourceLanguage, string targetLanguage) 
+		{
+			List<string> categoryGroups = new List<string>();
+
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
+
+				string query = "SELECT category FROM Flashcards WHERE source_language = @sourceLanguage AND target_language = @targetLanguage AND id_user = @id_user GROUP BY category";
+
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					cmd.Parameters.AddWithValue("@id_user", user.Id);
+					cmd.Parameters.AddWithValue("@sourceLanguage", sourceLanguage);
+					cmd.Parameters.AddWithValue("@targetLanguage", targetLanguage);
+
+					try
+					{
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+							while (reader.Read())
+							{
+								var category = reader.GetString(0);
+								categoryGroups.Add(category);
+							}
+						}
+					}
+					catch (SqlException ex)
+					{
+						Console.WriteLine($"SQL Error: {ex.Message}");
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine($"Error: {ex.Message}");
+					}
+				}
+			}
+			return categoryGroups;
+		}
 	}
 }

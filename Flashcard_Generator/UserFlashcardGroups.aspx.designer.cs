@@ -15,15 +15,6 @@ namespace Flashcard_Generator
 	{
 
 		/// <summary>
-		/// btnFlashcardGroup1 control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button btnFlashcardGroup1;
-
-		/// <summary>
 		/// categoryGroups control.
 		/// </summary>
 		/// <remarks>
