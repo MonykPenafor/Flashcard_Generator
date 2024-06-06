@@ -233,6 +233,7 @@
     <Content Include="SignUp.ascx" />
     <Content Include="Site.Master" />
     <Content Include="Study.aspx" />
+    <Content Include="TableRow.ascx" />
     <Content Include="UserFlashcardGroups.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -317,6 +318,13 @@
     </Compile>
     <Compile Include="Study.aspx.designer.cs">
       <DependentUpon>Study.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TableRow.ascx.cs">
+      <DependentUpon>TableRow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TableRow.ascx.designer.cs">
+      <DependentUpon>TableRow.ascx</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
     <Compile Include="UserFlashcardGroups.aspx.cs">

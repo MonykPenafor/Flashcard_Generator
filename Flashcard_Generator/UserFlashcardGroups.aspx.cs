@@ -35,7 +35,7 @@ namespace Flashcard_Generator
 
 				Label languageTitle = new Label();
 				languageTitle.CssClass = "lbl-category-groups";
-				languageTitle.Text = "<br/><br/>" + sourceLanguage +" / "+ targetLanguage + ":<br/>";
+				languageTitle.Text = "<br/>" + sourceLanguage +" / "+ targetLanguage + ":<br/>";
 				categoryGroups.Controls.Add(languageTitle);
 
 				List<string> categoryGroupsByLanguages = flashcardServices.GetCategoryGroupsByLanguagesAndUser(user, sourceLanguage, targetLanguage);

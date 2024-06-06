@@ -4,7 +4,7 @@ namespace Flashcard_Generator
 {
 	public class Flashcard
 	{
-		private int Id { get; set; }
+		public int Id { get; set; }
 		public User User { get; set; }
 		public string SourceLanguage { get; set; }
 		public string TargetLanguage { get; set; }

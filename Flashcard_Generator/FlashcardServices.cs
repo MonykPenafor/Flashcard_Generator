@@ -222,5 +222,45 @@ namespace Flashcard_Generator
 			}
 			return categoryGroups;
 		}
+	
+
+		public string DeleteFlashcard(Flashcard flashcard)
+		{
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
+
+				{
+					string query = "DELETE FROM Flashcards WHERE id_flashcard = @idFlashcardarget)";
+
+					using (SqlCommand cmd = new SqlCommand(query, con))
+					{
+
+						cmd.Parameters.AddWithValue("@idFlashcard", flashcard.Id);
+
+						try
+						{
+							cmd.ExecuteNonQuery();
+							return "ok!";
+
+						}
+						catch (SqlException ex)
+						{
+							return ex.Message;
+						}
+						catch (Exception ex)
+						{
+							return ex.Message;
+
+						}
+					}
+				}
+
+			}
+
+
+
+		}
+	
 	}
 }

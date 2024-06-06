@@ -15,13 +15,13 @@ namespace Flashcard_Generator
 	{
 
 		/// <summary>
-		/// FlashcardTable control.
+		/// rptrFlashcardList control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.Table FlashcardTable;
+		protected global::System.Web.UI.WebControls.Repeater rptrFlashcardList;
 
 		/// <summary>
 		/// btnDelete control.
