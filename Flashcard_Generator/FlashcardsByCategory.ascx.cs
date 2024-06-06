@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Flashcard_Generator
 {
-	public partial class ExploreFlashcardGroups : System.Web.UI.Page
+	public partial class FlashcardsByCategory : System.Web.UI.UserControl
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{

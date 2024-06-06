@@ -196,7 +196,17 @@ div.flashcard-group-container .btn-flashcard-group {
 }
 
 .lbl-category-groups{
- font-size: 20px;
- font-weight: bold;
+     font-size: 20px;
+     font-weight: bold;
 
+}
+
+
+.flashcad-table-row {
+    border-color: #00000085;
+    border-width: thin;
+}
+
+.flashcad-table-row-cell{
+    padding: 10px;
 }

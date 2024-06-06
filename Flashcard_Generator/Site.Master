@@ -52,11 +52,12 @@
                     <li class="nav-item"><a id="navUser" class="nav-link nav-user d-flex flex-column align-items-center" runat="server" href="~/Home.aspx">
                         <div class="col text-center">
                             <div class="row"><img src="Assets/Icons/user.png" class="a-icon mx-auto" /></div>
-                            <div class="row"><asp:Label ID="lblLoggedInUser" runat="server" Text=""/></div>
-                        </div></a>
+                            <div class="row"><asp:Label ID="lblLoggedInUser" runat="server" Text="" /></div>
+                        </div>
+                    </a>
                     </li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="UserFlashcardGroups.aspx" id="MyFlashcardsPage" visible="false">My Flashcards</a></li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="ExploreFlashcardGroups.aspx" >Explore Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="FlashcardGroupsDisplayByUser.aspx" id="MyFlashcardsPage" visible="false">My Flashcards</a></li>
+                    <li class="nav-item"><a class="nav-link" runat="server" href="FlashcardGroupsDisplay.aspx">Explore Flashcards</a></li>
                     <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardGenerator.aspx" id="FlashcardGeneratorPage" visible="false">Create Flashcards</a></li>
                     <li class="nav-item"><a class="nav-link" runat="server" href="~/Study.aspx">Study</a></li>
                 </ul>
@@ -72,7 +73,6 @@
                 <p>&copy; <%: DateTime.Now.Year %> - Flashcard Generator by Monyk Paola Penafor</p>
             </footer>
         </div>
-
 
     </form>
     <asp:PlaceHolder runat="server">
