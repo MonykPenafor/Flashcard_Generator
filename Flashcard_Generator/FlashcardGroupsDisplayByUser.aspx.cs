@@ -14,18 +14,6 @@ namespace Flashcard_Generator
 			LoadFlashcardGroups();
 		}
 
-		public class DivByLanguagesAndCategories
-		{
-			public string Languages { get; set; }
-			public List<string> Categories { get; set; }
-
-			public DivByLanguagesAndCategories(string languages, List<string> categories)
-			{
-				Languages = languages;
-				Categories = categories;
-			}
-		}
-
 		protected void LoadFlashcardGroups()
 		{
 			User user = (User)Session["LoggedInUser"];
@@ -38,8 +26,6 @@ namespace Flashcard_Generator
 			{
 				string sourceLanguage = languagesCombination[i];
 				string targetLanguage = languagesCombination[i+1];
-
-				//formatedLanguagesCombination.Add(sourceLanguage + " / " + targetLanguage + ":");
 
 				formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
 
