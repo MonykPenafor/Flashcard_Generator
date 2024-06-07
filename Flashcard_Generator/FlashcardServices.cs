@@ -12,6 +12,7 @@ namespace Flashcard_Generator
 	public class FlashcardServices
 	{
 
+
 		string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
 
 		public string CreateFlashcard(Flashcard flashcard)
@@ -142,7 +143,7 @@ namespace Flashcard_Generator
 
 
 		public List<string> GetLanguagesCombinationsByUser(User user)
-		{	
+		{
 			List<string> languages = new List<string>();
 
 			using (SqlConnection con = new SqlConnection(connectionString))
@@ -183,7 +184,7 @@ namespace Flashcard_Generator
 		}
 
 
-		public List<string> GetCategoryGroupsByLanguagesAndUser(User user, string sourceLanguage, string targetLanguage) 
+		public List<string> GetCategoryGroupsByLanguagesAndUser(User user, string sourceLanguage, string targetLanguage)
 		{
 			List<string> categoryGroups = new List<string>();
 
@@ -222,7 +223,7 @@ namespace Flashcard_Generator
 			}
 			return categoryGroups;
 		}
-	
+
 
 		public string DeleteFlashcard(Flashcard flashcard)
 		{
@@ -261,6 +262,6 @@ namespace Flashcard_Generator
 
 
 		}
-	
+
 	}
 }

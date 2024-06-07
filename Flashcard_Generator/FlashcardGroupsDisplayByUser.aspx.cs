@@ -14,62 +14,51 @@ namespace Flashcard_Generator
 			LoadFlashcardGroups();
 		}
 
+		public class DivByLanguagesAndCategories
+		{
+			public string Languages { get; set; }
+			public List<string> Categories { get; set; }
+
+			public DivByLanguagesAndCategories(string languages, List<string> categories)
+			{
+				Languages = languages;
+				Categories = categories;
+			}
+		}
 
 		protected void LoadFlashcardGroups()
 		{
 			User user = (User)Session["LoggedInUser"];
 			FlashcardServices flashcardServices = new FlashcardServices();
 			List<string> languagesCombination = flashcardServices.GetLanguagesCombinationsByUser(user);
-
-			List<string> formatedLanguagesCombination = new List<string>();
+			List<DivByLanguagesAndCategories> divByLanguagesAndCategories = new List<DivByLanguagesAndCategories>();
+			string formatedLanguagesCombination;
 
 			for (int i = 0; i < languagesCombination.Count; i = i+2)
 			{
 				string sourceLanguage = languagesCombination[i];
 				string targetLanguage = languagesCombination[i+1];
 
-				formatedLanguagesCombination.Add(sourceLanguage + " / " + targetLanguage + ":");
+				//formatedLanguagesCombination.Add(sourceLanguage + " / " + targetLanguage + ":");
 
+				formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
+
+				List<string> categories = LoadCategoriesByLanguages(user,sourceLanguage, targetLanguage);
+
+				var languagesAndItsCategories = new DivByLanguagesAndCategories(formatedLanguagesCombination, categories);
+
+				divByLanguagesAndCategories.Add(languagesAndItsCategories);
 			}
-			rptrFlashcardsByLanguageCombination.DataSource = formatedLanguagesCombination;
+
+			rptrFlashcardsByLanguageCombination.DataSource = divByLanguagesAndCategories;
 			rptrFlashcardsByLanguageCombination.DataBind();
 
 		}
 
-
-
-		protected void LoadCategoriesByLanguages()
-
-
-
-
-		//protected void GenerateFlashcardGroups()
-		//{
-		//	FlashcardServices flashcardServices = new FlashcardServices();
-		//	User user = (User)Session["LoggedInUser"];
-
-		//	List<string> languagesCombination = flashcardServices.GetLanguagesCombinationsByUser(user);
-
-		//	for (int i = 0; i < languagesCombination.Count; i = i+2)
-		//	{
-		//		string sourceLanguage = languagesCombination[i];
-		//		string targetLanguage = languagesCombination[i+1];
-
-		//		Label languageTitle = new Label();
-		//		languageTitle.CssClass = "lbl-category-groups";
-		//		languageTitle.Text = "<br/>" + sourceLanguage +" / "+ targetLanguage + ":<br/>";
-		//		categoryGroups.Controls.Add(languageTitle);
-
-		//		List<string> categoryGroupsByLanguages = flashcardServices.GetCategoryGroupsByLanguagesAndUser(user, sourceLanguage, targetLanguage);
-
-		//		for (int n = 0; n < categoryGroupsByLanguages.Count; n++)
-		//		{
-		//			Button btnCategory = new Button();
-		//			btnCategory.CssClass = "btn-flashcard-group";
-		//			btnCategory.Text = categoryGroupsByLanguages[n];
-		//			categoryGroups.Controls.Add(btnCategory);
-		//		}
-		//	}
-		//}
+		protected List<string> LoadCategoriesByLanguages(User user, string sourceLanguage, string targetLanguage)
+		{
+			FlashcardServices flashcardServices = new FlashcardServices();
+			return flashcardServices.GetCategoryGroupsByLanguagesAndUser(user, sourceLanguage, targetLanguage);
+		}
 	}
 }
