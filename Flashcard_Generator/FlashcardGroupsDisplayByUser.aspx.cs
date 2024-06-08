@@ -18,7 +18,7 @@ namespace Flashcard_Generator
 		{
 			User user = (User)Session["LoggedInUser"];
 			FlashcardServices flashcardServices = new FlashcardServices();
-			List<string> languagesCombination = flashcardServices.GetLanguagesCombinationsByUser(user);
+			List<string> languagesCombination = flashcardServices.GetLanguagesCombinationsForLoggedUser(user, true);
 			List<DivByLanguagesAndCategories> divByLanguagesAndCategories = new List<DivByLanguagesAndCategories>();
 			string formatedLanguagesCombination;
 
@@ -29,22 +29,14 @@ namespace Flashcard_Generator
 
 				formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
 
-				List<string> categories = LoadCategoriesByLanguages(user,sourceLanguage, targetLanguage);
+				List<string> categories = flashcardServices.GetCategoryGroupsForLoggedUser(user, sourceLanguage, targetLanguage, true);
 
 				var languagesAndItsCategories = new DivByLanguagesAndCategories(formatedLanguagesCombination, categories);
 
 				divByLanguagesAndCategories.Add(languagesAndItsCategories);
 			}
-
 			rptrFlashcardsByLanguageCombination.DataSource = divByLanguagesAndCategories;
 			rptrFlashcardsByLanguageCombination.DataBind();
-
-		}
-
-		protected List<string> LoadCategoriesByLanguages(User user, string sourceLanguage, string targetLanguage)
-		{
-			FlashcardServices flashcardServices = new FlashcardServices();
-			return flashcardServices.GetCategoryGroupsByLanguagesAndUser(user, sourceLanguage, targetLanguage);
 		}
 	}
 }

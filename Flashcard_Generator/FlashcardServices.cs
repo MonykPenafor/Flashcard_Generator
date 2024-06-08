@@ -12,8 +12,8 @@ namespace Flashcard_Generator
 	public class FlashcardServices
 	{
 
-
 		string connectionString = ConfigurationManager.ConnectionStrings["FlashCardsDB"].ConnectionString;
+
 
 		public string CreateFlashcard(Flashcard flashcard)
 		{
@@ -60,6 +60,48 @@ namespace Flashcard_Generator
 
 		}
 
+		public string DeleteFlashcard(Flashcard flashcard)
+		{
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
+				{
+					string query = "DELETE FROM Flashcards WHERE id_flashcard = @idFlashcardarget)";
+
+					using (SqlCommand cmd = new SqlCommand(query, con))
+					{
+						cmd.Parameters.AddWithValue("@idFlashcard", flashcard.Id);
+
+						try
+						{
+							cmd.ExecuteNonQuery();
+							return "ok!";
+						}
+						catch (SqlException ex)
+						{
+							return ex.Message;
+						}
+						catch (Exception ex)
+						{
+							return ex.Message;
+						}
+					}
+				}
+			}
+		}
+	
+		public string UpdateFlashcard(Flashcard flashcard)
+		{
+			return "hay";
+		}
+
+		public string GetFlashcard(Flashcard flashcard) 
+		{
+			return "hey";
+		}
+
+
+
 
 		public List<Flashcard> GetAllPublicFlashcards()
 		{
@@ -71,25 +113,9 @@ namespace Flashcard_Generator
 			{
 				con.Open();
 
-				string query = @"SELECT 
-									f.id_flashcard,
-									u.username,
-									f.source_language,
-									f.target_language,
-									f.category,
-									f.word_source,
-									f.word_target,
-									f.example_sentence_source,
-									f.example_sentence_target,
-									f.pronunciation,
-									f.tips,
-									f.proficiency,
-									f.is_public,
-									f.created_at,
-									f.updated_at
-								FROM FLASHCARDS f
-								JOIN USERS u ON f.id_user = u.id_user
-								WHERE f.is_public = 1";
+				string query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source,
+				f.word_target,f.example_sentence_source,f.example_sentence_target,f.pronunciation,f.tips,f.proficiency,f.is_public
+				FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.is_public = 1";
 
 				using (SqlCommand cmd = new SqlCommand(query, con))
 				{
@@ -107,7 +133,7 @@ namespace Flashcard_Generator
 									user,
 									reader.GetString(2),  // SourceLanguage
 									reader.GetString(3),  // TargetLanguage
-									reader.IsDBNull(4) ? null : reader.GetString(4),  // Category
+									reader.GetString(4),  // Category
 									reader.GetString(5),  // WordSource
 									reader.GetString(6),  // WordTarget
 									reader.GetString(7),  // ExampleSentenceSource
@@ -116,8 +142,6 @@ namespace Flashcard_Generator
 									reader.IsDBNull(10) ? null : reader.GetString(10),  // Tips
 									reader.IsDBNull(11) ? null : reader.GetString(11),  // Proficiency
 									reader.GetBoolean(12)  // IsPublic
-														   //reader.GetDateTime(13),  // CreatedAt
-														   //reader.GetDateTime(14)   // UpdatedAt
 								);
 
 								flashcards.Add(flashcard);
@@ -133,182 +157,11 @@ namespace Flashcard_Generator
 						Console.WriteLine($"Error: {ex.Message}");
 					}
 				}
-
-
 			}
-
 			return flashcards;
-
 		}
 
-
-		public List<string> GetLanguagesCombinationsByUser(User user)
-		{
-			List<string> languages = new List<string>();
-
-			using (SqlConnection con = new SqlConnection(connectionString))
-			{
-				con.Open();
-
-				string query = "SELECT source_language, target_language FROM Flashcards WHERE id_user = @id_user GROUP BY source_language, target_language";
-
-				using (SqlCommand cmd = new SqlCommand(query, con))
-				{
-					cmd.Parameters.AddWithValue("@id_user", user.Id);
-
-					try
-					{
-						using (SqlDataReader reader = cmd.ExecuteReader())
-						{
-							while (reader.Read())
-							{
-								var sourceLanguage = reader.GetString(0);
-								var targetLanguage = reader.GetString(1);
-
-								languages.Add(sourceLanguage);
-								languages.Add(targetLanguage);
-							}
-						}
-					}
-					catch (SqlException ex)
-					{
-						Console.WriteLine($"SQL Error: {ex.Message}");
-					}
-					catch (Exception ex)
-					{
-						Console.WriteLine($"Error: {ex.Message}");
-					}
-				}
-			}
-			return languages;
-		}
-
-		public List<string> GetCategoryGroupsByLanguagesAndUser(User user, string sourceLanguage, string targetLanguage)
-		{
-			List<string> categoryGroups = new List<string>();
-
-			using (SqlConnection con = new SqlConnection(connectionString))
-			{
-				con.Open();
-
-				string query = "SELECT category FROM Flashcards WHERE source_language = @sourceLanguage AND target_language = @targetLanguage AND id_user = @id_user GROUP BY category";
-
-				using (SqlCommand cmd = new SqlCommand(query, con))
-				{
-					cmd.Parameters.AddWithValue("@id_user", user.Id);
-					cmd.Parameters.AddWithValue("@sourceLanguage", sourceLanguage);
-					cmd.Parameters.AddWithValue("@targetLanguage", targetLanguage);
-
-					try
-					{
-						using (SqlDataReader reader = cmd.ExecuteReader())
-						{
-							while (reader.Read())
-							{
-								var category = reader.GetString(0);
-								categoryGroups.Add(category);
-							}
-						}
-					}
-					catch (SqlException ex)
-					{
-						Console.WriteLine($"SQL Error: {ex.Message}");
-					}
-					catch (Exception ex)
-					{
-						Console.WriteLine($"Error: {ex.Message}");
-					}
-				}
-			}
-			return categoryGroups;
-		}
-
-
-		public List<string> GetPublicLanguagesCombinationsFromOthers(User user)
-		{
-			List<string> languages = new List<string>();
-
-			using (SqlConnection con = new SqlConnection(connectionString))
-			{
-				con.Open();
-
-				string query = "SELECT source_language, target_language FROM Flashcards WHERE id_user != @id_user AND is_public = 1 GROUP BY source_language, target_language";
-
-				using (SqlCommand cmd = new SqlCommand(query, con))
-				{
-					cmd.Parameters.AddWithValue("@id_user", user.Id);
-
-					try
-					{
-						using (SqlDataReader reader = cmd.ExecuteReader())
-						{
-							while (reader.Read())
-							{
-								var sourceLanguage = reader.GetString(0);
-								var targetLanguage = reader.GetString(1);
-
-								languages.Add(sourceLanguage);
-								languages.Add(targetLanguage);
-							}
-						}
-					}
-					catch (SqlException ex)
-					{
-						Console.WriteLine($"SQL Error: {ex.Message}");
-					}
-					catch (Exception ex)
-					{
-						Console.WriteLine($"Error: {ex.Message}");
-					}
-				}
-			}
-			return languages;
-		}
-
-		public List<string> GetCategoryGroupsByLanguages(User user, string sourceLanguage, string targetLanguage)
-		{
-			List<string> categoryGroups = new List<string>();
-
-			using (SqlConnection con = new SqlConnection(connectionString))
-			{
-				con.Open();
-
-				string query = "SELECT category FROM Flashcards WHERE source_language = @sourceLanguage AND target_language = @targetLanguage AND id_user != @id_user GROUP BY category";
-
-				using (SqlCommand cmd = new SqlCommand(query, con))
-				{
-					cmd.Parameters.AddWithValue("@id_user", user.Id);
-					cmd.Parameters.AddWithValue("@sourceLanguage", sourceLanguage);
-					cmd.Parameters.AddWithValue("@targetLanguage", targetLanguage);
-
-					try
-					{
-						using (SqlDataReader reader = cmd.ExecuteReader())
-						{
-							while (reader.Read())
-							{
-								var category = reader.GetString(0);
-								categoryGroups.Add(category);
-							}
-						}
-					}
-					catch (SqlException ex)
-					{
-						Console.WriteLine($"SQL Error: {ex.Message}");
-					}
-					catch (Exception ex)
-					{
-						Console.WriteLine($"Error: {ex.Message}");
-					}
-				}
-			}
-			return categoryGroups;
-		}
-
-
-
-
-		public List<string> GetAllLanguagesCombinations()
+		public List<string> GetPublicLanguagesCombinations()
 		{
 			List<string> languages = new List<string>();
 
@@ -347,7 +200,7 @@ namespace Flashcard_Generator
 			return languages;
 		}
 
-		public List<string> GetAllCategoryGroups(string sourceLanguage, string targetLanguage)
+		public List<string> GetPublicCategoryGroups(string sourceLanguage, string targetLanguage)
 		{
 			List<string> categoryGroups = new List<string>();
 
@@ -386,55 +239,104 @@ namespace Flashcard_Generator
 			return categoryGroups;
 		}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-		public string DeleteFlashcard(Flashcard flashcard)
+		public List<string> GetLanguagesCombinationsForLoggedUser(User user, bool isUserFlashcards)
 		{
+			List<string> languages = new List<string>();
+
 			using (SqlConnection con = new SqlConnection(connectionString))
 			{
 				con.Open();
 
+				string query;
+
+				if (isUserFlashcards)
 				{
-					string query = "DELETE FROM Flashcards WHERE id_flashcard = @idFlashcardarget)";
-
-					using (SqlCommand cmd = new SqlCommand(query, con))
-					{
-
-						cmd.Parameters.AddWithValue("@idFlashcard", flashcard.Id);
-
-						try
-						{
-							cmd.ExecuteNonQuery();
-							return "ok!";
-
-						}
-						catch (SqlException ex)
-						{
-							return ex.Message;
-						}
-						catch (Exception ex)
-						{
-							return ex.Message;
-
-						}
-					}
+					query = "SELECT source_language, target_language FROM Flashcards WHERE id_user = @id_user GROUP BY source_language, target_language";
+				}
+				else
+				{
+					query = "SELECT source_language, target_language FROM Flashcards WHERE id_user != @id_user AND is_public = 1 GROUP BY source_language, target_language";
 				}
 
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					cmd.Parameters.AddWithValue("@id_user", user.Id);
+
+					try
+					{
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+							while (reader.Read())
+							{
+								var sourceLanguage = reader.GetString(0);
+								var targetLanguage = reader.GetString(1);
+
+								languages.Add(sourceLanguage);
+								languages.Add(targetLanguage);
+							}
+						}
+					}
+					catch (SqlException ex)
+					{
+						Console.WriteLine($"SQL Error: {ex.Message}");
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine($"Error: {ex.Message}");
+					}
+				}
 			}
+			return languages;
+		}
+
+		public List<string> GetCategoryGroupsForLoggedUser(User user, string sourceLanguage, string targetLanguage, bool isUserFlashcards)
+		{
+			List<string> categoryGroups = new List<string>();
+
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
+
+				string query;
+
+				if (isUserFlashcards)
+				{
+					query = "SELECT category FROM Flashcards WHERE source_language = @sourceLanguage AND target_language = @targetLanguage AND id_user = @id_user GROUP BY category";
+				}
+				else
+				{
+					query = "SELECT category FROM Flashcards WHERE source_language = @sourceLanguage AND target_language = @targetLanguage AND id_user != @id_user GROUP BY category";
+				}
 
 
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					cmd.Parameters.AddWithValue("@id_user", user.Id);
+					cmd.Parameters.AddWithValue("@sourceLanguage", sourceLanguage);
+					cmd.Parameters.AddWithValue("@targetLanguage", targetLanguage);
 
+					try
+					{
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+							while (reader.Read())
+							{
+								var category = reader.GetString(0);
+								categoryGroups.Add(category);
+							}
+						}
+					}
+					catch (SqlException ex)
+					{
+						Console.WriteLine($"SQL Error: {ex.Message}");
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine($"Error: {ex.Message}");
+					}
+				}
+			}
+			return categoryGroups;
 		}
 
 	}
