@@ -149,7 +149,8 @@
     <Content Include="Assets\Icons\translate.png" />
     <Content Include="Assets\Icons\united-kingdom.png" />
     <Content Include="Assets\Icons\writing.png" />
-    <Content Include="Assets\Style\Style.css" />
+    <Content Include="Assets\scripts.js" />
+    <Content Include="Assets\Style.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />

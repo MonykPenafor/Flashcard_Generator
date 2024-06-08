@@ -17,17 +17,21 @@
 
                     <asp:Repeater runat="server" ID="rptrFlashcardsByCategory" DataSource='<%# Eval("Categories") %>'>
 
-                        <HeaderTemplate><div class="flashcard-group-container"></HeaderTemplate>
+                        <HeaderTemplate>
+                            <div class="flashcard-group-container">
+                        </HeaderTemplate>
 
                         <ItemTemplate>
-                            <asp:Button runat="server" Text="<%# Container.DataItem %>" CssClass="btn-flashcard-group"/>
+                        <asp:LinkButton runat="server" class="btn-flashcard-group" OnClick="btnFlashcardsDisplay_Click"><%#Container.DataItem%></asp:LinkButton>
                         </ItemTemplate>
 
                         <FooterTemplate></div></FooterTemplate>
 
                     </asp:Repeater>
 
-                </div><br /><br />
+                </div>
+                <br />
+                <br />
             </ItemTemplate>
 
             <FooterTemplate></div></FooterTemplate>
@@ -35,11 +39,12 @@
 
     </div>
 
+    <script>
+        function redirectToPage() {
+            console.log("het");
+        }
+    </script>
+
+
 </asp:Content>
-
-
-
-
-
-
 

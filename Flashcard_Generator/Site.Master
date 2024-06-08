@@ -14,7 +14,7 @@
 
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image" />
-    <link href="Assets\Style\Style.css" rel="stylesheet" type="text/css" />
+    <link href="Assets\Style.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body>
@@ -78,5 +78,6 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     </asp:PlaceHolder>
+
 </body>
 </html>

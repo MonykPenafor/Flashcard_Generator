@@ -14,6 +14,11 @@ namespace Flashcard_Generator
 			LoadFlashcardGroups();
 		}
 
+		protected void btnFlashcardsDisplay_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("FlashcardsDisplay.aspx");
+		}
+
 		protected void LoadFlashcardGroups()
 		{
 			User user = (User)Session["LoggedInUser"];

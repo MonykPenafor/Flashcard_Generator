@@ -1,4 +1,5 @@
-﻿<%@ Page Title="Groups of Flashcards" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FlashcardGroupsDisplay.aspx.cs" Inherits="Flashcard_Generator.FlashcardGroupsDisplay" %>
+﻿<%@ Page Title="Groups of Flashcards" EnableEventValidation="true" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FlashcardGroupsDisplay.aspx.cs" Inherits="Flashcard_Generator.FlashcardGroupsDisplay" %>
+
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -21,7 +22,7 @@
                         </HeaderTemplate>
 
                         <ItemTemplate>
-                            <asp:Button runat="server" Text="<%# Container.DataItem %>" CssClass="btn-flashcard-group" />
+                             <asp:LinkButton runat="server" class="btn-flashcard-group" OnClick="btnFlashcardsDisplay_Click"><%#Container.DataItem%></asp:LinkButton>
                         </ItemTemplate>
 
                         <FooterTemplate></div></FooterTemplate>
