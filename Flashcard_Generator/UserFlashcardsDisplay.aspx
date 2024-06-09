@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Display of Flashcards" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FlashcardsDisplay.aspx.cs" Inherits="Flashcard_Generator.FlashcardsDisplay" %>
+﻿<%@ Page Title="Display of Flashcards" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserFlashcardsDisplay.aspx.cs" Inherits="Flashcard_Generator.UserFlashcardsDisplay" %>
 
 <%@ Register TagPrefix="monyk" TagName="Flashcard" Src="~/TableRow.ascx" %>
 
@@ -10,11 +10,13 @@
             <HeaderTemplate>
                 <table width="100%">
                     <tr class="flashcad-table-row">
+                        <th class="flashcad-table-row-cell"></th>
                         <th class="flashcad-table-row-cell">Vocabulary / Translation</th>
                         <th class="flashcad-table-row-cell">Usage / Pronunciation / Translation</th>
                         <th class="flashcad-table-row-cell">Tips</th>
-                        <th class="flashcad-table-row-cell">Proficiency</th>
-                        <th class="flashcad-table-row-cell">User</th>
+                        <th class="flashcad-table-row-cell">Level</th>
+                        <th class="flashcad-table-row-cell"></th>
+                        <th class="flashcad-table-row-cell"></th>
                     </tr>
             </HeaderTemplate>
 
@@ -35,4 +37,6 @@
 
         <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-primary btn-center"/>
     </div>
+
+    <script src="Assets/scripts.js" type="text/javascript"></script>
 </asp:Content>

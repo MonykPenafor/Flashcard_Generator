@@ -71,7 +71,7 @@ namespace Flashcard_Generator
 
         protected void btnFlashcardsDisplay_Click(object sender, EventArgs e)
         {
-			Response.Redirect("FlashcardsDisplay.aspx");
+			Response.Redirect("UserFlashcardsDisplay.aspx");
         }
     }
 }

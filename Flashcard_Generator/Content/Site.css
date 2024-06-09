@@ -2,9 +2,9 @@
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    margin-top: 100px;
-    margin-left: 210px;
-    margin-right: 250px;
+    margin-top: 90px;
+    margin-left: 180px;
+    margin-right: 240px;
     padding: 20px;
 }
 

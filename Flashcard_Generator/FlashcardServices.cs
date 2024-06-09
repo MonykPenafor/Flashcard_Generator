@@ -60,17 +60,17 @@ namespace Flashcard_Generator
 
 		}
 
-		public string DeleteFlashcard(Flashcard flashcard)
+		public string DeleteFlashcard(int flashcardId)
 		{
 			using (SqlConnection con = new SqlConnection(connectionString))
 			{
 				con.Open();
 				{
-					string query = "DELETE FROM Flashcards WHERE id_flashcard = @idFlashcardarget)";
+					string query = "DELETE FROM Flashcards WHERE id_flashcard = @idFlashcard";
 
 					using (SqlCommand cmd = new SqlCommand(query, con))
 					{
-						cmd.Parameters.AddWithValue("@idFlashcard", flashcard.Id);
+						cmd.Parameters.AddWithValue("@idFlashcard",flashcardId);
 
 						try
 						{
@@ -95,7 +95,7 @@ namespace Flashcard_Generator
 			return "hay";
 		}
 
-		public string GetFlashcard(Flashcard flashcard) 
+		public string GetFlashcard(int flashcardID) 
 		{
 			return "hey";
 		}

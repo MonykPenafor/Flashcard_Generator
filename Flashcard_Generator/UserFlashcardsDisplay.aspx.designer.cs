@@ -11,7 +11,7 @@ namespace Flashcard_Generator
 {
 
 
-	public partial class FlashcardsDisplay
+	public partial class UserFlashcardsDisplay
 	{
 
 		/// <summary>

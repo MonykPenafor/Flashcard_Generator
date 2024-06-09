@@ -32,12 +32,12 @@
     position: fixed;
     top: 70px;
     left: 0;
-    width: 200px;
+    width: 160px;
     height: 100vh;
     background-color: #333;
     color: #fff;
     align-items: start;
-    padding:0;
+    padding: 0;
 }
 
 
@@ -48,14 +48,13 @@ div.row.user {
     padding: 0;
 }
 
-img.a-icon{
-width:55px;
-height:30px;
+img.a-icon {
+    width: 55px;
+    height: 30px;
 }
 
-.user-label{
+.user-label {
     justify-content: center;
-
 }
 
 
@@ -65,18 +64,19 @@ height:30px;
 
 
 .nav-link {
-    padding: 10px 20px;
+    padding: 10px 10px;
     display: flex;
     text-decoration: none;
     color: inherit;
     transition: all 0.3s ease-in-out;
-    width: 200px;
+    width: 160px;
     align-items: center;
+    font-size: 14px;
 }
 
-.nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
+    .nav-link:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
 
 
 
@@ -114,7 +114,6 @@ height:30px;
 .flashcard-textBox.mymemo.big-textBox {
     width: 90%;
     height: 100px;
-
 }
 
 .form-group.label-memo {
@@ -144,7 +143,7 @@ height:30px;
 
 
 
-.edit.edit-button{
+.edit.edit-button {
     width: 25px;
     height: 25px;
 }
@@ -165,16 +164,14 @@ height:30px;
 
 .btn.btn-danger.btn-center, .btn.btn-primary.btn-center, .btn.btn-primary {
     width: 250px;
-
 }
 
-.btn-word{
+.btn-word {
     color: dodgerblue;
     background-color: white;
     border: none;
     font-weight: bold;
     padding: 0;
-
 }
 
 
@@ -196,10 +193,9 @@ div.flashcard-group-container .btn-flashcard-group {
     color: black;
 }
 
-.lbl-category-groups{
-     font-size: 20px;
-     font-weight: bold;
-
+.lbl-category-groups {
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .flashcad-table-row {
@@ -207,6 +203,17 @@ div.flashcard-group-container .btn-flashcard-group {
     border-width: thin;
 }
 
-.flashcad-table-row-cell{
+.flashcad-table-row-cell {
     padding: 10px;
 }
+
+.flashcad-table-row-cell.hidden {
+    display: none;
+}
+
+    .flashcad-table-row-cell .td-icon {
+        width: 15px;
+        height: 15px;
+        max-width: 30px;
+        display: flex;
+    }

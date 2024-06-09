@@ -45,7 +45,7 @@ namespace Flashcard_Generator
 			}
 			else
 			{
-				Response.Redirect("FlashcardGenerator.aspx");
+				Response.Redirect("UserFlashcardGenerator.aspx");
 			}
 		}
 	}

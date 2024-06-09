@@ -1,4 +1,4 @@
-﻿function redirectToPage(category) {
-    window.location.href = 'FlashcardsDisplay';
-    console.log("het");
+﻿function showToastAndRedirect(message, redirectUrl) {
+    alert(message);
+    window.location.href = redirectUrl;
 }
