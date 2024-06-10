@@ -37,10 +37,12 @@ namespace Flashcard_Generator
 			}
 			else
 			{
+
 				Response.Redirect("UserFlashcardsDisplay.aspx");
 
-				//string script = "showToastAndRedirect('Item deleted successfully!', 'UserFlashcardsDisplay.aspx');";
-				//ScriptManager.RegisterStartupScript(this, GetType(), "showToastAndRedirect", script, true);
+				//// Exemplo de uso:
+				//string script = "showToast('Flashcard deleted successfully.');";
+				//ScriptManager.RegisterStartupScript(this, GetType(), "showToast", script, true);
 			}
 		}
 	}

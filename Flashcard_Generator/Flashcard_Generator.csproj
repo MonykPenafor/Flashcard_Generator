@@ -168,6 +168,8 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="FlashcardsDisplay.aspx" />
+    <Content Include="TableRow2.ascx" />
     <Content Include="UserFlashcardsDisplay.aspx" />
     <Content Include="FlashcardGenerator.aspx" />
     <Content Include="FlashcardGroupsDisplay.aspx" />
@@ -245,6 +247,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="DivByLanguagesAndCategories.cs" />
     <Compile Include="Flashcard.cs" />
+    <Compile Include="FlashcardsDisplay.aspx.cs">
+      <DependentUpon>FlashcardsDisplay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FlashcardsDisplay.aspx.designer.cs">
+      <DependentUpon>FlashcardsDisplay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TableRow2.ascx.cs">
+      <DependentUpon>TableRow2.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TableRow2.ascx.designer.cs">
+      <DependentUpon>TableRow2.ascx</DependentUpon>
+    </Compile>
     <Compile Include="UserFlashcardsDisplay.aspx.cs">
       <DependentUpon>UserFlashcardsDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
