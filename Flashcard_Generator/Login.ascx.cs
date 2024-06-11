@@ -32,7 +32,7 @@ namespace Flashcard_Generator
 			}
 			else
 			{
-				Response.Redirect("UserFlashcardsDisplay.aspx");
+				Response.Redirect("Home.aspx");
 			}
 		}
 

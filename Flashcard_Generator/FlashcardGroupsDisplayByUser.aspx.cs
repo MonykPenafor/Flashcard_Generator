@@ -25,18 +25,18 @@ namespace Flashcard_Generator
 			FlashcardServices flashcardServices = new FlashcardServices();
 			List<string> languagesCombination = flashcardServices.GetLanguagesCombinationsForLoggedUser(user, true);
 			List<DivByLanguagesAndCategories> divByLanguagesAndCategories = new List<DivByLanguagesAndCategories>();
-			string formatedLanguagesCombination;
+			//string formatedLanguagesCombination;
 
 			for (int i = 0; i < languagesCombination.Count; i = i+2)
 			{
 				string sourceLanguage = languagesCombination[i];
 				string targetLanguage = languagesCombination[i+1];
 
-				formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
+				//formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
 
 				List<string> categories = flashcardServices.GetCategoryGroupsForLoggedUser(user, sourceLanguage, targetLanguage, true);
 
-				var languagesAndItsCategories = new DivByLanguagesAndCategories(formatedLanguagesCombination, categories);
+				var languagesAndItsCategories = new DivByLanguagesAndCategories(sourceLanguage, targetLanguage, categories);
 
 				divByLanguagesAndCategories.Add(languagesAndItsCategories);
 			}

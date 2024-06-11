@@ -6,11 +6,17 @@
     <div class="container">
         <h3>FLASHCARDS CREATED SO FAR:</h3>
 
+        <asp:DropDownList ID="ddlCategoryFilter" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlCategoryFilter_SelectedIndexChanged">
+            <asp:ListItem Text="Select Category" Value="" />
+            <!-- Add items dynamically in the code-behind -->
+        </asp:DropDownList>
+
+        <asp:Button ID="btnFilter" runat="server" Text="Filter" />
+
         <asp:Repeater runat="server" ID="rptrFlashcardList">
             <HeaderTemplate>
                 <table width="100%">
                     <tr class="flashcad-table-row">
-                        <th class="flashcad-table-row-cell"></th>
                         <th class="flashcad-table-row-cell">Vocabulary / Translation</th>
                         <th class="flashcad-table-row-cell">Usage / Pronunciation / Translation</th>
                         <th class="flashcad-table-row-cell">Tips</th>
@@ -35,7 +41,7 @@
             <FooterTemplate></table></FooterTemplate>
         </asp:Repeater>
 
-        <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-primary btn-center"/>
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-primary btn-center" />
     </div>
 
     <script src="Assets/scripts.js" type="text/javascript"></script>

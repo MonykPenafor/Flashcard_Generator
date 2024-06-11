@@ -11,8 +11,25 @@ namespace Flashcard_Generator
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			LoadFlashcards();
+			//LoadFlashcards();
+
+			if (!IsPostBack)
+			{
+				string languages = Request.QueryString["languages"];
+				string category = Request.QueryString["category"];
+
+				if (!string.IsNullOrEmpty(languages) && !string.IsNullOrEmpty(category))
+				{
+					LoadFlashcardsByLanguagesAndCategory(languages, category);
+				}
+			}
 		}
+
+		private void LoadFlashcardsByLanguagesAndCategory(string languages, string category)
+		{
+			// Implemente o carregamento dos flashcards com base nas linguagens e na categoria aqui.
+		}
+
 
 		protected void LoadFlashcards()
 		{

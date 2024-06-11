@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="TableRow.ascx.cs" Inherits="Flashcard_Generator.TableRow" %>
 
-<td class="flashcad-table-row-cell hidden"><%= FlashcardTableRow.Id %></td>
-<td class="flashcad-table-row-cell"><input type="checkbox" /></td>
 <td class="flashcad-table-row-cell"><%= FlashcardTableRow.WordTarget %> <br /> <%= FlashcardTableRow.WordSource%></td>
 <td class="flashcad-table-row-cell"><%= FlashcardTableRow.ExampleSentenceTarget %> <br /> <%= FlashcardTableRow.Pronunciation%> <br /> <%= FlashcardTableRow.ExampleSentenceSource%></td>
 <td class="flashcad-table-row-cell"><%= FlashcardTableRow.Tips %></td>

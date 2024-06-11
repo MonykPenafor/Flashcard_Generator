@@ -8,12 +8,15 @@ namespace Flashcard_Generator
 	public class DivByLanguagesAndCategories
 	{
 
-		public string Languages { get; set; }
+		public string SourceLanguage { get; set; }
+
+		public string TargetLanguage { get; set; }	
 		public List<string> Categories { get; set; }
 
-		public DivByLanguagesAndCategories(string languages, List<string> categories)
+		public DivByLanguagesAndCategories(string sourceLanguages, string targetLanguage, List<string> categories)
 		{
-			Languages = languages;
+			SourceLanguage = sourceLanguages;
+			TargetLanguage = targetLanguage;
 			Categories = categories;
 		}
 

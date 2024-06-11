@@ -26,7 +26,7 @@ namespace Flashcard_Generator
 			User user = (User)Session["LoggedInUser"];
 			FlashcardServices flashcardServices = new FlashcardServices();
 			List<DivByLanguagesAndCategories> divByLanguagesAndCategories = new List<DivByLanguagesAndCategories>();
-			string formatedLanguagesCombination;
+			//string formatedLanguagesCombination;
 
 			if (isLogged)
 			{
@@ -37,11 +37,11 @@ namespace Flashcard_Generator
 					string sourceLanguage = languagesCombination[i];
 					string targetLanguage = languagesCombination[i+1];
 
-					formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
+					//formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
 
 					List<string> categories = flashcardServices.GetCategoryGroupsForLoggedUser(user, sourceLanguage, targetLanguage, false);
 
-					var languagesAndItsCategories = new DivByLanguagesAndCategories(formatedLanguagesCombination, categories);
+					var languagesAndItsCategories = new DivByLanguagesAndCategories(sourceLanguage, targetLanguage, categories);
 
 					divByLanguagesAndCategories.Add(languagesAndItsCategories);
 				}
@@ -55,11 +55,11 @@ namespace Flashcard_Generator
 					string sourceLanguage = languagesCombination[i];
 					string targetLanguage = languagesCombination[i+1];
 
-					formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
+					//formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
 
 					List<string> categories = flashcardServices.GetPublicCategoryGroups(sourceLanguage, targetLanguage);
 
-					var languagesAndItsCategories = new DivByLanguagesAndCategories(formatedLanguagesCombination, categories);
+					var languagesAndItsCategories = new DivByLanguagesAndCategories(sourceLanguage, targetLanguage, categories);
 
 					divByLanguagesAndCategories.Add(languagesAndItsCategories);
 				}
@@ -71,7 +71,20 @@ namespace Flashcard_Generator
 
         protected void btnFlashcardsDisplay_Click(object sender, EventArgs e)
         {
-			Response.Redirect("FlashcardsDisplay.aspx");
-        }
+			LinkButton btn = sender as LinkButton;
+
+
+			string commandArgument = btn.CommandArgument;
+			string[] arguments = commandArgument.Split(',');
+
+
+			string languages = arguments[0];
+			string category = arguments[1];
+
+			Response.Redirect($"FlashcardsDisplay.aspx?languages={Server.UrlEncode(languages)}&category={Server.UrlEncode(category)}");
+
+
+
+		}
     }
 }

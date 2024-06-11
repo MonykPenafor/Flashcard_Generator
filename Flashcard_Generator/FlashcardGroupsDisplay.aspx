@@ -13,7 +13,7 @@
 
             <ItemTemplate>
                 <div>
-                    <h3><%# Eval("Languages") %></h3>
+                    <h3><%# Eval("SourceLanguage") %> / <%# Eval("TargetLanguage") %></h3>
 
                     <asp:Repeater runat="server" ID="rptrFlashcardsByCategory" DataSource='<%# Eval("Categories") %>'>
 
