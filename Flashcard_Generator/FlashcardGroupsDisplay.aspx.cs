@@ -11,13 +11,16 @@ namespace Flashcard_Generator
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (Session["LoggedInUser"] != null)
+			if (!IsPostBack)
 			{
-				LoadFlashcardGroups(true);
-			}
-			else
-			{
-				LoadFlashcardGroups(false);
+				if (Session["LoggedInUser"] != null)
+				{
+					LoadFlashcardGroups(true);
+				}
+				else
+				{
+					LoadFlashcardGroups(false);
+				}
 			}
 		}
 
@@ -69,22 +72,33 @@ namespace Flashcard_Generator
 			rptrFlashcardsByLanguageCombination.DataBind();
 		}
 
-        protected void btnFlashcardsDisplay_Click(object sender, EventArgs e)
-        {
+
+
+		protected void rptrFlashcardsByCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
+		{
+			if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+			{
+				RepeaterItem parentItem = (RepeaterItem)e.Item.Parent.Parent;
+				DivByLanguagesAndCategories parentData = (DivByLanguagesAndCategories)parentItem.DataItem;
+
+				LinkButton btnFlashcardGroup = (LinkButton)e.Item.FindControl("btnFlashcardGroup");
+				string category = (string)e.Item.DataItem;
+				btnFlashcardGroup.CommandArgument = $"{parentData.SourceLanguage},{parentData.TargetLanguage},{category}";
+			}
+		}
+
+
+		protected void btnFlashcardsDisplay_Click(object sender, EventArgs e)
+		{
 			LinkButton btn = sender as LinkButton;
-
-
 			string commandArgument = btn.CommandArgument;
 			string[] arguments = commandArgument.Split(',');
 
+			string source = arguments[0];
+			string target = arguments[1];
+			string category = arguments[2];
 
-			string languages = arguments[0];
-			string category = arguments[1];
-
-			Response.Redirect($"FlashcardsDisplay.aspx?languages={Server.UrlEncode(languages)}&category={Server.UrlEncode(category)}");
-
-
-
+			Response.Redirect($"FlashcardsDisplay.aspx?source={Server.UrlEncode(source)}&target={Server.UrlEncode(target)}&category={Server.UrlEncode(category)}");
 		}
     }
 }

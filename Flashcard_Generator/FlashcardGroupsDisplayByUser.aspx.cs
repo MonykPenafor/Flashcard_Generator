@@ -11,13 +11,44 @@ namespace Flashcard_Generator
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			LoadFlashcardGroups();
+
+			if (!IsPostBack)
+			{
+				LoadFlashcardGroups();
+			}
+
 		}
 
 		protected void btnFlashcardsDisplay_Click(object sender, EventArgs e)
 		{
-			Response.Redirect("UserFlashcardsDisplay.aspx");
+			LinkButton btn = sender as LinkButton;
+			string commandArgument = btn.CommandArgument;
+			string[] arguments = commandArgument.Split(',');
+
+			string source = arguments[0];
+			string target = arguments[1];
+			string category = arguments[2];
+
+			Response.Redirect($"UserFlashcardsDisplay.aspx?source={Server.UrlEncode(source)}&target={Server.UrlEncode(target)}&category={Server.UrlEncode(category)}");
 		}
+
+
+
+
+		protected void rptrFlashcardsByCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
+		{
+			if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
+			{
+				RepeaterItem parentItem = (RepeaterItem)e.Item.Parent.Parent;
+				DivByLanguagesAndCategories parentData = (DivByLanguagesAndCategories)parentItem.DataItem;
+
+				LinkButton btnFlashcardGroup = (LinkButton)e.Item.FindControl("btnFlashcardGroup");
+				string category = (string)e.Item.DataItem;
+				btnFlashcardGroup.CommandArgument = $"{parentData.SourceLanguage},{parentData.TargetLanguage},{category}";
+			}
+		}
+
+
 
 		protected void LoadFlashcardGroups()
 		{

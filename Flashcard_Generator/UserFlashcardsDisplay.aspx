@@ -6,11 +6,6 @@
     <div class="container">
         <h3>FLASHCARDS CREATED SO FAR:</h3>
 
-        <asp:DropDownList ID="ddlCategoryFilter" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlCategoryFilter_SelectedIndexChanged">
-            <asp:ListItem Text="Select Category" Value="" />
-            <!-- Add items dynamically in the code-behind -->
-        </asp:DropDownList>
-
         <asp:Button ID="btnFilter" runat="server" Text="Filter" />
 
         <asp:Repeater runat="server" ID="rptrFlashcardList">

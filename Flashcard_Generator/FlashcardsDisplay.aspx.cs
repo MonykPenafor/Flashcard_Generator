@@ -15,17 +15,18 @@ namespace Flashcard_Generator
 
 			if (!IsPostBack)
 			{
-				string languages = Request.QueryString["languages"];
+				string source = Request.QueryString["source"];
+				string target = Request.QueryString["target"];
 				string category = Request.QueryString["category"];
 
-				if (!string.IsNullOrEmpty(languages) && !string.IsNullOrEmpty(category))
+				if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(target) && !string.IsNullOrEmpty(category))
 				{
-					LoadFlashcardsByLanguagesAndCategory(languages, category);
+					LoadFlashcardsByLanguagesAndCategory(source, target, category);
 				}
 			}
 		}
 
-		private void LoadFlashcardsByLanguagesAndCategory(string languages, string category)
+		private void LoadFlashcardsByLanguagesAndCategory(string source, string target, string category)
 		{
 			// Implemente o carregamento dos flashcards com base nas linguagens e na categoria aqui.
 		}

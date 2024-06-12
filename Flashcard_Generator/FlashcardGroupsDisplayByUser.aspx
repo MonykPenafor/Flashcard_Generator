@@ -15,20 +15,17 @@
                 <div>
                     <h3><%# Eval("SourceLanguage") %> / <%# Eval("TargetLanguage") %></h3>
 
-                    <asp:Repeater runat="server" ID="rptrFlashcardsByCategory" DataSource='<%# Eval("Categories") %>'>
-
+                    <asp:Repeater runat="server" ID="rptrFlashcardsByCategory" DataSource='<%# Eval("Categories") %>' OnItemDataBound="rptrFlashcardsByCategory_ItemDataBound">
                         <HeaderTemplate>
                             <div class="flashcard-group-container">
                         </HeaderTemplate>
 
                         <ItemTemplate>
-                        <asp:LinkButton runat="server" class="btn-flashcard-group" OnClick="btnFlashcardsDisplay_Click"><%#Container.DataItem%></asp:LinkButton>
+                            <asp:LinkButton runat="server" class="btn-flashcard-group" ID="btnFlashcardGroup" OnClick="btnFlashcardsDisplay_Click"><%# Container.DataItem %></asp:LinkButton>
                         </ItemTemplate>
 
                         <FooterTemplate></div></FooterTemplate>
-
                     </asp:Repeater>
-
                 </div>
                 <br />
                 <br />
