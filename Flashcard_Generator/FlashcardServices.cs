@@ -70,7 +70,7 @@ namespace Flashcard_Generator
 
 					using (SqlCommand cmd = new SqlCommand(query, con))
 					{
-						cmd.Parameters.AddWithValue("@idFlashcard",flashcardId);
+						cmd.Parameters.AddWithValue("@idFlashcard", flashcardId);
 
 						try
 						{
@@ -89,21 +89,20 @@ namespace Flashcard_Generator
 				}
 			}
 		}
-	
+
 		public string UpdateFlashcard(Flashcard flashcard)
 		{
 			return "hay";
 		}
 
-		public string GetFlashcard(int flashcardID) 
+		public string GetFlashcard(int flashcardID)
 		{
 			return "hey";
 		}
 
 
 
-
-		public List<Flashcard> GetAllPublicFlashcardsByLanguagesAndCategory(string source, string target, string category, bool isUser)
+		public List<Flashcard> GetFlashcardsByLanguagesCategoriesAndVisibility(string source, string target, string category, string loggedUser, bool isOwner)
 		{
 			var flashcards = new List<Flashcard>();
 
@@ -112,23 +111,25 @@ namespace Flashcard_Generator
 			using (SqlConnection con = new SqlConnection(connectionString))
 			{
 
-				string query; 
+				string query;
 
-				if (isUser)
+				if (loggedUser == null)
 				{
-					query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source,
-				f.word_target,f.example_sentence_source,f.example_sentence_target,f.pronunciation,f.tips,f.proficiency,f.is_public
-				FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE source_language = @source AND 
-				target_language = @target AND category = @category";
+					query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source,f.word_target,f.example_sentence_source,f.example_sentence_target,f.pronunciation,f.tips,f.proficiency,f.is_public	FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.source_language = @source AND f.target_language = @target AND f.category = @category AND f.is_public = 1";
 				}
 				else
 				{
-					query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source,
-				f.word_target,f.example_sentence_source,f.example_sentence_target,f.pronunciation,f.tips,f.proficiency,f.is_public
-				FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE source_language = @source AND 
-				target_language = @target AND category = @category AND is_public = 1";
-				}
+					if (!isOwner)
+					{
+						query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source,f.word_target,f.example_sentence_source,f.example_sentence_target,f.pronunciation,f.tips,f.proficiency,f.is_public	FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.source_language = @source AND f.target_language = @target AND f.category = @category AND f.is_public = 1 AND u.username != @user";
 
+					}
+					else
+					{
+						query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source,f.word_target,f.example_sentence_source,f.example_sentence_target,f.pronunciation,f.tips,f.proficiency,f.is_public	FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.source_language = @source AND f.target_language = @target AND f.category = @category AND u.username = @user";
+
+					}
+				}
 
 				con.Open();
 
@@ -138,6 +139,7 @@ namespace Flashcard_Generator
 					cmd.Parameters.AddWithValue("@source", source);
 					cmd.Parameters.AddWithValue("@target", target);
 					cmd.Parameters.AddWithValue("@category", category);
+					cmd.Parameters.AddWithValue("@user", loggedUser);
 
 					try
 					{
@@ -383,7 +385,7 @@ namespace Flashcard_Generator
 				}
 				else
 				{
-					query = "SELECT category FROM Flashcards WHERE source_language = @sourceLanguage AND target_language = @targetLanguage AND id_user != @id_user GROUP BY category";
+					query = "SELECT category FROM Flashcards WHERE source_language = @sourceLanguage AND target_language = @targetLanguage AND id_user != @id_user AND is_public = 1 GROUP BY category";
 				}
 
 

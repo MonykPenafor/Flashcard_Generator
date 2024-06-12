@@ -19,19 +19,29 @@ namespace Flashcard_Generator
 
 				if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(target) && !string.IsNullOrEmpty(category))
 				{
-					LoadFlashcardsByLanguagesAndCategory(source, target, category);
+					User user = (User)Session["LoggedInUser"];
+
+					if (user != null)
+					{
+						LoadFlashcardsByLanguagesAndCategory(source, target, category, user.Username, false);
+					}
+					else
+					{
+						LoadFlashcardsByLanguagesAndCategory(source, target, category, null, false);
+					}
 				}
 			}
 		}
 
-		private void LoadFlashcardsByLanguagesAndCategory(string source, string target, string category)
+		private void LoadFlashcardsByLanguagesAndCategory(string source, string target, string category, string user, bool isOwner)
 		{
 			FlashcardServices flashcardServices = new FlashcardServices();
-			var flashcards = flashcardServices.GetAllPublicFlashcardsByLanguagesAndCategory(source, target, category, false);
+
+			var flashcards = flashcardServices.GetFlashcardsByLanguagesCategoriesAndVisibility(source, target, category, user, isOwner);
 
 			rptrFlashcardList.DataSource = flashcards;
 			rptrFlashcardList.DataBind();
 		}
-	
+
 	}
 }
