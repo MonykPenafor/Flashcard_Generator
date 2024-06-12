@@ -35,19 +35,14 @@ namespace Flashcard_Generator
 
 			for (int i = 0; i < numberOfFlashcards; i++)
 			{
-				Flashcard flashcard = new Flashcard(
-					user,
-					sourceLanguage,
-					targetLanguage,
-					category,
+				Flashcard flashcard = new Flashcard(user,sourceLanguage,targetLanguage,category,
 					wordSource[i],
 					wordTarget[i],
 					exampleSentenceSource[i],
 					exampleSentenceTarget[i],
 					pronunciation[i],
 					tips[i],
-					proficiency,
-					isPublic
+					proficiency,isPublic
 				);
 
 				string created = flashcardServices.CreateFlashcard(flashcard);
@@ -61,12 +56,8 @@ namespace Flashcard_Generator
 			}
 
 			lblMessage.Text = $"The Set was created";
-			Response.Redirect("FlashcardDisplay.aspx");
+			Response.Redirect("FlashcardGroupsDisplayByUser.aspx");
 		}
-
-
-
-
 
 
 		protected string[] CreateArrayOfStrings(string userInput) 
@@ -81,21 +72,8 @@ namespace Flashcard_Generator
 				stringList.Add(itemCleaned);
 			}
 
-
 			return stringList.ToArray();
 		}
-
-
-
-
-
-
-
-
-
-
-
-
 
 	}
 }

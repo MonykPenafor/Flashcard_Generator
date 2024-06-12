@@ -19,21 +19,6 @@ namespace Flashcard_Generator
 
 		}
 
-		protected void btnFlashcardsDisplay_Click(object sender, EventArgs e)
-		{
-			LinkButton btn = sender as LinkButton;
-			string commandArgument = btn.CommandArgument;
-			string[] arguments = commandArgument.Split(',');
-
-			string source = arguments[0];
-			string target = arguments[1];
-			string category = arguments[2];
-
-			Response.Redirect($"UserFlashcardsDisplay.aspx?source={Server.UrlEncode(source)}&target={Server.UrlEncode(target)}&category={Server.UrlEncode(category)}");
-		}
-
-
-
 
 		protected void rptrFlashcardsByCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
 		{
@@ -48,6 +33,19 @@ namespace Flashcard_Generator
 			}
 		}
 
+
+		protected void btnFlashcardsDisplay_Click(object sender, EventArgs e)
+		{
+			LinkButton btn = sender as LinkButton;
+			string commandArgument = btn.CommandArgument;
+			string[] arguments = commandArgument.Split(',');
+
+			string source = arguments[0];
+			string target = arguments[1];
+			string category = arguments[2];
+
+			Response.Redirect($"UserFlashcardsDisplay.aspx?source={Server.UrlEncode(source)}&target={Server.UrlEncode(target)}&category={Server.UrlEncode(category)}");
+		}
 
 
 		protected void LoadFlashcardGroups()

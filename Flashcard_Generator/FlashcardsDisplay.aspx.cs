@@ -11,8 +11,6 @@ namespace Flashcard_Generator
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			//LoadFlashcards();
-
 			if (!IsPostBack)
 			{
 				string source = Request.QueryString["source"];
@@ -28,17 +26,12 @@ namespace Flashcard_Generator
 
 		private void LoadFlashcardsByLanguagesAndCategory(string source, string target, string category)
 		{
-			// Implemente o carregamento dos flashcards com base nas linguagens e na categoria aqui.
-		}
-
-
-		protected void LoadFlashcards()
-		{
 			FlashcardServices flashcardServices = new FlashcardServices();
-			var flashcards = flashcardServices.GetAllPublicFlashcards();
+			var flashcards = flashcardServices.GetAllPublicFlashcardsByLanguagesAndCategory(source, target, category, false);
 
 			rptrFlashcardList.DataSource = flashcards;
 			rptrFlashcardList.DataBind();
 		}
+	
 	}
 }

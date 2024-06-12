@@ -35,13 +35,5 @@
         </asp:Repeater>
 
     </div>
-
-    <script>
-        function redirectToPage() {
-            console.log("het");
-        }
-    </script>
-
-
 </asp:Content>
 

@@ -3,52 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\site.master||{B30AFBFF-D992-43B7-B62D-2642580A2883}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\signup.ascx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\signup.ascx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\login.ascx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\login.ascx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardgroupsdisplaybyuser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardgroupsdisplaybyuser.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardgroupsdisplay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardgroupsdisplay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardgroupsdisplay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardgroupsdisplay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\tablerow2.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\tablerow2.ascx||{F390D63C-F7D8-4E74-AA04-57C1ECF53D4D}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardgroupsdisplaybyuser.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardgroupsdisplaybyuser.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\userflashcardsdisplay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\userflashcardsdisplay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardsdisplay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardsdisplay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\tablerow2.ascx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\tablerow2.ascx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\divbylanguagesandcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\divbylanguagesandcategories.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardsdisplay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardsdisplay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardgenerator.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardgenerator.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,158 +34,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SignUp.ascx.cs",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\SignUp.ascx.cs",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\SignUp.ascx.cs",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\SignUp.ascx.cs",
-              "RelativeToolTip": "Flashcard_Generator\\SignUp.ascx.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAowCQAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T18:30:46.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Login.ascx.cs",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\Login.ascx.cs",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\Login.ascx.cs",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\Login.ascx.cs",
-              "RelativeToolTip": "Flashcard_Generator\\Login.ascx.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAgwCMAAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T18:30:31.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Site.Master",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\Site.Master",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\Site.Master",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\Site.Master",
-              "RelativeToolTip": "Flashcard_Generator\\Site.Master",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-06-11T18:29:51.705Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FlashcardGroupsDisplayByUser.aspx",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGroupsDisplayByUser.aspx",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardGroupsDisplayByUser.aspx",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGroupsDisplayByUser.aspx",
-              "RelativeToolTip": "Flashcard_Generator\\FlashcardGroupsDisplayByUser.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-06-11T18:29:15.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FlashcardGroupsDisplayByUser.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGroupsDisplayByUser.aspx.cs",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardGroupsDisplayByUser.aspx.cs",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGroupsDisplayByUser.aspx.cs",
-              "RelativeToolTip": "Flashcard_Generator\\FlashcardGroupsDisplayByUser.aspx.cs",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAwwB4AAAAEAAAA",
+              "Title": "FlashcardGenerator.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGenerator.aspx.cs",
+              "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardGenerator.aspx.cs",
+              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGenerator.aspx.cs",
+              "RelativeToolTip": "Flashcard_Generator\\FlashcardGenerator.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD0AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T18:25:43.142Z",
+              "WhenOpened": "2024-06-12T14:29:33.06Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DivByLanguagesAndCategories.cs",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\DivByLanguagesAndCategories.cs",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\DivByLanguagesAndCategories.cs",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\DivByLanguagesAndCategories.cs",
-              "RelativeToolTip": "Flashcard_Generator\\DivByLanguagesAndCategories.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T18:18:52.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FlashcardGroupsDisplay.aspx.cs",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGroupsDisplay.aspx.cs",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardGroupsDisplay.aspx.cs",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGroupsDisplay.aspx.cs",
-              "RelativeToolTip": "Flashcard_Generator\\FlashcardGroupsDisplay.aspx.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T17:40:53.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FlashcardGroupsDisplay.aspx",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGroupsDisplay.aspx",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardGroupsDisplay.aspx",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardGroupsDisplay.aspx",
-              "RelativeToolTip": "Flashcard_Generator\\FlashcardGroupsDisplay.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-06-11T17:40:48.806Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TableRow2.ascx.cs",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\TableRow2.ascx.cs",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\TableRow2.ascx.cs",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\TableRow2.ascx.cs",
-              "RelativeToolTip": "Flashcard_Generator\\TableRow2.ascx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T17:38:28.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TableRow2.ascx",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\TableRow2.ascx",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\TableRow2.ascx",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\TableRow2.ascx",
-              "RelativeToolTip": "Flashcard_Generator\\TableRow2.ascx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003302|",
-              "WhenOpened": "2024-06-11T17:38:20.038Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "FlashcardsDisplay.aspx.cs",
               "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardsDisplay.aspx.cs",
               "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardsDisplay.aspx.cs",
               "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardsDisplay.aspx.cs",
               "RelativeToolTip": "Flashcard_Generator\\FlashcardsDisplay.aspx.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAATAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-11T17:37:41.64Z",
+              "WhenOpened": "2024-06-12T14:22:43.147Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FlashcardsDisplay.aspx",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardsDisplay.aspx",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardsDisplay.aspx",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardsDisplay.aspx",
-              "RelativeToolTip": "Flashcard_Generator\\FlashcardsDisplay.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-06-11T17:37:38.182Z",
+              "DocumentIndex": 0,
+              "Title": "UserFlashcardsDisplay.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\UserFlashcardsDisplay.aspx.cs",
+              "RelativeDocumentMoniker": "Flashcard_Generator\\UserFlashcardsDisplay.aspx.cs",
+              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\UserFlashcardsDisplay.aspx.cs",
+              "RelativeToolTip": "Flashcard_Generator\\UserFlashcardsDisplay.aspx.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T14:20:39.163Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FlashcardServices.cs",
+              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardServices.cs",
+              "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardServices.cs",
+              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardServices.cs",
+              "RelativeToolTip": "Flashcard_Generator\\FlashcardServices.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAqwD0BAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T14:09:41.75Z",
               "EditorCaption": ""
             }
           ]

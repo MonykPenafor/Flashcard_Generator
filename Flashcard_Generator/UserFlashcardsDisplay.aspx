@@ -6,8 +6,6 @@
     <div class="container">
         <h3>FLASHCARDS CREATED SO FAR:</h3>
 
-        <asp:Button ID="btnFilter" runat="server" Text="Filter" />
-
         <asp:Repeater runat="server" ID="rptrFlashcardList">
             <HeaderTemplate>
                 <table width="100%">

@@ -72,8 +72,6 @@ namespace Flashcard_Generator
 			rptrFlashcardsByLanguageCombination.DataBind();
 		}
 
-
-
 		protected void rptrFlashcardsByCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
 		{
 			if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
@@ -87,7 +85,6 @@ namespace Flashcard_Generator
 			}
 		}
 
-
 		protected void btnFlashcardsDisplay_Click(object sender, EventArgs e)
 		{
 			LinkButton btn = sender as LinkButton;
@@ -100,5 +97,6 @@ namespace Flashcard_Generator
 
 			Response.Redirect($"FlashcardsDisplay.aspx?source={Server.UrlEncode(source)}&target={Server.UrlEncode(target)}&category={Server.UrlEncode(category)}");
 		}
+
     }
 }
