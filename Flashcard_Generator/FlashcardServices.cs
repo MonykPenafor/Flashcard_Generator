@@ -115,18 +115,18 @@ namespace Flashcard_Generator
 
 				if (loggedUser == null)
 				{
-					query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source,f.word_target,f.example_sentence_source,f.example_sentence_target,f.pronunciation,f.tips,f.proficiency,f.is_public	FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.source_language = @source AND f.target_language = @target AND f.category = @category AND f.is_public = 1";
+					query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source, f.word_target, f.example_sentence_source, f.example_sentence_target, f.pronunciation,f.tips,f.proficiency, f.is_public	FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.source_language = @source AND f.target_language = @target AND f.category = @category AND f.is_public = 1";
 				}
 				else
 				{
 					if (!isOwner)
 					{
-						query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source,f.word_target,f.example_sentence_source,f.example_sentence_target,f.pronunciation,f.tips,f.proficiency,f.is_public	FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.source_language = @source AND f.target_language = @target AND f.category = @category AND f.is_public = 1 AND u.username != @user";
+						query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source, f.word_target, f.example_sentence_source, f.example_sentence_target, f.pronunciation,f.tips,f.proficiency,f.is_public	FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.source_language = @source AND f.target_language = @target AND f.category = @category AND f.is_public = 1 AND u.username != @user";
 
 					}
 					else
 					{
-						query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source,f.word_target,f.example_sentence_source,f.example_sentence_target,f.pronunciation,f.tips,f.proficiency,f.is_public	FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.source_language = @source AND f.target_language = @target AND f.category = @category AND u.username = @user";
+						query = @"SELECT f.id_flashcard, u.username, f.source_language, f.target_language, f.category, f.word_source, f.word_target, f.example_sentence_source, f.example_sentence_target, f.pronunciation,f.tips,f.proficiency,f.is_public	FROM FLASHCARDS f JOIN USERS u ON f.id_user = u.id_user WHERE f.source_language = @source AND f.target_language = @target AND f.category = @category AND u.username = @user";
 
 					}
 				}
@@ -139,7 +139,11 @@ namespace Flashcard_Generator
 					cmd.Parameters.AddWithValue("@source", source);
 					cmd.Parameters.AddWithValue("@target", target);
 					cmd.Parameters.AddWithValue("@category", category);
-					cmd.Parameters.AddWithValue("@user", loggedUser);
+
+					if (loggedUser != null)
+					{
+						cmd.Parameters.AddWithValue("@user", loggedUser);
+					}
 
 					try
 					{
