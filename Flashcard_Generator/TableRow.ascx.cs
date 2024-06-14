@@ -37,8 +37,11 @@ namespace Flashcard_Generator
 			}
 			else
 			{
+				string source = Request.QueryString["source"];
+				string target = Request.QueryString["target"];
+				string category = Request.QueryString["category"];
 
-				Response.Redirect("UserFlashcardsDisplay.aspx");
+				Response.Redirect($"UserFlashcardsDisplay.aspx?source={source}&target={target}&category={category}");
 
 				//// Exemplo de uso:
 				//string script = "showToast('Flashcard deleted successfully.');";

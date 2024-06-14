@@ -5,7 +5,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <h3>FLASHCARDS CREATED SO FAR:</h3>
-
+       <h4><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
         <asp:Repeater runat="server" ID="rptrFlashcardList">
             <HeaderTemplate>
                 <table width="100%">
