@@ -12,20 +12,17 @@ namespace Flashcard_Generator
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (!IsPostBack)
+			string source = Request.QueryString["source"];
+			string target = Request.QueryString["target"];
+			string category = Request.QueryString["category"];
+
+			if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(target) && !string.IsNullOrEmpty(category))
 			{
-				string source = Request.QueryString["source"];
-				string target = Request.QueryString["target"];
-				string category = Request.QueryString["category"];
 
-				if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(target) && !string.IsNullOrEmpty(category))
-				{
+				User user = (User)Session["LoggedInUser"];
+				string username = user.Username;
 
-					User user = (User)Session["LoggedInUser"];
-					string username = user.Username;
-
-					LoadFlashcardsByLanguagesAndCategory(source, target, category, username, true);
-				}
+				LoadFlashcardsByLanguagesAndCategory(source, target, category, username, true);
 			}
 		}
 

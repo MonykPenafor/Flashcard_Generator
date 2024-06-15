@@ -20,9 +20,12 @@ namespace Flashcard_Generator
 
 		protected void btnEditItem_Click(object sender, EventArgs e)
 		{
-			//LinkButton btn = sender as LinkButton;
-			//int flashcardId = Convert.ToInt16(btn.CommandArgument);
-			//flashcardServices.UpdateFlashcard(flashcardId);
+
+			LinkButton btn = sender as LinkButton;
+			int flashcardId = Convert.ToInt32(btn.CommandArgument);
+
+			string script = $"<script>showModal({flashcardId});</script>";
+			ScriptManager.RegisterStartupScript(this, GetType(), "showEditModal", script, false);
 		}
 
 		protected void btnDeleteItem_Click(object sender, EventArgs e)

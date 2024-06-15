@@ -100,7 +100,10 @@ namespace Flashcard_Generator
 			return "hey";
 		}
 
-
+		public Flashcard GetFlashcardById(int flashcardID)
+		{
+			return null;
+		}
 
 		public List<Flashcard> GetFlashcardsByLanguagesCategoriesAndVisibility(string source, string target, string category, string loggedUser, bool isOwner)
 		{
