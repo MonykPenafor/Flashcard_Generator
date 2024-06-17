@@ -199,19 +199,20 @@ div.flashcard-group-container .btn-flashcard-group {
 
 .flashcad-table-row-cell {
     padding: 10px;
+    z-index: 1;
 }
 
-.flashcad-table-row-cell.hidden {
-    display: none;
-}
+    .flashcad-table-row-cell.hidden {
+        display: none;
+    }
 
-.flashcad-table-row-cell .td-icon {
-    width: 15px;
-    height: 15px;
-    max-width: 30px;
-    display: flex;
-    cursor: pointer;
-}
+    .flashcad-table-row-cell .td-icon {
+        width: 15px;
+        height: 15px;
+        max-width: 30px;
+        display: flex;
+        cursor: pointer;
+    }
 
 
 
@@ -219,7 +220,7 @@ div.flashcard-group-container .btn-flashcard-group {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -234,7 +235,7 @@ div.flashcard-group-container .btn-flashcard-group {
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 60%;
+    width: 70%;
 }
 
 .close {
@@ -247,8 +248,26 @@ div.flashcard-group-container .btn-flashcard-group {
     padding: 0px 15px 0px 15px;
 }
 
-.close:hover, .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    .close:hover, .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+.modal-form-group {
+    margin:5px;
+    display: inline-grid;
+}
+
+.modal-label {
+    font-size: small;
+}
+
+.modal-form-control {
+    width: 150px;
+    height: 30px;
+}
+
+.modal-form{
+display: inline-block;
 }

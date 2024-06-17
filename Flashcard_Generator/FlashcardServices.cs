@@ -90,20 +90,18 @@ namespace Flashcard_Generator
 			}
 		}
 
-		public string UpdateFlashcard(Flashcard flashcard)
+		public string UpdateFlashcard(int flashcard)
 		{
 			return "hay";
 		}
 
-		public string GetFlashcard(int flashcardID)
-		{
-			return "hey";
-		}
-
-		public Flashcard GetFlashcardById(int flashcardID)
+		public Flashcard GetFlashcard(int flashcardID)
 		{
 			return null;
 		}
+
+
+
 
 		public List<Flashcard> GetFlashcardsByLanguagesCategoriesAndVisibility(string source, string target, string category, string loggedUser, bool isOwner)
 		{

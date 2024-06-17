@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.Security;
 
 namespace Flashcard_Generator
 {
@@ -32,6 +33,7 @@ namespace Flashcard_Generator
 			}
 			else
 			{
+				FormsAuthentication.SetAuthCookie(usernameOrEmail, false);
 				Response.Redirect("Home.aspx");
 			}
 		}

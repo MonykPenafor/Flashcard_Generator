@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
+using System.Web.Script.Services;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -34,6 +36,30 @@ namespace Flashcard_Generator
 			rptrFlashcardList.DataSource = flashcards;
 			rptrFlashcardList.DataBind();
 		}
+
+
+		//[WebMethod]
+		//public static void UpdateFlashcard(int flashcardId)
+		//{
+		//	// Perform database update logic here
+		//	FlashcardServices flashcardServices = new FlashcardServices();
+		//	flashcardServices.UpdateFlashcard(flashcardId);
+		//}
+
+
+		//[WebMethod(EnableSession = true)]
+		//public static string DeleteFlashcard(int flashcardId)
+		//{
+		//	// Check if the user is authenticated
+		//	if (HttpContext.Current.Session["LoggedUser"] == null)
+		//	{
+		//		HttpContext.Current.Response.StatusCode = 401;
+		//		return "Unauthorized";
+		//	}
+
+		//	FlashcardServices flashcardServices = new FlashcardServices();
+		//	return flashcardServices.DeleteFlashcard(flashcardId);
+		//}
 
 	}
 }

@@ -28,28 +28,65 @@ namespace Flashcard_Generator
 			ScriptManager.RegisterStartupScript(this, GetType(), "showEditModal", script, false);
 		}
 
-		protected void btnDeleteItem_Click(object sender, EventArgs e)
-		{
-			LinkButton btn = sender as LinkButton;
-			int flashcardId = Convert.ToInt32(btn.CommandArgument);
-			string deleted = flashcardServices.DeleteFlashcard(flashcardId);
+		//protected void btnDeleteItem_Click(object sender, EventArgs e)
+		//{
+		//	LinkButton btn = sender as LinkButton;
+		//	int flashcardId = Convert.ToInt32(btn.CommandArgument);
+		//	string deleted = flashcardServices.DeleteFlashcard(flashcardId);
 
-			if (deleted != "ok!")
+		//	if (deleted != "ok!")
+		//	{
+		//		Console.WriteLine(deleted);
+		//	}
+		//	else
+		//	{
+		//		string source = Request.QueryString["source"];
+		//		string target = Request.QueryString["target"];
+		//		string category = Request.QueryString["category"];
+
+		//		Response.Redirect($"UserFlashcardsDisplay.aspx?source={source}&target={target}&category={category}");
+
+		//		//// Exemplo de uso:
+		//		//string script = "showToast('Flashcard deleted successfully.');";
+		//		//ScriptManager.RegisterStartupScript(this, GetType(), "showToast", script, true);
+		//	}
+		//}
+
+		protected void btnDeleteHidden_Click(object sender, EventArgs e)
+		{
+			int flashcardId = int.Parse(hfFlashcardId.Value);
+			string result = flashcardServices.DeleteFlashcard(flashcardId);
+			string script;
+
+			if (result == "ok!")
 			{
-				Console.WriteLine(deleted);
+				script = $"deleteFlashcard({flashcardId});";
 			}
 			else
 			{
-				string source = Request.QueryString["source"];
-				string target = Request.QueryString["target"];
-				string category = Request.QueryString["category"];
-
-				Response.Redirect($"UserFlashcardsDisplay.aspx?source={source}&target={target}&category={category}");
-
-				//// Exemplo de uso:
-				//string script = "showToast('Flashcard deleted successfully.');";
-				//ScriptManager.RegisterStartupScript(this, GetType(), "showToast", script, true);
+				script = $"alert('{result}');";
 			}
+
+			ScriptManager.RegisterStartupScript(this, GetType(), "alert", script, true);
 		}
+
+
+
+		protected void btnDeleteFlashcard_Click(object sender, EventArgs e)
+		{
+			LinkButton btn = sender as LinkButton;
+			int flashcardId = Convert.ToInt32(btn.CommandArgument);
+			flashcardServices.DeleteFlashcard(flashcardId);
+			
+		}
+
+
+
+
+
+
+
+
+
 	}
 }
