@@ -19,6 +19,11 @@ namespace Flashcard_Generator
 		{
 		}
 
+
+
+
+
+
 		protected void btnEditFlashcard_Click(object sender, EventArgs e)
 		{
 

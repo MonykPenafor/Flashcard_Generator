@@ -54,14 +54,11 @@ namespace Flashcard_Generator
 			FlashcardServices flashcardServices = new FlashcardServices();
 			List<string> languagesCombination = flashcardServices.GetLanguagesCombinationsForLoggedUser(user, true);
 			List<DivByLanguagesAndCategories> divByLanguagesAndCategories = new List<DivByLanguagesAndCategories>();
-			//string formatedLanguagesCombination;
 
 			for (int i = 0; i < languagesCombination.Count; i = i+2)
 			{
 				string sourceLanguage = languagesCombination[i];
 				string targetLanguage = languagesCombination[i+1];
-
-				//formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
 
 				List<string> categories = flashcardServices.GetCategoryGroupsForLoggedUser(user, sourceLanguage, targetLanguage, true);
 

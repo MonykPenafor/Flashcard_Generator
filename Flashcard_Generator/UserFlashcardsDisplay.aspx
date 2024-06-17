@@ -1,12 +1,11 @@
 ﻿<%@ Page Title="Display of Flashcards" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserFlashcardsDisplay.aspx.cs" Inherits="Flashcard_Generator.UserFlashcardsDisplay" %>
-
 <%@ Register TagPrefix="monyk" TagName="FlashcardRow" Src="~/TableRow.ascx" %>
+
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <h3>FLASHCARDS CREATED SO FAR:</h3>
         <h4><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
-
 
 
         <asp:Repeater runat="server" ID="rptrFlashcardList">
@@ -17,8 +16,6 @@
                         <th class="flashcad-table-row-cell">Usage / Pronunciation / Translation</th>
                         <th class="flashcad-table-row-cell">Tips</th>
                         <th class="flashcad-table-row-cell">Level</th>
-                        <th class="flashcad-table-row-cell"></th>
-                        <th class="flashcad-table-row-cell"></th>
                         <th class="flashcad-table-row-cell"></th>
                         <th class="flashcad-table-row-cell"></th>
                     </tr>
@@ -40,34 +37,7 @@
         </asp:Repeater>
 
 
-        <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-primary btn-center" />
     </div>
 
-    <!-- Modal Structure -->
-    <div id="editModal" class="modal">
-
-        <div class="modal-content">
-
-            <span>
-                <button type="button" class="close" onclick="closeModal()">&times;</button></span>
-
-            <h2>Edit Flashcard</h2>
-            <p id="fcid"></p>
-
-
-<%--            <div class="modal-form-group">
-                <label for="txtSourceLanguage" class="modal-label">SOURCE LANGUAGE:</label>
-                <textbox required ></textbox>--%>
-
-                <input runat="server" id="idee" required />
-
-
-<%--            </div>--%>
-
-
-            <asp:Button runat="server" Text="save" />
-
-        </div>
-    </div>
 
 </asp:Content>

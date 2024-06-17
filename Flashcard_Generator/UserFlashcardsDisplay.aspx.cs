@@ -42,22 +42,6 @@ namespace Flashcard_Generator
 		}
 
 
-		//[WebMethod]
-		//public static void UpdateFlashcard(int flashcardId)
-		//{
-		//	// Perform database update logic here
-		//	FlashcardServices flashcardServices = new FlashcardServices();
-		//	flashcardServices.UpdateFlashcard(flashcardId);
-		//}
-
-
-		[WebMethod]
-		public static string DeleteFlashcard(int flashcardId)
-		{
-
-			FlashcardServices flashcardServices = new FlashcardServices();
-			return flashcardServices.DeleteFlashcard(flashcardId);
-		}
 
 	}
 }

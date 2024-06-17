@@ -45,11 +45,11 @@ namespace Flashcard_Generator
 					proficiency,isPublic
 				);
 
-				string created = flashcardServices.CreateFlashcard(flashcard);
+				string result = flashcardServices.CreateFlashcard(flashcard);
 
-				if (created != "ok")
+				if (result != "ok")
 				{
-					lblMessage.Text = created;
+					lblMessage.Text = result;
 					return;
 				}
 

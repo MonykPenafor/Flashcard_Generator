@@ -168,7 +168,6 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="EditModal.ascx" />
     <Content Include="FlashcardsDisplay.aspx" />
     <Content Include="TableRow2.ascx" />
     <Content Include="UserFlashcardsDisplay.aspx" />
@@ -247,13 +246,6 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="DivByLanguagesAndCategories.cs" />
-    <Compile Include="EditModal.ascx.cs">
-      <DependentUpon>EditModal.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="EditModal.ascx.designer.cs">
-      <DependentUpon>EditModal.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Flashcard.cs" />
     <Compile Include="FlashcardsDisplay.aspx.cs">
       <DependentUpon>FlashcardsDisplay.aspx</DependentUpon>

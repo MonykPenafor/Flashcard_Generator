@@ -5,6 +5,7 @@
     <div class="container">
         <h3>FLASHCARDS:</h3>
        <h4><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
+
         <asp:Repeater runat="server" ID="rptrFlashcardList">
             <HeaderTemplate>
                 <table width="100%">
@@ -32,8 +33,5 @@
             <FooterTemplate></table></FooterTemplate>
         </asp:Repeater>
 
-        <asp:Button ID="btnDelete" runat="server" Text="Delete" CssClass="btn btn-primary btn-center"/>
     </div>
-
-    <script src="Assets/scripts.js" type="text/javascript"></script>
 </asp:Content>

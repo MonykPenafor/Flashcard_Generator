@@ -29,7 +29,6 @@ namespace Flashcard_Generator
 			User user = (User)Session["LoggedInUser"];
 			FlashcardServices flashcardServices = new FlashcardServices();
 			List<DivByLanguagesAndCategories> divByLanguagesAndCategories = new List<DivByLanguagesAndCategories>();
-			//string formatedLanguagesCombination;
 
 			if (isLogged)
 			{
@@ -40,7 +39,6 @@ namespace Flashcard_Generator
 					string sourceLanguage = languagesCombination[i];
 					string targetLanguage = languagesCombination[i+1];
 
-					//formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
 
 					List<string> categories = flashcardServices.GetCategoryGroupsForLoggedUser(user, sourceLanguage, targetLanguage, false);
 
@@ -57,8 +55,6 @@ namespace Flashcard_Generator
 				{
 					string sourceLanguage = languagesCombination[i];
 					string targetLanguage = languagesCombination[i+1];
-
-					//formatedLanguagesCombination = sourceLanguage + " / " + targetLanguage + ":";
 
 					List<string> categories = flashcardServices.GetPublicCategoryGroups(sourceLanguage, targetLanguage);
 
