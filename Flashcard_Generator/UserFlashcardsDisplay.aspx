@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="Display of Flashcards" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="UserFlashcardsDisplay.aspx.cs" Inherits="Flashcard_Generator.UserFlashcardsDisplay" %>
 
 <%@ Register TagPrefix="monyk" TagName="FlashcardRow" Src="~/TableRow.ascx" %>
-<%@ Register TagPrefix="monyk" TagName="EditModal" Src="~/EditModal.ascx" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
@@ -56,8 +55,17 @@
             <p id="fcid"></p>
 
 
-            <monyk:EditModal runat="server" />
-            <button class="btn btn-success">Save</button>
+<%--            <div class="modal-form-group">
+                <label for="txtSourceLanguage" class="modal-label">SOURCE LANGUAGE:</label>
+                <textbox required ></textbox>--%>
+
+                <input runat="server" id="idee" required />
+
+
+<%--            </div>--%>
+
+
+            <asp:Button runat="server" Text="save" />
 
         </div>
     </div>

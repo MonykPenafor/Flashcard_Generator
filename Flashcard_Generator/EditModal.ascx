@@ -1,16 +1,21 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="EditModal.ascx.cs" Inherits="Flashcard_Generator.EditModal" %>
 
 
-    <div class="modal-form">
 
- <%--       <div class="modal-form-group">
+        <div class="modal-form-group">
             <label for="txtSourceLanguage" class="modal-label">SOURCE LANGUAGE:</label>
-            <asp:RequiredFieldValidator ID="rfvSourceLanguage" runat="server" ControlToValidate="txtSourceLanguage" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
-            <asp:TextBox ID="txtSourceLanguage" runat="server" CssClass="modal-form-control" MaxLength="30"></asp:TextBox>
+            <textbox></textbox>
 
-        </div>--%>
+            <input runat="server" id="idee"/>
 
-<%--        <div class="modal-form-group">
+
+        </div>    
+
+   
+<%--     <div class="modal-form">
+
+        
+        <div class="modal-form-group">
             <label for="txtTargetLanguage" class="modal-label">TARGET LANGUAGE:</label>
             <asp:RequiredFieldValidator ID="rfvTargetLanguage" runat="server" ControlToValidate="txtTargetLanguage" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
             <asp:TextBox ID="txtTargetLanguage" runat="server" CssClass="modal-form-control" MaxLength="30"></asp:TextBox>
@@ -41,6 +46,5 @@
                 <asp:ListItem Value="true">Public</asp:ListItem>
                 <asp:ListItem Value="false">Private</asp:ListItem>
             </asp:DropDownList>
-        </div>--%>
+        </div>    </div>--%>
 
-    </div>

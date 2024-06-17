@@ -14,18 +14,22 @@ namespace Flashcard_Generator
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			string source = Request.QueryString["source"];
-			string target = Request.QueryString["target"];
-			string category = Request.QueryString["category"];
-
-			if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(target) && !string.IsNullOrEmpty(category))
+			if (!IsPostBack)
 			{
+				string source = Request.QueryString["source"];
+				string target = Request.QueryString["target"];
+				string category = Request.QueryString["category"];
 
-				User user = (User)Session["LoggedInUser"];
-				string username = user.Username;
+				if (!string.IsNullOrEmpty(source) && !string.IsNullOrEmpty(target) && !string.IsNullOrEmpty(category))
+				{
 
-				LoadFlashcardsByLanguagesAndCategory(source, target, category, username, true);
+					User user = (User)Session["LoggedInUser"];
+					string username = user.Username;
+
+					LoadFlashcardsByLanguagesAndCategory(source, target, category, username, true);
+				}
 			}
+
 		}
 
 		private void LoadFlashcardsByLanguagesAndCategory(string source, string target, string category, string username, bool isOwner)
@@ -47,19 +51,13 @@ namespace Flashcard_Generator
 		//}
 
 
-		//[WebMethod(EnableSession = true)]
-		//public static string DeleteFlashcard(int flashcardId)
-		//{
-		//	// Check if the user is authenticated
-		//	if (HttpContext.Current.Session["LoggedUser"] == null)
-		//	{
-		//		HttpContext.Current.Response.StatusCode = 401;
-		//		return "Unauthorized";
-		//	}
+		[WebMethod]
+		public static string DeleteFlashcard(int flashcardId)
+		{
 
-		//	FlashcardServices flashcardServices = new FlashcardServices();
-		//	return flashcardServices.DeleteFlashcard(flashcardId);
-		//}
+			FlashcardServices flashcardServices = new FlashcardServices();
+			return flashcardServices.DeleteFlashcard(flashcardId);
+		}
 
 	}
 }

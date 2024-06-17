@@ -1,8 +1,8 @@
 ﻿
-function deleteFlashcard(flashcardId) {
-    document.getElementById('<%= hfFlashcardId.ClientID %>').value = flashcardId;
-    document.getElementById('<%= btnDeleteHidden.ClientID %>').click();
-}
+//function deleteFlashcard(flashcardId) {
+//    document.getElementById('<%= hfFlashcardId.ClientID %>').value = flashcardId;
+//    document.getElementById('<%= btnDeleteHidden.ClientID %>').click();
+//}
 
 
 function showModal(id) {
@@ -13,13 +13,10 @@ function showModal(id) {
 }
 
 
-
 function closeModal() {
     document.getElementById('editModal').style.display = 'none';
     return false; // Prevent default action of the event
 }
-
-
 
 
 //function saveChanges() {
@@ -48,24 +45,21 @@ function closeModal() {
 //}
 
 
-//function deleteFlashcard(flashcardId) {
-//    $.ajax({
-//        type: "POST",
-//        url: "UserFlashcardsDisplay.aspx/DeleteFlashcard",
-//        data: JSON.stringify({ flashcardId: flashcardId }),
-//        contentType: "application/json; charset=utf-8",
-//        dataType: "json",
-//        headers: {
-//            'Authorization': 'Bearer ' + '<%= Session.SessionID %>'
-//        },
-//        success: function (response) {
-//            alert("Success: " + response.d);
-//        },
-//        error: function (xhr, status, error) {
-//            console.error("Error deleting flashcard: " + xhr.responseText);
-//            if (xhr.status === 401) {
-//                alert("Unauthorized access. Please log in.");
-//            }
-//        }
-//    });
-//}
+function deleteFlashcard(flashcardId) {
+    $.ajax({
+        type: "POST",
+        url: "UserFlashcardsDisplay.aspx/DeleteFlashcard",
+        data: JSON.stringify({ flashcardId: flashcardId }),
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (response) {
+            alert("Success: " + response.d);
+        },
+        error: function (xhr, status, error) {
+            console.error("Error deleting flashcard: " + xhr.responseText);
+            if (xhr.status === 401) {
+                alert("Unauthorized access. Please log in.");
+            }
+        }
+    });
+}

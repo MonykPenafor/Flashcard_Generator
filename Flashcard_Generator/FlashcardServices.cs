@@ -97,8 +97,66 @@ namespace Flashcard_Generator
 
 		public Flashcard GetFlashcard(int flashcardID)
 		{
-			return null;
+			UserServices userServices = new UserServices();
+
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+
+				string query = @"SELECT u.username, f.source_language, f.target_language, f.category, f.word_source, f.word_target, f.example_sentence_source, f.example_sentence_target, f.pronunciation,f.tips,f.proficiency, f.is_public	FROM FLASHCARDS f, users u WHERE f.id_user = u.id_user AND f.id_flashcard = @flashcardId";
+
+				con.Open();
+
+				using (SqlCommand cmd = new SqlCommand(query, con))
+				{
+					cmd.Parameters.AddWithValue("@flashcardId", flashcardID);
+
+					try
+					{
+						using (SqlDataReader reader = cmd.ExecuteReader())
+						{
+							if (reader.Read())
+							{
+								string username = reader.GetString(0);
+								User user = userServices.GetUserByUsernameOrEmail(username);
+
+								var flashcard = new Flashcard(
+									user,
+									reader.GetString(1),  // SourceLanguage
+									reader.GetString(2),  // TargetLanguage
+									reader.GetString(3),  // Category
+									reader.GetString(4),  // WordSource
+									reader.GetString(5),  // WordTarget
+									reader.GetString(6),  // ExampleSentenceSource
+									reader.GetString(7),  // ExampleSentenceTarget
+									reader.IsDBNull(8) ? null : reader.GetString(8),  // Pronunciation
+									reader.IsDBNull(9) ? null : reader.GetString(9),  // Tips
+									reader.IsDBNull(10) ? null : reader.GetString(10),  // Proficiency
+									reader.GetBoolean(11)  // IsPublic
+								);
+								return flashcard;
+							}
+							else
+							{
+								Console.WriteLine("Nenhuma linha retornada pela consulta.");
+								return null; // Ou outra ação apropriada se nenhum resultado for encontrado
+							}
+						}
+					}
+					catch (SqlException ex)
+					{
+						Console.WriteLine($"SQL Error: {ex.Message}");
+						return null;
+					}
+					catch (Exception ex)
+					{
+						Console.WriteLine($"Error: {ex.Message}");
+						return null;
+					}
+				}
+			}
 		}
+
+
 
 
 
