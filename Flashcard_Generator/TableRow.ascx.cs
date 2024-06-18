@@ -22,8 +22,6 @@ namespace Flashcard_Generator
 
 
 
-
-
 		protected void btnEditFlashcard_Click(object sender, EventArgs e)
 		{
 
@@ -45,6 +43,7 @@ namespace Flashcard_Generator
 			{
 				Console.WriteLine(deleted);
 			}
+
 			else
 			{
 				string source = Request.QueryString["source"];

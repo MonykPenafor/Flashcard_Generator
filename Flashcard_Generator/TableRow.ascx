@@ -7,21 +7,17 @@
 <td class="flashcad-table-row-cell"><%= FlashcardTableRow.Proficiency %></td>
 
 
-<td class="flashcad-table-row-cell"><button runat="server" type="button" onclick="deleteFlashcard">delete</button></td>
-<td class="flashcad-table-row-cell"><button type="button" onclick='showModal(<%# FlashcardTableRow.Id %>)'>edit</button></td>
+<td class="flashcad-table-row-cell"><button runat="server" type="button" class="td-icon" onclick="deleteFlashcard()"><img src="assets/icons/bin.png" alt="delete"/></button></td>
+<td class="flashcad-table-row-cell"><button type="button" class="td-icon" onclick='showModal(<%# FlashcardTableRow.Id %>)'><img src="assets/icons/edit.png" alt="edit"/></button></td>
 
 
 <input type="hidden" value='<%# FlashcardTableRow.Id %>' id="fcid" runat="server"/>
-<span hidden="hidden"><button type="button" runat="server" id="btnfcid" onclick="btnDeleteFlashcard_Click"></button></span>
 
-
+<span><button visible="false" type="button" runat="server" class="btnfcidDelete" onserverclick="btnDeleteFlashcard_Click"></button></span>
+<span><button visible="false" type="button" runat="server" class="btnfcidEdit" onserverclick="btnEditFlashcard_Click"></button></span>
 
 
 <%-- 
-
-
-
-
 
 
 

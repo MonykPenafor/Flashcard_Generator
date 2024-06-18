@@ -14,8 +14,6 @@ namespace Flashcard_Generator
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-			if (!IsPostBack)
-			{
 				string source = Request.QueryString["source"];
 				string target = Request.QueryString["target"];
 				string category = Request.QueryString["category"];
@@ -28,8 +26,6 @@ namespace Flashcard_Generator
 
 					LoadFlashcardsByLanguagesAndCategory(source, target, category, username, true);
 				}
-			}
-
 		}
 
 		private void LoadFlashcardsByLanguagesAndCategory(string source, string target, string category, string username, bool isOwner)
@@ -40,6 +36,7 @@ namespace Flashcard_Generator
 			rptrFlashcardList.DataSource = flashcards;
 			rptrFlashcardList.DataBind();
 		}
+
 
 
 

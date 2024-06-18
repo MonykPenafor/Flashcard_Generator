@@ -207,12 +207,22 @@ div.flashcard-group-container .btn-flashcard-group {
     }
 
     .flashcad-table-row-cell .td-icon {
-        width: 15px;
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        /*width: 15px;
         height: 15px;
         max-width: 30px;
         display: flex;
-        cursor: pointer;
+        cursor: pointer;*/
     }
+
+        .flashcad-table-row-cell .td-icon img {
+            width: 17px;
+            height: 17px;
+        }
 
 
 
@@ -255,7 +265,7 @@ div.flashcard-group-container .btn-flashcard-group {
     }
 
 .modal-form-group {
-    margin:5px;
+    margin: 5px;
     display: inline-grid;
 }
 
@@ -268,6 +278,6 @@ div.flashcard-group-container .btn-flashcard-group {
     height: 30px;
 }
 
-.modal-form{
-display: inline-block;
+.modal-form {
+    display: inline-block;
 }
