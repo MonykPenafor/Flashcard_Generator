@@ -6,7 +6,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <h3>FLASHCARDS CREATED SO FAR:</h3>
-        <h4><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
+        <h4 id="selectedFC"><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
 
         <asp:Repeater runat="server" ID="rptrFlashcardList">
             <HeaderTemplate>
@@ -22,7 +22,7 @@
             </HeaderTemplate>
 
             <ItemTemplate>
-                <tr class="flashcad-table-row">
+                <tr class="flashcad-table-row" visible="false">
                     <monyk:FlashcardRow runat="server" Visible="true" FlashcardTableRow="<%#Container.DataItem %>" />
                 </tr>
             </ItemTemplate>
@@ -38,36 +38,30 @@
 
     </div>
 
-    <div>
-        <asp:Button ID="btnClickMe" runat="server" Text="Click Me" />
-        <asp:Label ID="lblMessage" runat="server" Text="Hello, world!"></asp:Label>
-    </div>
-
 
     <!-- Modal Structure -->
     <div id="editModal" class="modal">
         <div class="modal-content">
-            <span>
-                <button type="button" class="close" onclick="closeModal()">&times;</button></span>
+            <span><button type="button" class="close" onclick="closeModal()">&times;</button></span>
 
             <p id="fcidModal"></p>
 
             <h2>Edit Flashcard</h2>
 
-            <label for="wsource">Vocabulary:</label>
-            <input type="text" id="wsource" name="wsource" />
-
-            <label for="wtarget">Vocabulary Translation:</label>
+            <label for="wtarget">Vocabulary:</label>
             <input type="text" id="wtarget" name="wtarget" />
 
-            <label for="esource">Usage:</label>
-            <input type="text" id="esource" name="esource" />
+            <label for="wsource">Vocabulary Translation:</label>
+            <input type="text" id="wsource" name="wsource" />
+
+            <label for="etarget">Usage:</label>
+            <input type="text" id="etarget" name="etarget" />
 
             <label for="pron">Pronunciation:</label>
             <input type="text" id="pron" name="pron" />
 
-            <label for="etarget">Usage Translation:</label>
-            <input type="text" id="etarget" name="etarget" />
+            <label for="esource">Usage Translation:</label>
+            <input type="text" id="esource" name="esource" />
 
             <label for="tips">Tips:</label>
             <input type="text" id="tips" name="tips" />
@@ -76,15 +70,9 @@
             <input type="text" id="level" name="level" />
 
             <button class="btn btn-success">Save</button>
+            <asp:Button runat="server"/>
 
         </div>
     </div>
-
-
-
-    <script type="text/javascript">
-        var btnClickMeId = '<%= btnClickMe.ClientID %>';
-        var lblMessageId = '<%= lblMessage.ClientID %>';
-</script>
 
 </asp:Content>

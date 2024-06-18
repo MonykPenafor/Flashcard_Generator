@@ -20,39 +20,5 @@ namespace Flashcard_Generator
 		}
 
 
-
-
-		protected void btnEditFlashcard_Click(object sender, EventArgs e)
-		{
-
-			int flashcardId = Convert.ToInt32(fcid.Value);
-
-			//string script = $"<script>showModal({flashcardId});</script>";
-			//ScriptManager.RegisterStartupScript(this, GetType(), "showEditModal", script, false);
-		}
-
-
-
-		protected void btnDeleteFlashcard_Click(object sender, EventArgs e)
-		{
-
-			int flashcardId = Convert.ToInt32(fcid.Value);
-			string deleted = flashcardServices.DeleteFlashcard(flashcardId);
-
-			if (deleted != "ok!")
-			{
-				Console.WriteLine(deleted);
-			}
-
-			else
-			{
-				string source = Request.QueryString["source"];
-				string target = Request.QueryString["target"];
-				string category = Request.QueryString["category"];
-
-				Response.Redirect($"UserFlashcardsDisplay.aspx?source={source}&target={target}&category={category}");
-			}
-		}
-
 	}
 }

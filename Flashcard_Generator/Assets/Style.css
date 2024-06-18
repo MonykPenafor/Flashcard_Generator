@@ -230,7 +230,7 @@ div.flashcard-group-container .btn-flashcard-group {
 .modal {
     display: none;
     position: fixed;
-    z-index: 1000;
+    z-index: 1;
     left: 0;
     top: 0;
     width: 100%;
@@ -242,7 +242,7 @@ div.flashcard-group-container .btn-flashcard-group {
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 70%;

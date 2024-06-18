@@ -12,6 +12,7 @@ namespace Flashcard_Generator
 {
 	public partial class UserFlashcardsDisplay : Page
 	{
+
 		protected void Page_Load(object sender, EventArgs e)
 		{
 				string source = Request.QueryString["source"];
@@ -38,21 +39,15 @@ namespace Flashcard_Generator
 		}
 
 
+
 		[WebMethod]
 		public static string DeleteFlashcard(int flashcardId)
 		{
 			FlashcardServices flashcardService = new FlashcardServices();
 			return flashcardService.DeleteFlashcard(flashcardId);
+
+
 		}
-
-
-		[WebMethod]
-		public static string GetServerTime()
-		{
-			return "Current server time is: " + DateTime.Now.ToString();
-		}
-
-
 
 
 
