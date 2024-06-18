@@ -38,6 +38,24 @@ namespace Flashcard_Generator
 		}
 
 
+		[WebMethod]
+		public static string DeleteFlashcard(int flashcardId)
+		{
+			FlashcardServices flashcardService = new FlashcardServices();
+			return flashcardService.DeleteFlashcard(flashcardId);
+		}
+
+
+		[WebMethod]
+		public static string GetServerTime()
+		{
+			return "Current server time is: " + DateTime.Now.ToString();
+		}
+
+
+
+
+
 
 
 	}
