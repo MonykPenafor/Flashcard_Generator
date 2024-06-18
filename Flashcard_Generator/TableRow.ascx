@@ -7,10 +7,12 @@
 <td class="flashcad-table-row-cell"><%= FlashcardTableRow.Proficiency %></td>
 
 
+<td class="flashcad-table-row-cell"><button runat="server" type="button" onclick="deleteFlashcard">delete</button></td>
+<td class="flashcad-table-row-cell"><button type="button" onclick='showModal(<%# FlashcardTableRow.Id %>)'>edit</button></td>
 
 
-
-
+<input type="hidden" value='<%# FlashcardTableRow.Id %>' id="fcid" runat="server"/>
+<span hidden="hidden"><button type="button" runat="server" id="btnfcid" onclick="btnDeleteFlashcard_Click"></button></span>
 
 
 
@@ -23,7 +25,7 @@
 
 
 
-<td class="flashcad-table-row-cell"><asp:LinkButton runat="server" type="button" CommandArgument='<%# FlashcardTableRow.Id %>' OnClick="btnEditFlashcard_Click" CssClass="td-icon"><img src="assets/icons/edit.png" alt="edit"/></asp:LinkButton></td>
+<td ><asp:LinkButton runat="server" type="button" CommandArgument='<%# FlashcardTableRow.Id %>' OnClick="btnEditFlashcard_Click" CssClass="td-icon"><img src="assets/icons/edit.png" alt="edit"/></asp:LinkButton></td>
 <td class="flashcad-table-row-cell"><asp:LinkButton runat="server" CommandArgument='<%# FlashcardTableRow.Id %>' OnClick="btnDeleteFlashcard_Click" CssClass="td-icon"><img src="assets/icons/bin.png" alt="delete"/></asp:LinkButton></td>
 
 <input type="hidden" value='<%# FlashcardTableRow.Id %>' id="ide" runat="server"/>

@@ -27,19 +27,18 @@ namespace Flashcard_Generator
 		protected void btnEditFlashcard_Click(object sender, EventArgs e)
 		{
 
-			LinkButton btn = sender as LinkButton;
-			int flashcardId = Convert.ToInt32(btn.CommandArgument);
+			int flashcardId = Convert.ToInt32(fcid.Value);
 
-			string script = $"<script>showModal({flashcardId});</script>";
-			ScriptManager.RegisterStartupScript(this, GetType(), "showEditModal", script, false);
+			//string script = $"<script>showModal({flashcardId});</script>";
+			//ScriptManager.RegisterStartupScript(this, GetType(), "showEditModal", script, false);
 		}
 
 
 
 		protected void btnDeleteFlashcard_Click(object sender, EventArgs e)
 		{
-			LinkButton btn = sender as LinkButton;
-			int flashcardId = Convert.ToInt32(btn.CommandArgument);
+
+			int flashcardId = Convert.ToInt32(fcid.Value);
 			string deleted = flashcardServices.DeleteFlashcard(flashcardId);
 
 			if (deleted != "ok!")
@@ -53,7 +52,6 @@ namespace Flashcard_Generator
 				string category = Request.QueryString["category"];
 
 				Response.Redirect($"UserFlashcardsDisplay.aspx?source={source}&target={target}&category={category}");
-
 			}
 		}
 

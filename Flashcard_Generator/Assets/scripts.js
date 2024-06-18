@@ -1,10 +1,12 @@
 ﻿
 function showModal(id) {
-    var paragraph = document.getElementById('fcid');
-    paragraph.innerText = id;
+    var p = document.getElementById('fcid');
+    p.innerText = id;
 
     document.getElementById('editModal').style.display = 'block';
+    return false;
 }
+
 
 
 function closeModal() {
@@ -12,3 +14,8 @@ function closeModal() {
     return false; // Prevent default action of the event
 }
 
+
+function deleteFlashcard() {
+    var btn = document.getElementById('btnfcid');
+    btn.click;
+}

@@ -13,5 +13,23 @@ namespace Flashcard_Generator
 
 	public partial class TableRow
 	{
+
+		/// <summary>
+		/// fcid control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlInputHidden fcid;
+
+		/// <summary>
+		/// btnfcid control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.HtmlControls.HtmlButton btnfcid;
 	}
 }
