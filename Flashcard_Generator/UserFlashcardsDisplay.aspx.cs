@@ -51,6 +51,15 @@ namespace Flashcard_Generator
 
 
 
+		[WebMethod]
+		public static string UpdateFlashcard(int flashcardId, )
+		{
+			FlashcardServices flashcardService = new FlashcardServices();
+			return flashcardService.UpdateFlashcard(flashcardId);
+
+		}
+
+
 
 
 	}

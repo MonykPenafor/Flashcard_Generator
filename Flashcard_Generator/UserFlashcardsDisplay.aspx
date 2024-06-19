@@ -44,9 +44,8 @@
         <div class="modal-content">
             <span><button type="button" class="close" onclick="closeModal()">&times;</button></span>
 
-            <p id="fcidModal"></p>
-
             <h2>Edit Flashcard</h2>
+            <p id="fcidModal"></p>
 
             <label for="wtarget">Vocabulary:</label>
             <input type="text" id="wtarget" name="wtarget" />
@@ -70,7 +69,6 @@
             <input type="text" id="level" name="level" />
 
             <button class="btn btn-success">Save</button>
-            <asp:Button runat="server"/>
 
         </div>
     </div>
