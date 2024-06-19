@@ -90,8 +90,22 @@ namespace Flashcard_Generator
 			}
 		}
 
-		public string UpdateFlashcard(int flashcard)
+		public string UpdateFlashcard(int id, string wtarget, string wsource, string etarget, string pron, string esource, string tips, string level)
 		{
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			return "hay";
 		}
 

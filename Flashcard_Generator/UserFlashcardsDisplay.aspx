@@ -42,16 +42,48 @@
     <!-- Modal Structure -->
     <div id="editModal" class="modal">
         <div class="modal-content">
-            <span><button type="button" class="close" onclick="closeModal()">&times;</button></span>
+            <span>
+                <button type="button" class="close" onclick="closeModal()">&times;</button></span>
 
             <h2>Edit Flashcard</h2>
             <p id="fcidModal"></p>
 
-            <label for="wtarget">Vocabulary:</label>
-            <input type="text" id="wtarget" name="wtarget" />
+            <div class="row">
+                <div class="col">
+                    <label for="wtarget">Vocabulary:</label>
+                    <input type="text" id="wtarget" name="wtarget" class="edit-1-row" />
+                </div>
+                <div class="col">
+                    <label for="wsource">Vocabulary Translation:</label>
+                    <input type="text" id="wsource" name="wsource" class="edit-1-row" />
+                </div>
+                <div class="col">
 
-            <label for="wsource">Vocabulary Translation:</label>
-            <input type="text" id="wsource" name="wsource" />
+                    <label for="level">Level:</label>
+                    <select id="level" name="level" class="edit-1-row">
+                        <option value="--">--</option>
+                        <option value="A1">A1</option>
+                        <option value="A2">A2</option>
+                        <option value="B1">B1</option>
+                        <option value="B2">B2</option>
+                        <option value="C1">C1</option>
+                        <option value="C2">C2</option>
+                    </select>
+
+
+                </div>
+                <div class="col">
+
+                    <label for="isPublic">Visibility:</label>
+                    <select id="isPublic" name="isPublic" class="edit-1-row">
+                        <option value="true">Public</option>
+                        <option value="flase">Private</option>
+                    </select>
+
+                </div>
+            </div>
+
+
 
             <label for="etarget">Usage:</label>
             <input type="text" id="etarget" name="etarget" />
@@ -65,10 +97,10 @@
             <label for="tips">Tips:</label>
             <input type="text" id="tips" name="tips" />
 
-            <label for="level">Level:</label>
-            <input type="text" id="level" name="level" />
+            <br />
+            <br />
 
-            <button class="btn btn-success">Save</button>
+            <button class="btn btn-success btn-sm" onclick="saveChanges()">Save</button>
 
         </div>
     </div>

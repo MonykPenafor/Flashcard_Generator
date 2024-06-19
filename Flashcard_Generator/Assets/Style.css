@@ -281,3 +281,8 @@ div.flashcard-group-container .btn-flashcard-group {
 .modal-form {
     display: inline-block;
 }
+
+.edit-1-row {
+    width: 100%;
+    height: 30px;
+}

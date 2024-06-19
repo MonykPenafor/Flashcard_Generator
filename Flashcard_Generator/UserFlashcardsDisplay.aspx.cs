@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -52,10 +53,21 @@ namespace Flashcard_Generator
 
 
 		[WebMethod]
-		public static string UpdateFlashcard(int flashcardId, )
+		public static string UpdateFlashcard(string jsonData)
 		{
+			var data = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonData);
+
+			int id = Convert.ToInt32(data["id"]);
+			string wtarget = data["wtarget"];
+			string wsource = data["wsource"];
+			string etarget = data["etarget"];
+			string pron = data["pron"];
+			string esource = data["esource"];
+			string tips = data["tips"];
+			string level = data["level"];
+
 			FlashcardServices flashcardService = new FlashcardServices();
-			return flashcardService.UpdateFlashcard(flashcardId);
+			return flashcardService.UpdateFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level);
 
 		}
 
