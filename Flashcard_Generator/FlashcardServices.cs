@@ -92,21 +92,43 @@ namespace Flashcard_Generator
 
 		public string UpdateFlashcard(int id, string wtarget, string wsource, string etarget, string pron, string esource, string tips, string level)
 		{
+			using (SqlConnection con = new SqlConnection(connectionString))
+			{
+				con.Open();
+
+				{
+					string query = "UPDATE Flashcards SET word_source = @wsource, word_target = @wtarget, example_sentence_source = @esource, example_sentence_target = @etarget, pronunciation = @pron, tips = @tips, proficiency = @level WHERE id_flashcard = @id";
+					using (SqlCommand cmd = new SqlCommand(query, con))
+					{
+						cmd.Parameters.AddWithValue("@id", id);
+						cmd.Parameters.AddWithValue("@wsource", wsource);
+						cmd.Parameters.AddWithValue("@wtarget", wtarget);
+						cmd.Parameters.AddWithValue("@esource", esource);
+						cmd.Parameters.AddWithValue("@etarget", etarget);
+						cmd.Parameters.AddWithValue("@pron", pron);
+						cmd.Parameters.AddWithValue("@tips", tips);
+						cmd.Parameters.AddWithValue("@level", level);
 
 
+						try
+						{
+							cmd.ExecuteNonQuery();
+							return "ok";
+						}
+						catch (SqlException ex)
+						{
+							return $"Failed!: {ex}";
+						}
+						catch (Exception ex)
+						{
 
+							return $"Failed!: {ex}";
+						}
+					}
+				}
 
+			}
 
-
-
-
-
-
-
-
-
-
-			return "hay";
 		}
 
 		public Flashcard GetFlashcard(int flashcardID)

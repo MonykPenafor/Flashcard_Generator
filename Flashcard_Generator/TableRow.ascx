@@ -6,18 +6,17 @@
 <td class="flashcad-table-row-cell"><%= FlashcardTableRow.Tips %></td>
 <td class="flashcad-table-row-cell"><%= FlashcardTableRow.Proficiency %></td>
 
-
 <td class="flashcad-table-row-cell"><button class="td-icon" onclick='deleteFlashcard(<%# FlashcardTableRow.Id %>)'><img src="assets/icons/bin.png" alt="delete"/></button></td>
 <td class="flashcad-table-row-cell"><button type="button" class="td-icon" 
 onclick='showModal(
 
-<%# FlashcardTableRow.Id %>, 
-"<%= FlashcardTableRow.WordTarget %>", 
-"<%= FlashcardTableRow.WordSource %>", 
-"<%= FlashcardTableRow.ExampleSentenceTarget %>", 
-"<%= FlashcardTableRow.Pronunciation %>", 
-"<%= FlashcardTableRow.ExampleSentenceSource %>", 
-"<%= FlashcardTableRow.Tips %>", 
-"<%= FlashcardTableRow.Proficiency %>"       )'><img src="assets/icons/edit.png" alt="edit"/></button></td>
+    <%# FlashcardTableRow.Id %>, 
+"<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.WordTarget) %>", 
+"<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.WordSource) %>", 
+"<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.ExampleSentenceTarget) %>", 
+"<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.Pronunciation) %>", 
+"<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.ExampleSentenceSource) %>", 
+"<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.Tips)  %>", 
+"<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.Proficiency) %>"       )'><img src="assets/icons/edit.png" alt="edit"/></button></td>
 
 

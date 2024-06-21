@@ -50,27 +50,12 @@ namespace Flashcard_Generator
 
 		}
 
-
-
 		[WebMethod]
-		public static string UpdateFlashcard(string jsonData)
+		public static string UpdateFlashcard(int id, string wtarget, string wsource, string etarget, string pron, string esource, string tips, string level)
 		{
-			var data = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonData);
-
-			int id = Convert.ToInt32(data["id"]);
-			string wtarget = data["wtarget"];
-			string wsource = data["wsource"];
-			string etarget = data["etarget"];
-			string pron = data["pron"];
-			string esource = data["esource"];
-			string tips = data["tips"];
-			string level = data["level"];
-
 			FlashcardServices flashcardService = new FlashcardServices();
 			return flashcardService.UpdateFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level);
-
 		}
-
 
 
 

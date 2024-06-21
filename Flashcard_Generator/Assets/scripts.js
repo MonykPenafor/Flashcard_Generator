@@ -1,14 +1,14 @@
 ﻿
 function showModal(id, wtarget, wsource, etarget, pron, esource, tips, level) {
 
-    $('#fcidModal').text(id);
-    $('#wtarget').val(wtarget);
-    $('#wsource').val(wsource);
-    $('#etarget').val(etarget);
-    $('#pron').val(pron);
-    $('#esource').val(esource);
-    $('#tips').val(tips);
-    $('#level').val(level);
+    $("#fcidModal").text(id);
+    $("#wtarget").val(wtarget);
+    $("#wsource").val(wsource);
+    $("#etarget").val(etarget);
+    $("#pron").val(pron);
+    $("#esource").val(esource);
+    $("#tips").val(tips);
+    $("#level").val(level);
 
     document.getElementById('editModal').style.display = 'block';
     return false;
@@ -22,7 +22,6 @@ function closeModal() {
 
 
 function saveChanges() {
-
     var id = $('#fcidModal').text();
     var wtarget = $('#wtarget').val();
     var wsource = $('#wsource').val();
@@ -32,8 +31,8 @@ function saveChanges() {
     var tips = $('#tips').val();
     var level = $('#level').val();
 
-    // Chamar editFlashcard com os valores coletados
     editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level);
+
 }
 
 
@@ -54,7 +53,10 @@ function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (response) {
+            updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level);
             alert("Success: " + response.d);
+
+            closeModal();
         },
         error: function (xhr, status, error) {
             console.error("Error updating flashcard: " + xhr.responseText);
@@ -62,6 +64,16 @@ function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level
     });
 }
 
+
+function updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level) {
+    var rowId = 'Row' + id;
+    var row = $("#" + rowId);
+
+    row.find(".flashcad-table-row-cell").eq(0).html(wtarget + "<br />" + wsource);
+    row.find(".flashcad-table-row-cell").eq(1).html(etarget + "<br />" + pron + "<br />" + esource);
+    row.find(".flashcad-table-row-cell").eq(2).text(tips);
+    row.find(".flashcad-table-row-cell").eq(3).text(level);
+}
 
 
 
