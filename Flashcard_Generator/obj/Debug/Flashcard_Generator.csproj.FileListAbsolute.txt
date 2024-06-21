@@ -164,3 +164,7 @@ C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard
 C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcar.D51893F0.Up2Date
 C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.dll
 C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.pdb
+C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BouncyCastle.Cryptography.dll
+C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\itextsharp.dll
+C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BouncyCastle.Cryptography.xml
+C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\itextsharp.xml

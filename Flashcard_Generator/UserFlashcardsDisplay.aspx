@@ -12,7 +12,7 @@
                 <h4 id="selectedFC"><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
             </div>
             <div class="col-2">
-                <button type="button">PDF</button></div>
+                <button type="button" runat="server" onserverclick="GeneratePDF">PDF</button></div>
 
         </div>
         <asp:Repeater runat="server" ID="rptrFlashcardList">
