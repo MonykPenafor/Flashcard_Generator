@@ -2,11 +2,38 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <div class="container">
+    <div class="container" style="display: grid">
+
+        <div id="toast">Text copied to clipboard!</div>
 
         <h3>HOW TO CREATE THE FLASHCARDS:</h3>
 
-        <p>- FILL THE BOXES LIKE IN THE EXAMPLE... </p>
+        <br />
+
+        <h4>Here you can create many flashcards from the same group at once, they will share the Group Title, Languages, Level and Privacy Setting.</h4>
+
+        <br />
+        <p class="instructions">
+            - Write the data between "" (quotation marks) and separate each flashcard data with ; (semicolon)
+        <br />
+            - DO NOT end the phrase with ';', use it only to separate
+        <br />
+            - Don't write sentences that are too long, otherwise they will not fit in the flashcard if you want to print them later
+        <br />
+            - Look at the placeholders for a better understanding
+        </p>
+
+        <br />
+
+        <div style="display: flex; align-items: center;">
+            <p style="font-size: 17px; margin: 0;">You can use this snippet on Chat GPT to help you create flashcards, change the languages, level and topic at the start of the snippet to your liking. :)</p>
+            <button type="button" onclick="copyToClipboard()" class="td-icon">
+                <img src="Assets/Icons/copy.png" /></button>
+        </div>
+
+        <br />
+        <br />
+
 
         <div class="form-group">
 
@@ -59,7 +86,7 @@
         </div>
 
         <br />
-
+        <%--
         <div class="form-group label-memo">
             <label for="txtVocabularyTarget" class="flashcard-label">VOCABULARY:</label>
             <asp:RequiredFieldValidator ID="rfvVocabularyTarget" runat="server" ControlToValidate="txtVocabularyTarget" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
@@ -94,19 +121,60 @@
             <asp:TextBox ID="txtTranslation" runat="server" CssClass="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
                 TextMode="MultiLine" placeholder='"I eat an apple"; "He drinks coffee"; "She watches a movie"'></asp:TextBox>
         </div>
-
+        
         <div class="form-group label-memo">
             <label for="txtTip" class="flashcard-label">TIPS:</label>
             <asp:RequiredFieldValidator ID="rfvTip" runat="server" ControlToValidate="txtTip" ErrorMessage="required" CssClass="text-danger" Display="Dynamic" />
             <asp:TextBox ID="txtTip" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox"
                 TextMode="MultiLine" placeholder='"食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences."; "飲む: Remember to use the correct context; can also mean to take (medicine)."; "見る: Can be used for watching, seeing, or looking. Usage depends on context."'></asp:TextBox>
+        </div>--%>
+
+        <div class="form-group label-memo">
+            <label for="txtVocabularyTarget" class="flashcard-label">VOCABULARY:</label>
+            <textarea id="txtVocabularyTarget" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
+                placeholder='"食べる"; "飲む"; "見る"' rows="4"></textarea>
         </div>
 
-        <asp:Label ID="lblMessage" runat="server" Text="" CssClass="error-message" />
+        <div class="form-group label-memo">
+            <label for="txtVocabularySource" class="flashcard-label">VOCABULARY TRANSLATION:</label>
+            <textarea id="txtVocabularySource" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
+                placeholder='"to eat"; "to drink"; "to watch"' rows="4"></textarea>
+        </div>
 
+        <div class="form-group label-memo">
+            <label for="txtWordOrPhrase" class="flashcard-label">EXAMPLE SENTENCE:</label>
+            <textarea id="txtWordOrPhrase" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
+                placeholder='"私はりんごを食べる"; "彼はコーヒーを飲む"; "彼女は映画を見る"' rows="4"></textarea>
+        </div>
+
+        <div class="form-group label-memo">
+            <label for="txtSimplified" class="flashcard-label">PRONUNCIATION / SIMPLIFICATION:</label>
+            <textarea id="txtSimplified" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
+                placeholder='"わたしはりんごをたべる"; "かれはコーヒーをのむ"; "かのじょはえいがをみる"' rows="4"></textarea>
+        </div>
+
+        <div class="form-group label-memo">
+            <label for="txtTranslation" class="flashcard-label">EXAMPLE SENTENCE TRANSLATION:</label>
+            <textarea id="txtTranslation" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
+                placeholder='"I eat an apple"; "He drinks coffee"; "She watches a movie"' rows="4"></textarea>
+        </div>
+
+        <div class="form-group label-memo">
+            <label for="txtTip" class="flashcard-label">TIPS:</label>
+            <textarea id="txtTip" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
+                placeholder='"食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences.";"飲む: Remember to use the correct context; can also mean to take (medicine)."; "見る: Can be used for watching, seeing, or looking. Usage depends on context."'
+                rows="4"></textarea>
+        </div>
+
+        <asp:Label ID="lblMessage" runat="server" Text="" CssClass="error-message" /><br />
         <br />
 
-        <asp:Button ID="btnCreateFlashcards" runat="server" Text="CREATE" CssClass="btn btn-danger btn-center" OnClick="btnCreateFlashcards_Click" />
+        <span style="justify-self: center">
+            <asp:Button ID="btnCreateFlashcards" runat="server" Text="CREATE" CssClass="btn btn-danger btn-center fw-bold" OnClick="btnCreateFlashcards_Click" />
+        </span>
+        <br />
+        <br />
+
 
     </div>
 </asp:Content>

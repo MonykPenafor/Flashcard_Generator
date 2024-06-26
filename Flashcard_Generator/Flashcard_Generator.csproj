@@ -157,6 +157,7 @@
     <Content Include="Assets\Icons\writing.png" />
     <Content Include="Assets\scripts.js" />
     <Content Include="Assets\Style.css" />
+    <Content Include="Assets\text.js" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />

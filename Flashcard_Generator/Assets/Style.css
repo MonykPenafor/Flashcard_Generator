@@ -254,7 +254,7 @@ div.flashcard-group-container .btn-flashcard-group {
         display: none;
     }
 
-    .flashcad-table-row-cell .td-icon {
+    .flashcad-table-row-cell .td-icon, .td-icon {
         display: flex;
         cursor: pointer;
         align-items: center;
@@ -267,7 +267,7 @@ div.flashcard-group-container .btn-flashcard-group {
         cursor: pointer;*/
     }
 
-        .flashcad-table-row-cell .td-icon img {
+        .flashcad-table-row-cell .td-icon img, .td-icon img {
             width: 17px;
             height: 17px;
         }
@@ -333,4 +333,86 @@ div.flashcard-group-container .btn-flashcard-group {
 .edit-1-row {
     width: 100%;
     height: 30px;
+}
+
+
+
+
+
+
+/* Toast container */
+#toast {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 300px;
+    font-size: 17px;
+}
+
+    /* Show the toast */
+    #toast.show {
+        visibility: visible;
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    }
+
+/* Animations to fade in and out the toast */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 300px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 300px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30p0x;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 300px;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+.instructions{
+    font-size: 20px;
 }

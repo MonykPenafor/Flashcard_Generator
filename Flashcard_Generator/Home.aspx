@@ -15,7 +15,7 @@
                 <h4 class="mon">Welcome to our Flashcard Generator! Our tool helps you create personalized flashcards to enhance your language learning. Whether you're a beginner or advanced learner, our flashcards make studying new vocabulary and phrases easy and effective.</h4>
 
 
-                <img src="Assets/Icons/bin.png" />
+                <img src="Assets/Icons/.png" />
 
             </div>
 

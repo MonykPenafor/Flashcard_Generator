@@ -107,3 +107,20 @@ function deleteFlashcard(flashcardId) {
         }
     });
 }
+
+function copyToClipboard() {
+    navigator.clipboard.writeText(textToCopy).then(function () {
+        console.log('Text copied to clipboard');
+        showToast('Text copied to clipboard!');
+    }).catch(function (error) {
+        console.error('Error copying text: ', error);
+        showToast('Failed to copy text.');
+    });
+}
+
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.className = "show";
+    setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+}
