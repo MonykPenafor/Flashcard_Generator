@@ -105,24 +105,6 @@ namespace Flashcard_Generator
 		protected global::System.Web.UI.WebControls.TextBox txtVocabularyTarget;
 
 		/// <summary>
-		/// rfvWordOrPhrase control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWordOrPhrase;
-
-		/// <summary>
-		/// txtWordOrPhrase control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtWordOrPhrase;
-
-		/// <summary>
 		/// rfvVocabularySource control.
 		/// </summary>
 		/// <remarks>
@@ -141,22 +123,22 @@ namespace Flashcard_Generator
 		protected global::System.Web.UI.WebControls.TextBox txtVocabularySource;
 
 		/// <summary>
-		/// rfvTranslation control.
+		/// rfvWordOrPhrase control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTranslation;
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvWordOrPhrase;
 
 		/// <summary>
-		/// txtTranslation control.
+		/// txtWordOrPhrase control.
 		/// </summary>
 		/// <remarks>
 		/// Auto-generated field.
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox txtTranslation;
+		protected global::System.Web.UI.WebControls.TextBox txtWordOrPhrase;
 
 		/// <summary>
 		/// rfvSimplified control.
@@ -175,6 +157,24 @@ namespace Flashcard_Generator
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.TextBox txtSimplified;
+
+		/// <summary>
+		/// rfvTranslation control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvTranslation;
+
+		/// <summary>
+		/// txtTranslation control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtTranslation;
 
 		/// <summary>
 		/// rfvTip control.

@@ -1,5 +1,8 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -43,5 +46,130 @@ namespace Flashcard_Generator
 			rptrFlashcardList.DataBind();
 		}
 
+
+		protected void GeneratePDF(object sender, EventArgs e)
+		{
+			string source = Request.QueryString["source"];
+			string target = Request.QueryString["target"];
+			string category = Request.QueryString["category"];
+			bool isOwner = false;
+
+			FlashcardServices flashcardServices = new FlashcardServices();
+			List<Flashcard> flashcards = flashcardServices.GetFlashcardsByLanguagesCategoriesAndVisibility(source, target, category, null, isOwner);
+
+			string fontPath = Server.MapPath("~/Assets/NotoSansCJKsc-Regular.otf");
+			BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
+			Font unicodeFont = new Font(bf, 7, Font.NORMAL, BaseColor.BLACK);
+			Font headerFont = new Font(bf, 11, Font.BOLD, BaseColor.BLACK);
+			Font titleFont = new Font(bf, 13, Font.BOLD, BaseColor.BLACK);
+			Font textFont = new Font(bf, 17, Font.NORMAL, BaseColor.BLACK);
+			Font smallFont = new Font(bf, 9, Font.NORMAL, BaseColor.BLACK);
+
+			using (MemoryStream ms = new MemoryStream())
+			{
+				Document document = new Document(PageSize.A4, 5, 5, 10, 10);
+				PdfWriter writer = PdfWriter.GetInstance(document, ms);
+				document.Open();
+
+				PdfPTable table = new PdfPTable(2);
+				table.WidthPercentage = 100;
+				table.SetWidths(new float[] { 1, 1 });
+
+				// Adicionar flashcards lado A
+				for (int i = 0; i < flashcards.Count; i++)
+				{
+					PdfPCell cell = new PdfPCell(CreateFlashcardTable(
+						headerFont, titleFont, textFont, smallFont,
+						flashcards[i].TargetLanguage, flashcards[i].WordTarget,
+						flashcards[i].ExampleSentenceTarget, flashcards[i].Pronunciation, flashcards[i].Proficiency, flashcards[i].Id))
+					{ Border = PdfPCell.NO_BORDER };
+
+					table.AddCell(cell);
+
+					if (i % 2 != 0)
+					{
+						document.Add(table);
+						table = new PdfPTable(2);
+						table.WidthPercentage = 100;
+						table.SetWidths(new float[] { 1, 1 });
+					}
+				}
+
+				if (table.Size > 0)
+				{
+					document.Add(table);
+				}
+
+				document.NewPage();
+
+				// Adicionar flashcards lado B
+				for (int i = 0; i < flashcards.Count; i++)
+				{
+					PdfPCell cell = new PdfPCell(CreateFlashcardTable(
+						headerFont, titleFont, textFont, smallFont,
+						flashcards[i].SourceLanguage, flashcards[(i + 1) % flashcards.Count].WordSource,
+						flashcards[(i + 1) % flashcards.Count].ExampleSentenceSource, flashcards[i].Tips, flashcards[i].Proficiency, flashcards[i].Id))
+					{ Border = PdfPCell.NO_BORDER };
+
+					table.AddCell(cell);
+
+					if (i % 2 != 0)
+					{
+						document.Add(table);
+						table = new PdfPTable(2);
+						table.WidthPercentage = 100;
+						table.SetWidths(new float[] { 1, 1 });
+					}
+				}
+
+				if (table.Size > 0)
+				{
+					document.Add(table);
+				}
+
+				document.Close();
+
+				Response.ContentType = "application/pdf";
+				Response.AddHeader("content-disposition", "attachment;filename=Flashcards.pdf");
+				Response.Cache.SetCacheability(HttpCacheability.NoCache);
+				Response.BinaryWrite(ms.ToArray());
+				Response.End();
+			}
+		}
+
+		private PdfPTable CreateFlashcardTable(Font headerFont, Font titleFont, Font textFont, Font smallFont, string language,
+			string word, string sentence, string additionalInfo, string level, int id)
+		{
+			PdfPTable table = new PdfPTable(1);
+			table.WidthPercentage = 100;
+			table.DefaultCell.Border = PdfPCell.NO_BORDER;
+
+			// Create card container
+			PdfPCell cardContainer = new PdfPCell();
+			cardContainer.BackgroundColor = BaseColor.WHITE;
+			cardContainer.Padding = 10;
+			cardContainer.Border = PdfPCell.BOX;
+			cardContainer.BorderColor = BaseColor.BLACK;
+
+			// Card header
+			PdfPTable headerTable = new PdfPTable(3);
+			headerTable.WidthPercentage = 100;
+			headerTable.SetWidths(new float[] { 1, 4, 1 });
+
+			headerTable.AddCell(new PdfPCell(new Phrase(id.ToString() , headerFont)) { Border = PdfPCell.NO_BORDER, HorizontalAlignment = Element.ALIGN_LEFT });
+			headerTable.AddCell(new PdfPCell(new Phrase(language, headerFont)) { Border = PdfPCell.NO_BORDER, HorizontalAlignment = Element.ALIGN_CENTER });
+			headerTable.AddCell(new PdfPCell(new Phrase(level, headerFont)) { Border = PdfPCell.NO_BORDER, HorizontalAlignment = Element.ALIGN_RIGHT });
+
+			cardContainer.AddElement(headerTable);
+
+			// Card body
+			cardContainer.AddElement(new Phrase(word, titleFont));
+			cardContainer.AddElement(new Phrase(sentence, textFont));
+			cardContainer.AddElement(new Phrase(additionalInfo, smallFont));
+
+			table.AddCell(cardContainer);
+
+			return table;
+		}
 	}
 }

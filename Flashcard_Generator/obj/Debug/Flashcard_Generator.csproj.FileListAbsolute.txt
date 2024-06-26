@@ -168,3 +168,7 @@ C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard
 C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\itextsharp.dll
 C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BouncyCastle.Cryptography.xml
 C:\Users\Monyk Penafor\source\repos\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\itextsharp.xml
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BouncyCastle.Cryptography.dll
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\itextsharp.dll
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BouncyCastle.Cryptography.xml
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\itextsharp.xml

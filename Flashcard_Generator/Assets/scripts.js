@@ -1,5 +1,6 @@
 ﻿
-function showModal(id, wtarget, wsource, etarget, pron, esource, tips, level) {
+function showModal(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic) {
+
 
     $("#fcidModal").text(id);
     $("#wtarget").val(wtarget);
@@ -9,6 +10,10 @@ function showModal(id, wtarget, wsource, etarget, pron, esource, tips, level) {
     $("#esource").val(esource);
     $("#tips").val(tips);
     $("#level").val(level);
+
+    var ispublic = (isPublic === 'False') ? 'false' : 'true';
+    $("#isPublic").val(ispublic);
+
 
     document.getElementById('editModal').style.display = 'block';
     return false;
@@ -30,13 +35,19 @@ function saveChanges() {
     var esource = $('#esource').val();
     var tips = $('#tips').val();
     var level = $('#level').val();
+    var isPublic = $('#isPublic').val();
 
-    editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level);
+    if (!wtarget || !wsource || !etarget || !pron || !esource || !tips) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
+    editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic);
 
 }
 
 
-function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level) {
+function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic) {
     $.ajax({
         type: "POST",
         url: "UserFlashcardsDisplay.aspx/UpdateFlashcard",
@@ -48,7 +59,8 @@ function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level
             pron: pron,
             esource: esource,
             tips: tips,
-            level: level
+            level: level,
+            isPublic: isPublic
         }),
         contentType: "application/json; charset=utf-8",
         dataType: "json",
@@ -65,6 +77,7 @@ function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level
 }
 
 
+
 function updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level) {
     var rowId = 'Row' + id;
     var row = $("#" + rowId);
@@ -74,8 +87,6 @@ function updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, leve
     row.find(".flashcad-table-row-cell").eq(2).text(tips);
     row.find(".flashcad-table-row-cell").eq(3).text(level);
 }
-
-
 
 
 function deleteFlashcard(flashcardId) {
@@ -96,4 +107,3 @@ function deleteFlashcard(flashcardId) {
         }
     });
 }
-

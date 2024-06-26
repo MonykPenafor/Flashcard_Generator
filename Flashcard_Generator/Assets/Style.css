@@ -19,8 +19,53 @@
     color: white;
     left: 90px;
     position: fixed;
-    margin-bottom: 0;
     align-items: center;
+}
+
+.sfont {
+    font-family: 'ghost' ;
+    font-size: 80px;
+    padding: 0;
+}
+
+.mon {
+    font-family: 'Bhlingglers';
+    padding: 0;
+}
+
+
+
+
+
+@font-face {
+    font-family: 'Supernova';
+    font-style: normal;
+    font-weight: 200;
+    src: local(''), url('https://fonts.cdnfonts.com/s/107561/Supernova-Personal-Used-BF654da72b6232e.woff') format('woff');
+}
+@font-face {
+    font-family: 'Bhlingglers';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),url(https://fonts.cdnfonts.com/s/107521/Bhlingglers-L3nog.woff) format('woff')
+}
+@font-face {
+    font-family: 'Death Fire';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Death Fire'), url('https://fonts.cdnfonts.com/s/106845/Death-Fire-BF654506b943c6c.woff') format('woff');
+}
+@font-face {
+    font-family: 'boyrun';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('https://fonts.cdnfonts.com/s/107170/Boyrun.woff') format('woff');
+}
+@font-face {
+    font-family: 'ghost';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),url(https://fonts.cdnfonts.com/s/107486/Tree-Ghost-BF654b8d7bef5e0.woff) format('woff')
 }
 
 
@@ -74,6 +119,7 @@ img.a-icon {
 
     .nav-link:hover {
         background-color: rgba(255, 255, 255, 0.2);
+        color: white;
     }
 
 
@@ -144,12 +190,14 @@ img.a-icon {
     height: 25px;
 }
 
-.col.panel-register {
+.col-4 .panel-register {
     border: solid;
     border-color: #b9b9b9;
     border-width: thin;
     border-radius: 0.4rem;
-    margin-right: 50px;
+    width: 350px;
+    height: 470px;
+    padding-top: 60px;
 }
 
 

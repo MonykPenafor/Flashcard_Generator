@@ -12,7 +12,7 @@
                 <h4 id="selectedFC"><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
             </div>
             <div class="col-2">
-                <button type="button" runat="server" onserverclick="GeneratePDF">PDF</button></div>
+                <button type="button" runat="server" onserverclick="GeneratePDF" class="btn btn-dark"> PDF </button></div>
 
         </div>
         <asp:Repeater runat="server" ID="rptrFlashcardList">
@@ -47,7 +47,7 @@
 
 
     <!-- Modal Structure -->
-    <div id="editModal" class="modal">
+    <div id="editModal" class="modal form">
         <div class="modal-content">
             <span>
                 <button type="button" class="close" onclick="closeModal()">&times;</button></span>
@@ -58,14 +58,15 @@
             <div class="row">
                 <div class="col">
                     <label for="wtarget">Vocabulary:</label>
-                    <input type="text" id="wtarget" name="wtarget" class="edit-1-row" />
+                    <input type="text" id="wtarget" name="wtarget" class="edit-1-row" required/>
                 </div>
+
                 <div class="col">
                     <label for="wsource">Vocabulary Translation:</label>
-                    <input type="text" id="wsource" name="wsource" class="edit-1-row" />
+                    <input type="text" id="wsource" name="wsource" class="edit-1-row" required/>
                 </div>
-                <div class="col">
 
+                <div class="col">
                     <label for="level">Level:</label>
                     <select id="level" name="level" class="edit-1-row">
                         <option value="--">--</option>
@@ -76,33 +77,29 @@
                         <option value="C1">C1</option>
                         <option value="C2">C2</option>
                     </select>
-
-
                 </div>
-                <div class="col">
 
+                <div class="col">
                     <label for="isPublic">Visibility:</label>
                     <select id="isPublic" name="isPublic" class="edit-1-row">
                         <option value="true">Public</option>
-                        <option value="flase">Private</option>
+                        <option value="false">Private</option>
                     </select>
 
                 </div>
             </div>
 
-
-
             <label for="etarget">Usage:</label>
-            <input type="text" id="etarget" name="etarget" />
+            <input type="text" id="etarget" name="etarget" required/>
 
             <label for="pron">Pronunciation:</label>
-            <input type="text" id="pron" name="pron" />
+            <input type="text" id="pron" name="pron" required/>
 
             <label for="esource">Usage Translation:</label>
-            <input type="text" id="esource" name="esource" />
+            <input type="text" id="esource" name="esource" required/>
 
             <label for="tips">Tips:</label>
-            <input type="text" id="tips" name="tips" />
+            <input type="text" id="tips" name="tips" required/>
 
             <br />
             <br />

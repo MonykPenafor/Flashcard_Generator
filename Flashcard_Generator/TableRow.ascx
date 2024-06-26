@@ -17,6 +17,7 @@ onclick='showModal(
 "<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.Pronunciation) %>", 
 "<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.ExampleSentenceSource) %>", 
 "<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.Tips)  %>", 
-"<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.Proficiency) %>"       )'><img src="assets/icons/edit.png" alt="edit"/></button></td>
+"<%= FlashcardTableRow.Proficiency %>" , 
+"<%= FlashcardTableRow.IsPublic %>"       )'><img src="assets/icons/edit.png" alt="edit"/></button></td>
 
 

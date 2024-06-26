@@ -4,8 +4,14 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <h3>FLASHCARDS:</h3>
-       <h4><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
+        <div class="row">
+            <div class="col-10">
+                <h4 id="selectedFC"><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
+            </div>
+            <div class="col-2">
+                <button type="button" runat="server" onserverclick="GeneratePDF">PDF</button></div>
 
+        </div>
         <asp:Repeater runat="server" ID="rptrFlashcardList">
             <HeaderTemplate>
                 <table width="100%">

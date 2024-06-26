@@ -90,14 +90,14 @@ namespace Flashcard_Generator
 			}
 		}
 
-		public string UpdateFlashcard(int id, string wtarget, string wsource, string etarget, string pron, string esource, string tips, string level)
+		public string UpdateFlashcard(int id, string wtarget, string wsource, string etarget, string pron, string esource, string tips, string level, bool isPublic)
 		{
 			using (SqlConnection con = new SqlConnection(connectionString))
 			{
 				con.Open();
 
 				{
-					string query = "UPDATE Flashcards SET word_source = @wsource, word_target = @wtarget, example_sentence_source = @esource, example_sentence_target = @etarget, pronunciation = @pron, tips = @tips, proficiency = @level WHERE id_flashcard = @id";
+					string query = "UPDATE Flashcards SET word_source = @wsource, word_target = @wtarget, example_sentence_source = @esource, example_sentence_target = @etarget, pronunciation = @pron, tips = @tips, proficiency = @level, is_public = @isPublic WHERE id_flashcard = @id";
 					using (SqlCommand cmd = new SqlCommand(query, con))
 					{
 						cmd.Parameters.AddWithValue("@id", id);
@@ -108,6 +108,7 @@ namespace Flashcard_Generator
 						cmd.Parameters.AddWithValue("@pron", pron);
 						cmd.Parameters.AddWithValue("@tips", tips);
 						cmd.Parameters.AddWithValue("@level", level);
+						cmd.Parameters.AddWithValue("@isPublic", isPublic);
 
 
 						try
