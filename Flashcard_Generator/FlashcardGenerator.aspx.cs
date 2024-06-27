@@ -8,6 +8,12 @@ namespace Flashcard_Generator
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			txtVocabularyTarget.Attributes.Add("required", "required");
+			txtVocabularySource.Attributes.Add("required", "required");
+			txtWordOrPhrase.Attributes.Add("required", "required");
+			txtSimplified.Attributes.Add("required", "required");
+			txtTranslation.Attributes.Add("required", "required");
+			txtTip.Attributes.Add("required", "required");
 
 		}
 

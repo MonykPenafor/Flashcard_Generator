@@ -337,9 +337,6 @@ div.flashcard-group-container .btn-flashcard-group {
 
 
 
-
-
-
 /* Toast container */
 #toast {
     visibility: hidden;
@@ -352,8 +349,8 @@ div.flashcard-group-container .btn-flashcard-group {
     padding: 16px;
     position: fixed;
     z-index: 1;
-    left: 50%;
-    bottom: 300px;
+    left: 85%;
+    bottom: 450px;
     font-size: 17px;
 }
 
@@ -364,54 +361,7 @@ div.flashcard-group-container .btn-flashcard-group {
         animation: fadein 0.5s, fadeout 0.5s 2.5s;
     }
 
-/* Animations to fade in and out the toast */
-@-webkit-keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
 
-    to {
-        bottom: 300px;
-        opacity: 1;
-    }
-}
-
-@keyframes fadein {
-    from {
-        bottom: 0;
-        opacity: 0;
-    }
-
-    to {
-        bottom: 300px;
-        opacity: 1;
-    }
-}
-
-@-webkit-keyframes fadeout {
-    from {
-        bottom: 30p0x;
-        opacity: 1;
-    }
-
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
-}
-
-@keyframes fadeout {
-    from {
-        bottom: 300px;
-        opacity: 1;
-    }
-
-    to {
-        bottom: 0;
-        opacity: 0;
-    }
-}
 
 .instructions{
     font-size: 20px;

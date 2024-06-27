@@ -49,10 +49,19 @@ namespace Flashcard_Generator
 		public static string DeleteFlashcard(int flashcardId)
 		{
 			FlashcardServices flashcardService = new FlashcardServices();
-			return flashcardService.DeleteFlashcard(flashcardId);
+			var result = flashcardService.DeleteFlashcard(flashcardId);
 
+			if (result == "ok")
+			{
+				return "Success";
+			}
+			else
+			{
+				return "Failure";
+			}
 
 		}
+
 
 		[WebMethod]
 		public static string UpdateFlashcard(int id, string wtarget, string wsource, string etarget, string pron, string esource, string tips, string level, string isPublic)

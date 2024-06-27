@@ -5,6 +5,9 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
+    
+        <div id="toast"></div>
+
         <h3>FLASHCARDS CREATED SO FAR:</h3>
 
         <div class="row">

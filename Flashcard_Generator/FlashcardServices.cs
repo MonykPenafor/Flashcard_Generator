@@ -75,7 +75,7 @@ namespace Flashcard_Generator
 						try
 						{
 							cmd.ExecuteNonQuery();
-							return "ok!";
+							return "ok";
 						}
 						catch (SqlException ex)
 						{

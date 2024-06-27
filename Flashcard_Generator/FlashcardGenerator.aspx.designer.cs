@@ -87,6 +87,60 @@ namespace Flashcard_Generator
 		protected global::System.Web.UI.WebControls.DropDownList ddlPrivacySetting;
 
 		/// <summary>
+		/// txtVocabularyTarget control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtVocabularyTarget;
+
+		/// <summary>
+		/// txtVocabularySource control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtVocabularySource;
+
+		/// <summary>
+		/// txtWordOrPhrase control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtWordOrPhrase;
+
+		/// <summary>
+		/// txtSimplified control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtSimplified;
+
+		/// <summary>
+		/// txtTranslation control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtTranslation;
+
+		/// <summary>
+		/// txtTip control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.TextBox txtTip;
+
+		/// <summary>
 		/// lblMessage control.
 		/// </summary>
 		/// <remarks>
