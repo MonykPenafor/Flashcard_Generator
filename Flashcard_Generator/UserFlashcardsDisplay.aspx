@@ -5,7 +5,7 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
-    
+
         <div id="toast"></div>
 
         <h3>FLASHCARDS CREATED SO FAR:</h3>
@@ -15,9 +15,11 @@
                 <h4 id="selectedFC"><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
             </div>
             <div class="col-2">
-                <button type="button" runat="server" onserverclick="GeneratePDF" class="btn btn-dark"> PDF </button></div>
+                <button type="button" runat="server" onserverclick="GeneratePDF" class="btn btn-dark">PDF </button>
+            </div>
 
         </div>
+        <br />
         <asp:Repeater runat="server" ID="rptrFlashcardList">
             <HeaderTemplate>
                 <table width="100%">
@@ -32,13 +34,13 @@
             </HeaderTemplate>
 
             <ItemTemplate>
-                <tr class="flashcad-table-row" id="Row<%# Eval("Id")%>">
+                <tr class="flashcad-table-row" visible="true" id="<%# Eval("Id")%>">
                     <monyk:FlashcardRow runat="server" Visible="true" FlashcardTableRow="<%#Container.DataItem %>" />
                 </tr>
             </ItemTemplate>
 
             <AlternatingItemTemplate>
-                <tr class="flashcad-table-row" style="background-color: #b8cfff2e" id="<%# Eval("Id")%>">
+                <tr class="flashcad-table-row" visible="true" style="background-color: #b8cfff2e" id="<%# Eval("Id")%>">
                     <monyk:FlashcardRow runat="server" Visible="true" FlashcardTableRow="<%#Container.DataItem %>" />
                 </tr>
             </AlternatingItemTemplate>
@@ -61,12 +63,12 @@
             <div class="row">
                 <div class="col">
                     <label for="wtarget">Vocabulary:</label>
-                    <input type="text" id="wtarget" name="wtarget" class="edit-1-row" required/>
+                    <input type="text" id="wtarget" name="wtarget" class="edit-1-row" required />
                 </div>
 
                 <div class="col">
                     <label for="wsource">Vocabulary Translation:</label>
-                    <input type="text" id="wsource" name="wsource" class="edit-1-row" required/>
+                    <input type="text" id="wsource" name="wsource" class="edit-1-row" required />
                 </div>
 
                 <div class="col">
@@ -93,22 +95,34 @@
             </div>
 
             <label for="etarget">Usage:</label>
-            <input type="text" id="etarget" name="etarget" required/>
+            <input type="text" id="etarget" name="etarget" required />
 
             <label for="pron">Pronunciation:</label>
-            <input type="text" id="pron" name="pron" required/>
+            <input type="text" id="pron" name="pron" required />
 
             <label for="esource">Usage Translation:</label>
-            <input type="text" id="esource" name="esource" required/>
+            <input type="text" id="esource" name="esource" required />
 
             <label for="tips">Tips:</label>
-            <input type="text" id="tips" name="tips" required/>
+            <input type="text" id="tips" name="tips" required />
 
             <br />
             <br />
 
             <button class="btn btn-success btn-sm" type="button" onclick="saveChanges()">Save</button>
 
+        </div>
+    </div>
+
+
+    <!-- Modal de Confirmação -->
+    <div id="confirmDeleteModal" class="modal">
+        <div class="modal-content">
+
+            <h4>Confirm Delete</h4>
+            <p>Are you sure you want to delete this flashcard?</p>
+            <button id="confirmDeleteBtn" class="btn btn-danger">Delete</button>
+            <button class="btn btn-secondary" onclick="closeConfirmModal()">Cancel</button>
         </div>
     </div>
 

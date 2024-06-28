@@ -18,6 +18,6 @@ onclick='showModal(
 "<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.ExampleSentenceSource) %>", 
 "<%= HttpUtility.JavaScriptStringEncode(FlashcardTableRow.Tips)  %>", 
 "<%= FlashcardTableRow.Proficiency %>" , 
-"<%= FlashcardTableRow.IsPublic %>"       )'><img src="assets/icons/edit.png" alt="edit"/></button></td>
+"<%= FlashcardTableRow.IsPublic %>"   )'><img src="assets/icons/edit.png" alt="edit"/></button></td>
 
 

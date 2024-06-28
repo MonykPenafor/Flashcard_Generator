@@ -10,7 +10,7 @@
 
         <br />
 
-        <h5>Here you can create many flashcards from the same group at once, they will share the Group Title, Languages, Level and Privacy Setting.</h5>
+        <h5>Here you can create flashcards that will share the Group Title, Languages, Level and Privacy Setting.</h5>
 
         <p class="instructions">
             - Write the data between "" (quotation marks) and separate each flashcard data with ; (semicolon)

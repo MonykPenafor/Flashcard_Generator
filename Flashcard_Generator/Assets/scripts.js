@@ -126,9 +126,6 @@ function showToast(message) {
 }
 
 
-
-
-
 function deleteFlashcard(flashcardId) {
     $.ajax({
         type: "POST",
@@ -138,7 +135,8 @@ function deleteFlashcard(flashcardId) {
         dataType: "json",
         success: function (response) {
             if (response.d === "Success") {
-                $.when($("#" + flashcardId).remove()).done(function () {
+                $("#" + flashcardId).fadeOut("fast", function () {
+                    $(this).remove();
                     showToast('Flashcard deleted!');
                 });
             } else {
