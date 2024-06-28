@@ -66,21 +66,19 @@ function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level
         dataType: "json",
         success: function (response) {
             updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level);
-            alert("Success: " + response.d);
-
             closeModal();
+            showToast("Flashcard Updated!")
         },
         error: function (xhr, status, error) {
             console.error("Error updating flashcard: " + xhr.responseText);
+            showToast("Error updating flashcard: " + xhr.responseText);
         }
     });
 }
 
 
-
 function updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level) {
-    var rowId = 'Row' + id;
-    var row = $("#" + rowId);
+    var row = $("#" + id);
 
     row.find(".flashcad-table-row-cell").eq(0).html(wtarget + "<br />" + wsource);
     row.find(".flashcad-table-row-cell").eq(1).html(etarget + "<br />" + pron + "<br />" + esource);
@@ -90,23 +88,6 @@ function updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, leve
 
 }
 
-
-//function deleteFlashcard(flashcardId) {
-//    $.ajax({
-//        type: "POST",
-//        url: "UserFlashcardsDisplay.aspx/DeleteFlashcard",
-//        data: JSON.stringify({ flashcardId: flashcardId }),
-//        contentType: "application/json; charset=utf-8",
-//        dataType: "json",
-//        success: function (response) {
-//            showToast('Flashcard deleted!')
-//        },
-//        error: function (xhr, status, error) {
-//            console.error("Error deleting flashcard: " + xhr.responseText);
-//            showToast('Error deleting flashcard');
-//        }
-//    });
-//}
 
 function copyToClipboard() {
     navigator.clipboard.writeText(textToCopy).then(function () {
@@ -118,6 +99,7 @@ function copyToClipboard() {
     });
 }
 
+
 function showToast(message) {
     const toast = document.getElementById("toast");
     toast.textContent = message;
@@ -127,25 +109,27 @@ function showToast(message) {
 
 
 function deleteFlashcard(flashcardId) {
-    $.ajax({
-        type: "POST",
-        url: "UserFlashcardsDisplay.aspx/DeleteFlashcard",
-        data: JSON.stringify({ flashcardId: flashcardId }),
-        contentType: "application/json; charset=utf-8",
-        dataType: "json",
-        success: function (response) {
-            if (response.d === "Success") {
-                $("#" + flashcardId).fadeOut("fast", function () {
-                    $(this).remove();
-                    showToast('Flashcard deleted!');
-                });
-            } else {
-                showToast('Error deleting flashcard');
+    if (confirm("Are you sure you want to delete the flashcard forever and ever?")) {
+        $.ajax({
+            type: "POST",
+            url: "UserFlashcardsDisplay.aspx/DeleteFlashcard",
+            data: JSON.stringify({ flashcardId: flashcardId }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+                if (response.d === "Success") {
+                    $("#" + flashcardId).fadeOut("fast", function () {
+                        $(this).remove();
+                        showToast('Flashcard deleted!');
+                    });
+                } else {
+                    showToast('Error deleting flashcard');
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error deleting flashcard: " + xhr.responseText);
+                showToast('Error deleting flashcard - ajax');
             }
-        },
-        error: function (xhr, status, error) {
-            console.error("Error deleting flashcard: " + xhr.responseText);
-            showToast('Error deleting flashcard - ajax');
-        }
-    });
+        });
+    }
 }

@@ -17,7 +17,6 @@
             <div class="col-2">
                 <button type="button" runat="server" onserverclick="GeneratePDF" class="btn btn-dark">PDF </button>
             </div>
-
         </div>
         <br />
         <asp:Repeater runat="server" ID="rptrFlashcardList">
@@ -28,6 +27,7 @@
                         <th class="flashcad-table-row-cell">Usage / Pronunciation / Translation</th>
                         <th class="flashcad-table-row-cell">Tips</th>
                         <th class="flashcad-table-row-cell">Level</th>
+                        <th class="flashcad-table-row-cell"></th>
                         <th class="flashcad-table-row-cell"></th>
                         <th class="flashcad-table-row-cell"></th>
                     </tr>
@@ -111,18 +111,6 @@
 
             <button class="btn btn-success btn-sm" type="button" onclick="saveChanges()">Save</button>
 
-        </div>
-    </div>
-
-
-    <!-- Modal de Confirmação -->
-    <div id="confirmDeleteModal" class="modal">
-        <div class="modal-content">
-
-            <h4>Confirm Delete</h4>
-            <p>Are you sure you want to delete this flashcard?</p>
-            <button id="confirmDeleteBtn" class="btn btn-danger">Delete</button>
-            <button class="btn btn-secondary" onclick="closeConfirmModal()">Cancel</button>
         </div>
     </div>
 
