@@ -4,7 +4,7 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container" id="cntnrCategoryGroups">
-        <h4>EXPLORE FLASHCARDS FROM OTHER USERS</h4>
+        <h2 class="mon">EXPLORE FLASHCARDS FROM OTHER USERS</h2>
 
         <asp:Repeater runat="server" ID="rptrFlashcardsByLanguageCombination">
             <HeaderTemplate>
@@ -13,7 +13,7 @@
 
             <ItemTemplate>
                 <div>
-                    <h3><%# Eval("SourceLanguage") %> / <%# Eval("TargetLanguage") %></h3>
+                    <h3 class="mon"><%# Eval("SourceLanguage") %> / <%# Eval("TargetLanguage") %></h3>
 
                     <asp:Repeater runat="server" ID="rptrFlashcardsByCategory" DataSource='<%# Eval("Categories") %>' OnItemDataBound="rptrFlashcardsByCategory_ItemDataBound">
                         <HeaderTemplate>
@@ -27,7 +27,6 @@
                         <FooterTemplate></div></FooterTemplate>
                     </asp:Repeater>
                 </div>
-                <br />
                 <br />
             </ItemTemplate>
 

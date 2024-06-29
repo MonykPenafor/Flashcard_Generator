@@ -65,7 +65,7 @@ function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (response) {
-            updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level);
+            updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic);
             closeModal();
             showToast("Flashcard Updated!")
         },
@@ -77,13 +77,19 @@ function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level
 }
 
 
-function updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level) {
+function updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic) {
     var row = $("#" + id);
+
+    //var ispublic = (isPublic === 'False') ? 'false' : 'true';
+    //$("#isPublic").val(ispublic);
+
+
 
     row.find(".flashcad-table-row-cell").eq(0).html(wtarget + "<br />" + wsource);
     row.find(".flashcad-table-row-cell").eq(1).html(etarget + "<br />" + pron + "<br />" + esource);
     row.find(".flashcad-table-row-cell").eq(2).text(tips);
     row.find(".flashcad-table-row-cell").eq(3).text(level);
+    row.find(".flashcad-table-row-cell").eq(4).text(isPublic);
 
 
 }
@@ -128,7 +134,7 @@ function deleteFlashcard(flashcardId) {
             },
             error: function (xhr, status, error) {
                 console.error("Error deleting flashcard: " + xhr.responseText);
-                showToast('Error deleting flashcard - ajax');
+                alert('Error deleting flashcard - ajax' + xhr.responseText);
             }
         });
     }

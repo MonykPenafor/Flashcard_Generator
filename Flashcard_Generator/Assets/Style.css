@@ -28,12 +28,22 @@
     padding: 0;
 }
 
-.mon {
-    font-family: 'Bhlingglers';
+h3.mon {
+    font-family: 'ghost';
     padding: 0;
+    font-size: 45px;
 }
 
+h2.mon {
+    font-family: 'ghost';
+    padding: 0;
+    font-size: 70px;
+}
 
+h4.mon {
+    font-family: 'ghost';
+    font-size: 40px;
+}
 
 
 

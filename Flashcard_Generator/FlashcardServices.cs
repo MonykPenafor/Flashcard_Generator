@@ -23,7 +23,7 @@ namespace Flashcard_Generator
 
 				{
 					string query = "INSERT INTO Flashcards (id_user, source_language, target_language, category, word_source, word_target, example_sentence_source, example_sentence_target, pronunciation, tips, proficiency, is_public) " +
-											"VALUES (@UserId, @SourceLanguage, @TargetLanguage, @Category, @WordSource, @WordTarget, @ExampleSentenceSource, @ExampleSentenceTarget, @Pronunciation, @Tips, @Proficiency, @IsPublic)";
+											"VALUES (@UserId, UPPER(@SourceLanguage), UPPER(@TargetLanguage), UPPER(@Category), @WordSource, @WordTarget, @ExampleSentenceSource, @ExampleSentenceTarget, @Pronunciation, @Tips, @Proficiency, @IsPublic)";
 					using (SqlCommand cmd = new SqlCommand(query, con))
 					{
 						cmd.Parameters.AddWithValue("@UserId", flashcard.User.Id);

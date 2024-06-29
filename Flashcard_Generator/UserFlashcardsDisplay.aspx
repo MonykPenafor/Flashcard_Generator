@@ -8,11 +8,9 @@
 
         <div id="toast"></div>
 
-        <h3>FLASHCARDS CREATED SO FAR:</h3>
-
-        <div class="row">
+        <div class="row" style="align-items:center;">
             <div class="col-10">
-                <h4 id="selectedFC"><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%> - <%=Request.QueryString["category"] %></h4>
+                <h2 id="selectedFC" class="mon"><%=Request.QueryString["source"]%> / <%=Request.QueryString["target"]%>: <%=Request.QueryString["category"] %></h2>
             </div>
             <div class="col-2">
                 <button type="button" runat="server" onserverclick="GeneratePDF" class="btn btn-dark">PDF </button>

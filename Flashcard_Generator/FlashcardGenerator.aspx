@@ -20,6 +20,8 @@
             - Don't write sentences that are too long, otherwise they will not fit in the flashcard if you want to print them later
         <br />
             - Look at the placeholders for a better understanding
+        <br />
+            - If theres not the same number of flashcards written in all the boxes, it will create the flashcards according to the number of flashcards in the first box, and the rest will be losen, so make sure you put the same amount of flashcards in the boxes!
         </p>
 
         <div style="display: flex; align-items: center;">

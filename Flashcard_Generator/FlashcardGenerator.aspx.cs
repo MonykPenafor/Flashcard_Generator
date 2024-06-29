@@ -34,6 +34,12 @@ namespace Flashcard_Generator
 			string proficiency = ddlLanguageProficiency.SelectedValue;
 			bool isPublic = bool.Parse(ddlPrivacySetting.SelectedValue);
 
+			bool equalNumberOfData = ValidateNumberOfFlashcards(wordSource.Length, wordTarget.Length, exampleSentenceSource.Length, exampleSentenceTarget.Length, tips.Length, pronunciation.Length);
+
+			if (equalNumberOfData)
+			{
+
+			}
 
 			var numberOfFlashcards = wordSource.Length;
 
@@ -79,6 +85,11 @@ namespace Flashcard_Generator
 			}
 
 			return stringList.ToArray();
+		}
+
+		protected bool ValidateNumberOfFlashcards(int a, int b, int c, int d, int e, int f)
+		{
+			return a == b && b == c && c == d && d == e && e == f;
 		}
 
 	}

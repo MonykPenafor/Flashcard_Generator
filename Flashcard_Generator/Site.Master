@@ -65,7 +65,7 @@
                     <li class="nav-item"><a class="nav-link" runat="server" href="FlashcardGroupsDisplayByUser.aspx" id="MyFlashcardsPage" visible="false">My Flashcards</a></li>
                     <li class="nav-item"><a class="nav-link" runat="server" href="FlashcardGroupsDisplay.aspx">Explore Flashcards</a></li>
                     <li class="nav-item"><a class="nav-link" runat="server" href="~/FlashcardGenerator.aspx" id="FlashcardGeneratorPage" visible="false">Create Flashcards</a></li>
-                    <li class="nav-item"><a class="nav-link" runat="server" href="~/Study.aspx">Study</a></li>
+                    <%--<li class="nav-item"><a class="nav-link" runat="server" href="~/Study.aspx">Study</a></li>--%>
                 </ul>
             </div>
         </nav>

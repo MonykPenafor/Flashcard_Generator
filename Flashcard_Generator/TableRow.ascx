@@ -7,7 +7,7 @@
 <td class="flashcad-table-row-cell"><%= FlashcardTableRow.Proficiency %></td>
 <td class="flashcad-table-row-cell"><%= FlashcardTableRow.IsPublic %></td>
 
-<td class="flashcad-table-row-cell"><button class="td-icon" onclick='deleteFlashcard(<%# FlashcardTableRow.Id %>)'><img src="assets/icons/bin.png" alt="delete"/></button></td>
+<td class="flashcad-table-row-cell"><button class="td-icon" type="button" onclick='deleteFlashcard(<%# FlashcardTableRow.Id %>)'><img src="assets/icons/bin.png" alt="delete"/></button></td>
 <td class="flashcad-table-row-cell"><button type="button" class="td-icon" 
 onclick='showModal(
 
