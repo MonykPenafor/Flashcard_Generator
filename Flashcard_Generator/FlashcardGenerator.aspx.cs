@@ -52,27 +52,27 @@ namespace Flashcard_Generator
 
 			try
 			{
-for (int i = 0; i < numberOfFlashcards; i++)
-			{
-				Flashcard flashcard = new Flashcard(user, sourceLanguage, targetLanguage, category,
-					wordSource[i],
-					wordTarget[i],
-					exampleSentenceSource[i],
-					exampleSentenceTarget[i],
-					pronunciation[i],
-					tips[i],
-					proficiency, isPublic
-				);
-
-				string result = flashcardServices.CreateFlashcard(flashcard);
-
-				if (result != "ok")
+				for (int i = 0; i < numberOfFlashcards; i++)
 				{
-					lblMessage.Text = result;
-					return;
-				}
+					Flashcard flashcard = new Flashcard(user, sourceLanguage, targetLanguage, category,
+						wordSource[i],
+						wordTarget[i],
+						exampleSentenceSource[i],
+						exampleSentenceTarget[i],
+						pronunciation[i],
+						tips[i],
+						proficiency, isPublic
+					);
 
-			}
+					string result = flashcardServices.CreateFlashcard(flashcard);
+
+					if (result != "ok")
+					{
+						lblMessage.Text = result;
+						return;
+					}
+
+				}
 			}
 			catch (Exception ex)
 			{
@@ -103,18 +103,6 @@ for (int i = 0; i < numberOfFlashcards; i++)
 		{
 			return a == b && b == c && c == d && d == e && e == f;
 		}
-
-
-
-
-
-
-
-
-
-
-
-
 
 	}
 }

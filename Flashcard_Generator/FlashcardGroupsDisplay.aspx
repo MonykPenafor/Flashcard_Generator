@@ -4,7 +4,8 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container" id="cntnrCategoryGroups">
-        <h2 class="mon">EXPLORE FLASHCARDS FROM OTHER USERS</h2>
+
+        <h2 class="mon">EXPLORE FLASHCARDS</h2>
 
         <asp:Repeater runat="server" ID="rptrFlashcardsByLanguageCombination">
             <HeaderTemplate>

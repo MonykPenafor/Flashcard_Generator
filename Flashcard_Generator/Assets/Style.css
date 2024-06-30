@@ -1,11 +1,21 @@
-﻿/* fixed top */
+﻿
+/*Main Content*/
+
+#mainContainer {
+    margin-top: 90px;
+    margin-left: 220px;
+    margin-right: 220px;
+    padding: 20px;
+}
+
+
+/* fixed top */
 
 .fixed-top {
     position: fixed;
     top: 0;
     height: 70px;
 }
-
 
 .nav-icon {
     width: 50px;
@@ -20,62 +30,6 @@
     left: 90px;
     position: fixed;
     align-items: center;
-}
-
-.sfont {
-    font-family: 'ghost' ;
-    font-size: 80px;
-    padding: 0;
-}
-
-h3.mon {
-    font-family: 'ghost';
-    padding: 0;
-    font-size: 45px;
-}
-
-h2.mon {
-    font-family: 'ghost';
-    padding: 0;
-    font-size: 70px;
-}
-
-h4.mon {
-    font-family: 'ghost';
-    font-size: 40px;
-}
-
-
-
-@font-face {
-    font-family: 'Supernova';
-    font-style: normal;
-    font-weight: 200;
-    src: local(''), url('https://fonts.cdnfonts.com/s/107561/Supernova-Personal-Used-BF654da72b6232e.woff') format('woff');
-}
-@font-face {
-    font-family: 'Bhlingglers';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),url(https://fonts.cdnfonts.com/s/107521/Bhlingglers-L3nog.woff) format('woff')
-}
-@font-face {
-    font-family: 'Death Fire';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Death Fire'), url('https://fonts.cdnfonts.com/s/106845/Death-Fire-BF654506b943c6c.woff') format('woff');
-}
-@font-face {
-    font-family: 'boyrun';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''), url('https://fonts.cdnfonts.com/s/107170/Boyrun.woff') format('woff');
-}
-@font-face {
-    font-family: 'ghost';
-    font-style: normal;
-    font-weight: 400;
-    src: local(''),url(https://fonts.cdnfonts.com/s/107486/Tree-Ghost-BF654b8d7bef5e0.woff) format('woff')
 }
 
 
@@ -94,7 +48,6 @@ h4.mon {
 }
 
 
-
 /* nav bar */
 
 div.row.user {
@@ -110,11 +63,9 @@ img.a-icon {
     justify-content: center;
 }
 
-
 .nav-item {
     margin: 0;
 }
-
 
 .nav-link {
     padding: 10px 10px;
@@ -133,20 +84,11 @@ img.a-icon {
     }
 
 
-
-
-/*Main Content*/
-
-#mainContainer {
-    margin-top: 90px;
-    margin-left: 220px;
-    margin-right: 220px;
-    padding: 20px;
-}
-
-
-
 /* Form Groups in create flashcards*/
+
+.instructions {
+    font-size: 20px;
+}
 
 .flashcard-label {
     font-size: 15px;
@@ -190,16 +132,6 @@ img.a-icon {
     margin-top: 15px;
 }
 
-.error-message {
-    color: red;
-    font-size: 15px;
-}
-
-.edit.edit-button {
-    width: 25px;
-    height: 25px;
-}
-
 .col-4 .panel-register {
     border: solid;
     border-color: #b9b9b9;
@@ -211,25 +143,16 @@ img.a-icon {
 }
 
 
+/*  buttons of groups of flashcards */
 
-/* buttons */
-
-.btn.btn-danger.btn-center, .btn.btn-primary.btn-center, .btn.btn-primary {
-    width: 250px;
+div.col-2 input.btn.btn-add {
+    height: 40px;
+    width: 40px;
+    padding: 10px;
+    background-color: #91cfe1;
+    border: 0;
 }
 
-.btn-word {
-    color: dodgerblue;
-    background-color: white;
-    border: none;
-    font-weight: bold;
-    padding: 0;
-}
-
-
-
-
-/*display groups*/
 div.flashcard-group-container .btn-flashcard-group {
     height: 50px;
     background-color: #91cfe1;
@@ -249,6 +172,9 @@ div.flashcard-group-container .btn-flashcard-group {
     font-size: 20px;
     font-weight: bold;
 }
+
+
+/*  TABLE  */
 
 .flashcad-table-row {
     border-color: #00000085;
@@ -270,11 +196,6 @@ div.flashcard-group-container .btn-flashcard-group {
         align-items: center;
         background-color: transparent;
         border: none;
-        /*width: 15px;
-        height: 15px;
-        max-width: 30px;
-        display: flex;
-        cursor: pointer;*/
     }
 
         .flashcad-table-row-cell .td-icon img, .td-icon img {
@@ -284,6 +205,7 @@ div.flashcard-group-container .btn-flashcard-group {
 
 
 
+/*  EDIT MODAL  */
 
 .modal {
     display: none;
@@ -364,7 +286,6 @@ div.flashcard-group-container .btn-flashcard-group {
     font-size: 17px;
 }
 
-    /* Show the toast */
     #toast.show {
         visibility: visible;
         -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -373,6 +294,86 @@ div.flashcard-group-container .btn-flashcard-group {
 
 
 
-.instructions{
-    font-size: 20px;
+/*  RANDOM ELEMENTS - used in all the code */
+
+.error-message {
+    color: red;
+    font-size: 15px;
 }
+
+.btn.btn-danger.btn-center, .btn.btn-primary.btn-center, .btn.btn-primary {
+    width: 250px;
+}
+
+.btn-word {
+    color: dodgerblue;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    padding: 0;
+}
+
+
+
+/*   FONTS   */
+
+.sfont {
+    font-family: 'ghost';
+    font-size: 80px;
+    padding: 0;
+}
+
+h3.mon {
+    font-family: 'ghost';
+    padding: 0;
+    font-size: 45px;
+}
+
+h2.mon {
+    font-family: 'ghost';
+    padding: 0;
+    font-size: 70px;
+}
+
+h4.mon {
+    font-family: 'ghost';
+    font-size: 40px;
+}
+
+@font-face {
+    font-family: 'Supernova';
+    font-style: normal;
+    font-weight: 200;
+    src: local(''), url('https://fonts.cdnfonts.com/s/107561/Supernova-Personal-Used-BF654da72b6232e.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Bhlingglers';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),url(https://fonts.cdnfonts.com/s/107521/Bhlingglers-L3nog.woff) format('woff')
+}
+
+@font-face {
+    font-family: 'Death Fire';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Death Fire'), url('https://fonts.cdnfonts.com/s/106845/Death-Fire-BF654506b943c6c.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'boyrun';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''), url('https://fonts.cdnfonts.com/s/107170/Boyrun.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'ghost';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),url(https://fonts.cdnfonts.com/s/107486/Tree-Ghost-BF654b8d7bef5e0.woff) format('woff')
+}
+
+
+

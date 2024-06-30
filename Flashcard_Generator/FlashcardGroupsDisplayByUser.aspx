@@ -4,7 +4,20 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="container" id="cntnrCategoryGroups">
-        <h2 class="mon">MY FLASHCARDS</h2>
+
+
+
+        <div class="row" style="align-items: center;">
+            <div class="col-10">
+                <h2 class="mon">MY FLASHCARDS</h2>
+            </div>
+            <div class="col-2">
+                <asp:ImageButton runat="server" CssClass="btn btn-add" OnClick="btnNewFlashcardGroup_Click" ImageUrl="~/Assets/Icons/add.png" AlternateText="New Flashcard Group" />
+            </div>
+
+        </div>
+
+        <div id="toast"></div>
 
         <asp:Repeater runat="server" ID="rptrFlashcardsByLanguageCombination">
             <HeaderTemplate>

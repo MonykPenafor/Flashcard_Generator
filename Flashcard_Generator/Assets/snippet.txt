@@ -1,4 +1,4 @@
-Read the Example:
+Read the Example:[
 
 Number of flashcards: 20
 Source Language: English
@@ -30,14 +30,13 @@ Translation of the Example Phrase in the Source Language:
 
 Tips About the Word in the Source Language:
 "大きい: Often used to describe physical size. Pay attention to its use in different contexts to describe both tangible and abstract concepts."; "小さい: Often used to describe small objects or living beings. Remember its frequent use in daily conversation."; "新しい: Used for new items, experiences, or changes. Note how it can describe both tangible and intangible things."; "古い: Describes something old or outdated. It’s often the opposite of 新しい."; "暑い: Used to describe hot weather or temperature. Don’t confuse with 熱い, which means 'hot' (to the touch)."; "寒い: Used to describe cold weather or temperature. Useful for discussing seasonal changes."; "面白い: Means interesting or funny. Often used to describe stories, books, or experiences."; "つまらない: Means boring or uninteresting. Useful for expressing disinterest or dissatisfaction."; "難しい: Means difficult or complex. Often used in academic or challenging contexts."; "簡単: Means easy or simple. Note it’s a な-adjective, and it is the opposite of 難しい."; "高い: Can mean tall, high, or expensive, depending on the context. It’s versatile and frequently used."; "低い: Means low or short in height. It’s the opposite of 高い."; "広い: Describes something spacious or wide. Commonly used for areas or spaces."; "狭い: Describes something narrow or cramped. It’s the opposite of 広い."; "強い: Describes strength or strong characteristics. Can refer to physical strength or potency."; "弱い: Describes weakness or frailty. Often the opposite of 強い."; "速い: Means fast or quick. Often used with verbs related to movement or speed."; "遅い: Means slow or late. Opposite of 速い, and useful for discussing punctuality."; "明るい: Describes brightness or a cheerful personality. Can describe both physical light and moods."; "暗い: Describes darkness or a gloomy mood. Often the opposite of 明るい and used for lighting and atmosphere."
-
+]
 
 
 I developed an app to generate flashcards, you give the source and target language information and it generates, 
-but it has to be between '"' and separated by ";" like in th examples, please help me create some flashcards like in the example above, 
-i will give you the variables:
+but it has to be between '"' and separated by ";" like in the example above, please help me create some flashcards with this variables:
 
-Number of flashcards: 5
+Number of flashcards: 15
 Source Language: Portugues
 Target Language: Chinese
 Topic: verbs

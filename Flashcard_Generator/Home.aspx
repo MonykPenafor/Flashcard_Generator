@@ -51,7 +51,14 @@
     <asp:Panel runat="server" ID="pnlProfile" Visible="false">
         <div class="container">
 
-            <h1>Profile Analysis</h1>
+            <h2 class="mon">Profile Analysis</h2>
+
+            <p>Flashcards created: </p>
+            <p>Public Flashcards: </p>
+            <p>Private Flashcards: </p>
+            <p>Flashcards Created: </p>
+            <p>Flashcards Created: </p>
+
             <asp:Button runat="server" ID="btnLogOut" Text="Log Out" CssClass="btn-word" OnClick="btnLogOut_Click" />
 
         </div>

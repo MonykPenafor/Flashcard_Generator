@@ -44,35 +44,42 @@ namespace Flashcard_Generator
 		}
 
 
+		[WebMethod]
+		public static string UpdateFlashcard(int id, string wtarget, string wsource, string etarget, string pron, string esource, string tips, string level, string isPublic)
+		{
+			FlashcardServices flashcardService = new FlashcardServices();
+			return flashcardService.UpdateFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level, bool.Parse(isPublic));
+		}
+
 
 		[WebMethod]
 		public static string DeleteFlashcard(int flashcardId)
 		{
 			FlashcardServices flashcardService = new FlashcardServices();
-			var result = flashcardService.DeleteFlashcard(flashcardId);
-
-			if (result == "ok")
-			{
-				return "Success";
-
-			}
-			else
-			{
-				return "Failure";
-			}
-
+			return flashcardService.DeleteFlashcard(flashcardId);
 		}
 
 
 		[WebMethod]
-		public static string UpdateFlashcard(int id, string wtarget, string wsource, string etarget, string pron, string esource, string tips, string level, string isPublic)
+		public static string DeleteAllFlashcards(string lsource, string ltarget, string category, string username)
 		{
 			FlashcardServices flashcardService = new FlashcardServices();
-			
-			bool ispublic = bool.Parse(isPublic);
+			List<Flashcard> flashcards = flashcardService.GetFlashcardsByLanguagesCategoriesAndVisibility(lsource, ltarget, category, username, true);
 
-			return flashcardService.UpdateFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level, ispublic);
+			try
+			{
+				foreach (Flashcard flashcard in flashcards)
+				{
+					flashcardService.DeleteFlashcard(flashcard.Id);
+				}
+				return "ok";
+			}
+			catch (Exception ex)
+			{
+				return "Error: " + ex.Message;
+			}
 		}
+
 
 
 		protected void GeneratePDF(object sender, EventArgs e)
@@ -185,5 +192,7 @@ namespace Flashcard_Generator
 
 			return table;
 		}
+	
+	
 	}
 }

@@ -6,7 +6,7 @@
 
         <div id="toast">Text copied to clipboard!</div>
 
-        <h3>HOW TO CREATE THE FLASHCARDS:</h3>
+        <h3 class="mon">HOW TO CREATE THE FLASHCARDS:</h3>
 
         <br />
 

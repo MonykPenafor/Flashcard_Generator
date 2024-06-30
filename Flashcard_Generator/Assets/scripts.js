@@ -1,6 +1,36 @@
 ﻿
-function showModal(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic) {
+function showToast(message) {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.className = "show";
+    setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+}
 
+
+function copyToClipboard() {
+    navigator.clipboard.writeText(textToCopy).then(function () {
+        console.log('Text copied to clipboard');
+        showToast('Text copied to clipboard!');
+    }).catch(function (error) {
+        console.error('Error copying text: ', error);
+        showToast('Failed to copy text.');
+    });
+}
+
+
+function showModal(id) {
+
+    var row = $("#" + id);
+
+    var wtarget = row.find(".tr-word-target").text();
+    var wsource = row.find(".tr-word-source").text();
+    var etarget = row.find(".tr-example-target").text();
+    var pron = row.find(".tr-pronunciation").text();
+    var esource = row.find(".tr-example-source").text();
+    var tips = row.find(".tr-tips").text();
+    var level = row.find(".tr-level").text();
+    var isPublic = row.find(".tr-isPublic").text();
+    var ispublic = (isPublic === 'False' || isPublic === 'false') ? 'false' : 'true';
 
     $("#fcidModal").text(id);
     $("#wtarget").val(wtarget);
@@ -10,10 +40,7 @@ function showModal(id, wtarget, wsource, etarget, pron, esource, tips, level, is
     $("#esource").val(esource);
     $("#tips").val(tips);
     $("#level").val(level);
-
-    var ispublic = (isPublic === 'False') ? 'false' : 'true';
     $("#isPublic").val(ispublic);
-
 
     document.getElementById('editModal').style.display = 'block';
     return false;
@@ -27,6 +54,7 @@ function closeModal() {
 
 
 function saveChanges() {
+
     var id = $('#fcidModal').text();
     var wtarget = $('#wtarget').val();
     var wsource = $('#wsource').val();
@@ -43,7 +71,6 @@ function saveChanges() {
     }
 
     editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic);
-
 }
 
 
@@ -65,52 +92,36 @@ function editFlashcard(id, wtarget, wsource, etarget, pron, esource, tips, level
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (response) {
-            updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic);
-            closeModal();
-            showToast("Flashcard Updated!")
+
+            if (response.d === 'ok') {
+                updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic);
+                closeModal();
+                showToast("Flashcard Updated!");
+            }
+            else {
+                alert("Error updating flashcard: " + response.d);
+            }
         },
         error: function (xhr, status, error) {
-            console.error("Error updating flashcard: " + xhr.responseText);
-            showToast("Error updating flashcard: " + xhr.responseText);
+            console.error("Error:" + xhr.responseText);
+            alert("Error: " + xhr.responseText);
         }
     });
 }
 
 
 function updateTableRow(id, wtarget, wsource, etarget, pron, esource, tips, level, isPublic) {
+
     var row = $("#" + id);
 
-    //var ispublic = (isPublic === 'False') ? 'false' : 'true';
-    //$("#isPublic").val(ispublic);
-
-
-
-    row.find(".flashcad-table-row-cell").eq(0).html(wtarget + "<br />" + wsource);
-    row.find(".flashcad-table-row-cell").eq(1).html(etarget + "<br />" + pron + "<br />" + esource);
-    row.find(".flashcad-table-row-cell").eq(2).text(tips);
-    row.find(".flashcad-table-row-cell").eq(3).text(level);
-    row.find(".flashcad-table-row-cell").eq(4).text(isPublic);
-
-
-}
-
-
-function copyToClipboard() {
-    navigator.clipboard.writeText(textToCopy).then(function () {
-        console.log('Text copied to clipboard');
-        showToast('Text copied to clipboard!');
-    }).catch(function (error) {
-        console.error('Error copying text: ', error);
-        showToast('Failed to copy text.');
-    });
-}
-
-
-function showToast(message) {
-    const toast = document.getElementById("toast");
-    toast.textContent = message;
-    toast.className = "show";
-    setTimeout(function () { toast.className = toast.className.replace("show", ""); }, 3000);
+    row.find(".tr-word-target").text(wtarget);
+    row.find(".tr-word-source").text(wsource);
+    row.find(".tr-example-target").text(etarget);
+    row.find(".tr-pronunciation").text(pron);
+    row.find(".tr-example-source").text(esource);
+    row.find(".tr-tips").text(tips);
+    row.find(".tr-level").text(level);
+    row.find(".tr-isPublic").text(isPublic);
 }
 
 
@@ -123,13 +134,17 @@ function deleteFlashcard(flashcardId) {
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             success: function (response) {
-                if (response.d === "Success") {
+
+                if (response.d === "ok")
+                {
                     $("#" + flashcardId).fadeOut("fast", function () {
                         $(this).remove();
                         showToast('Flashcard deleted!');
                     });
-                } else {
-                    showToast('Error deleting flashcard');
+                }
+                else
+                {
+                    alert('Error deleting flashcard: ' + response.d);
                 }
             },
             error: function (xhr, status, error) {
@@ -141,4 +156,40 @@ function deleteFlashcard(flashcardId) {
 }
 
 
+function deleteAllFlashcards(lsource, ltarget, category) {
 
+    var username = $('#lblLoggedInUser').text();
+
+    if (confirm("Are you sure you want to delete All the flashcards in this table forever and ever?")) {
+        $.ajax({
+            type: "POST",
+            url: "UserFlashcardsDisplay.aspx/DeleteAllFlashcards",
+            data: JSON.stringify({
+                lsource: lsource,
+                ltarget: ltarget,
+                category: category,
+                username: username
+            }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (response) {
+
+                if (response.d === "ok") {
+                    showToast('Flashcards deleted!');
+
+                    setTimeout(function () {
+                        window.location.href = 'FlashcardGroupsDisplayByUser.aspx';
+                    }, 2000);
+                }
+                else
+                {
+                    alert('Error deleting flashcards: ' + response.d);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Error deleting flashcard: " + xhr.responseText);
+                alert('Error deleting flashcard - ajax' + xhr.responseText);
+            }
+        });
+    }
+}

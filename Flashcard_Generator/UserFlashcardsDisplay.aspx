@@ -4,7 +4,7 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="container">
+    <div class="container" style="display:grid">
 
         <div id="toast"></div>
 
@@ -25,7 +25,7 @@
                         <th class="flashcad-table-row-cell">Usage / Pronunciation / Translation</th>
                         <th class="flashcad-table-row-cell">Tips</th>
                         <th class="flashcad-table-row-cell">Level</th>
-                        <th class="flashcad-table-row-cell"></th>
+                        <th class="flashcad-table-row-cell">Public</th>
                         <th class="flashcad-table-row-cell"></th>
                         <th class="flashcad-table-row-cell"></th>
                     </tr>
@@ -45,6 +45,10 @@
 
             <FooterTemplate></table></FooterTemplate>
         </asp:Repeater>
+
+        <br />
+
+        <span style="justify-self: right"> <button class="btn-word" style="font-size:20px; color: blue" onclick="deleteAllFlashcards('<%=Request.QueryString["source"]%>','<%=Request.QueryString["target"]%>','<%=Request.QueryString["category"] %>' )">Delete Group Of Flashcards</button></span>
 
     </div>
 

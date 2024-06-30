@@ -69,5 +69,13 @@ namespace Flashcard_Generator
 			rptrFlashcardsByLanguageCombination.DataSource = divByLanguagesAndCategories;
 			rptrFlashcardsByLanguageCombination.DataBind();
 		}
+
+
+
+		protected void btnNewFlashcardGroup_Click(Object sender, EventArgs e)
+		{
+			Response.Redirect($"FlashcardGenerator.aspx");
+		}
+
 	}
 }

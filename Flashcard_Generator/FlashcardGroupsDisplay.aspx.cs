@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.X509;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -70,11 +71,14 @@ namespace Flashcard_Generator
 
 		protected void rptrFlashcardsByCategory_ItemDataBound(object sender, RepeaterItemEventArgs e)
 		{
+
 			if (e.Item.ItemType == ListItemType.Item || e.Item.ItemType == ListItemType.AlternatingItem)
 			{
+				// catch info about the parent repeater - (used because there is a repeater inside a repeater)
 				RepeaterItem parentItem = (RepeaterItem)e.Item.Parent.Parent;
 				DivByLanguagesAndCategories parentData = (DivByLanguagesAndCategories)parentItem.DataItem;
 
+				// give the arguments to the category button
 				LinkButton btnFlashcardGroup = (LinkButton)e.Item.FindControl("btnFlashcardGroup");
 				string category = (string)e.Item.DataItem;
 				btnFlashcardGroup.CommandArgument = $"{parentData.SourceLanguage},{parentData.TargetLanguage},{category}";
@@ -94,5 +98,10 @@ namespace Flashcard_Generator
 			Response.Redirect($"FlashcardsDisplay.aspx?source={Server.UrlEncode(source)}&target={Server.UrlEncode(target)}&category={Server.UrlEncode(category)}");
 		}
 
-    }
+
+		protected void btnNewFlashcardsDisplay_Click(Object sender, EventArgs e)
+		{
+			Response.Redirect($"FlashcardGenerator.aspx");
+		}
+	}
 }
