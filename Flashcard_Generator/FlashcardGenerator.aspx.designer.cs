@@ -87,6 +87,15 @@ namespace Flashcard_Generator
 		protected global::System.Web.UI.WebControls.DropDownList ddlPrivacySetting;
 
 		/// <summary>
+		/// lblMessage control.
+		/// </summary>
+		/// <remarks>
+		/// Auto-generated field.
+		/// To modify move field declaration from designer file to code-behind file.
+		/// </remarks>
+		protected global::System.Web.UI.WebControls.Label lblMessage;
+
+		/// <summary>
 		/// txtVocabularyTarget control.
 		/// </summary>
 		/// <remarks>
@@ -139,15 +148,6 @@ namespace Flashcard_Generator
 		/// To modify move field declaration from designer file to code-behind file.
 		/// </remarks>
 		protected global::System.Web.UI.WebControls.TextBox txtTip;
-
-		/// <summary>
-		/// lblMessage control.
-		/// </summary>
-		/// <remarks>
-		/// Auto-generated field.
-		/// To modify move field declaration from designer file to code-behind file.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label lblMessage;
 
 		/// <summary>
 		/// btnCreateFlashcards control.

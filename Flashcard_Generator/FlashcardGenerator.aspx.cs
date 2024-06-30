@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web.Services;
+using System.Web;
 using System.Web.UI;
+using Microsoft.Ajax.Utilities;
 
 namespace Flashcard_Generator
 {
@@ -36,25 +39,29 @@ namespace Flashcard_Generator
 
 			bool equalNumberOfData = ValidateNumberOfFlashcards(wordSource.Length, wordTarget.Length, exampleSentenceSource.Length, exampleSentenceTarget.Length, tips.Length, pronunciation.Length);
 
-			if (equalNumberOfData)
+			if (!equalNumberOfData)
 			{
-
+				lblMessage.Text = "The number of flashcards in the fields must be the same";
+				return;
 			}
 
-			var numberOfFlashcards = wordSource.Length;
+			var numberOfFlashcards = wordTarget.Length;
 
 			FlashcardServices flashcardServices = new FlashcardServices();
 
-			for (int i = 0; i < numberOfFlashcards; i++)
+
+			try
 			{
-				Flashcard flashcard = new Flashcard(user,sourceLanguage,targetLanguage,category,
+for (int i = 0; i < numberOfFlashcards; i++)
+			{
+				Flashcard flashcard = new Flashcard(user, sourceLanguage, targetLanguage, category,
 					wordSource[i],
 					wordTarget[i],
 					exampleSentenceSource[i],
 					exampleSentenceTarget[i],
 					pronunciation[i],
 					tips[i],
-					proficiency,isPublic
+					proficiency, isPublic
 				);
 
 				string result = flashcardServices.CreateFlashcard(flashcard);
@@ -66,13 +73,18 @@ namespace Flashcard_Generator
 				}
 
 			}
+			}
+			catch (Exception ex)
+			{
+				lblMessage.Text = ex.Message;
+			}
 
 			lblMessage.Text = $"The Set was created";
 			Response.Redirect("FlashcardGroupsDisplayByUser.aspx");
 		}
 
 
-		protected string[] CreateArrayOfStrings(string userInput) 
+		protected string[] CreateArrayOfStrings(string userInput)
 		{
 			string[] separatedStrings = userInput.Split(new char[] { ';' }, StringSplitOptions.RemoveEmptyEntries);
 
@@ -91,6 +103,18 @@ namespace Flashcard_Generator
 		{
 			return a == b && b == c && c == d && d == e && e == f;
 		}
+
+
+
+
+
+
+
+
+
+
+
+
 
 	}
 }

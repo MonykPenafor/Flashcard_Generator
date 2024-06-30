@@ -13,21 +13,27 @@
         <h5>Here you can create flashcards that will share the Group Title, Languages, Level and Privacy Setting.</h5>
 
         <p class="instructions">
-            - Write the data between "" (quotation marks) and separate each flashcard data with ; (semicolon)
+            - Write the data between (") and separate each flashcard data with (;).
         <br />
-            - DO NOT end the phrase with ';', use it only to separate
+            - Don't write (") or (;) in the middle of the phrases.
         <br />
-            - Don't write sentences that are too long, otherwise they will not fit in the flashcard if you want to print them later
+            - Don't write sentences that are too long, otherwise they will not fit in the flashcard if you want to print them later.
         <br />
-            - Look at the placeholders for a better understanding
+            - There must be the same number of flashcards in all the fields.
         <br />
-            - If theres not the same number of flashcards written in all the boxes, it will create the flashcards according to the number of flashcards in the first box, and the rest will be losen, so make sure you put the same amount of flashcards in the boxes!
+            - Look at the placeholders for a better understanding.
         </p>
 
         <div style="display: flex; align-items: center;">
-            <p style="font-size: 17px; margin: 0;">Use this snippet <button type="button" onclick="copyToClipboard()" class="td-icon" style="padding:0; margin:0; display:inline;"><img src="Assets/Icons/copy.png" /></button> on Chat GPT to help you create flashcards, change the languages, level and topic at the start of the snippet to your liking. :)</p>
-            
-        </div><br />
+            <p style="font-size: 17px; margin: 0;">
+                Use this snippet
+                <button type="button" onclick="copyToClipboard()" class="td-icon" style="padding: 0; margin: 0; display: inline;">
+                    <img src="Assets/Icons/copy.png" /></button>
+                on Chat GPT to help you create flashcards, change the languages, level and topic at the start of the snippet to your liking. :)
+            </p>
+
+        </div>
+        <br />
 
         <div class="form-group">
 
@@ -81,6 +87,8 @@
 
         <br />
         
+        <asp:Label ID="lblMessage" runat="server" Text="" CssClass="error-message fw-bold" /><br />
+
         <div class="form-group label-memo">
             <label for="txtVocabularyTarget" class="flashcard-label">VOCABULARY:</label>
             <asp:TextBox ID="txtVocabularyTarget" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox"
@@ -110,51 +118,13 @@
             <asp:TextBox ID="txtTranslation" runat="server" CssClass="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
                 TextMode="MultiLine" placeholder='"I eat an apple"; "He drinks coffee"; "She watches a movie"'></asp:TextBox>
         </div>
-        
+
         <div class="form-group label-memo">
             <label for="txtTip" class="flashcard-label">TIPS:</label>
             <asp:TextBox ID="txtTip" runat="server" CssClass="flashcard-textBox  mymemo big-textBox form-control multiline-textbox"
                 TextMode="MultiLine" placeholder='"食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences."; "飲む: Remember to use the correct context; can also mean to take (medicine)."; "見る: Can be used for watching, seeing, or looking. Usage depends on context."'></asp:TextBox>
         </div>
 
-<%--        <div class="form-group label-memo">
-            <label for="txtVocabularyTarget" class="flashcard-label">VOCABULARY:</label>
-            <textarea runat="server" id="txtVocabularyTarget" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
-                placeholder='"食べる"; "飲む"; "見る"' rows="4"></textarea>
-        </div>
-
-        <div class="form-group label-memo">
-            <label for="txtVocabularySource" class="flashcard-label">VOCABULARY TRANSLATION:</label>
-            <textarea id="txtVocabularySource" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
-                placeholder='"to eat"; "to drink"; "to watch"' rows="4"></textarea>
-        </div>
-
-        <div class="form-group label-memo">
-            <label for="txtWordOrPhrase" class="flashcard-label">EXAMPLE SENTENCE:</label>
-            <textarea id="txtWordOrPhrase" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
-                placeholder='"私はりんごを食べる"; "彼はコーヒーを飲む"; "彼女は映画を見る"' rows="4"></textarea>
-        </div>
-
-        <div class="form-group label-memo">
-            <label for="txtSimplified" class="flashcard-label">PRONUNCIATION / SIMPLIFICATION:</label>
-            <textarea id="txtSimplified" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
-                placeholder='"わたしはりんごをたべる"; "かれはコーヒーをのむ"; "かのじょはえいがをみる"' rows="4"></textarea>
-        </div>
-
-        <div class="form-group label-memo">
-            <label for="txtTranslation" class="flashcard-label">EXAMPLE SENTENCE TRANSLATION:</label>
-            <textarea id="txtTranslation" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
-                placeholder='"I eat an apple"; "He drinks coffee"; "She watches a movie"' rows="4"></textarea>
-        </div>
-
-        <div class="form-group label-memo">
-            <label for="txtTip" class="flashcard-label">TIPS:</label>
-            <textarea id="txtTip" required class="flashcard-textBox mymemo big-textBox form-control multiline-textbox"
-                placeholder='"食べる: Often used in everyday conversation, pay attention to particles like を when forming sentences.";"飲む: Remember to use the correct context; can also mean to take (medicine)."; "見る: Can be used for watching, seeing, or looking. Usage depends on context."'
-                rows="4"></textarea>
-        </div>--%>
-
-        <asp:Label ID="lblMessage" runat="server" Text="" CssClass="error-message" /><br />
         <br />
 
         <span style="justify-self: center">
@@ -165,4 +135,6 @@
 
 
     </div>
+
+
 </asp:Content>
