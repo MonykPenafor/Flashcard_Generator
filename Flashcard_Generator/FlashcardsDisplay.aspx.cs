@@ -65,8 +65,10 @@ namespace Flashcard_Generator
 			Font textFont = new Font(bf, 14, Font.NORMAL, BaseColor.BLACK);
 			Font smallFont = new Font(bf, 9, Font.NORMAL, BaseColor.BLACK);
 
+
 			using (MemoryStream ms = new MemoryStream())
 			{
+
 				Document document = new Document(PageSize.A4, 5, 5, 10, 10);
 				PdfWriter writer = PdfWriter.GetInstance(document, ms);
 				document.Open();
@@ -75,39 +77,74 @@ namespace Flashcard_Generator
 				table.WidthPercentage = 100;
 				table.SetWidths(new float[] { 1, 1 });
 
+				int cardsPerPage = 16;
+				int numberOfFlashcards = flashcards.Count;
 
-				// Add front and back of flashcards side by side
-				for (int i = 0; i < flashcards.Count; i++)
+
+				for (int i = 0; i < numberOfFlashcards; i++)
 				{
-					// Front of flashcard
-					PdfPCell frontCell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[i].TargetLanguage, flashcards[i].WordTarget,
-						flashcards[i].ExampleSentenceTarget, flashcards[i].Pronunciation, flashcards[i].Proficiency, flashcards[i].Id))
-					{ Border = PdfPCell.NO_BORDER };
 
-					table.AddCell(frontCell);
-
-					// Back of flashcard
-					PdfPCell backCell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[i].SourceLanguage, flashcards[i].WordSource,
-						flashcards[i].ExampleSentenceSource, flashcards[i].Tips, flashcards[i].Proficiency, flashcards[i].Id))
-					{ Border = PdfPCell.NO_BORDER };
-
-					table.AddCell(backCell);
-
-					if ((i + 1) % 2 == 0)
+					for (int j = 0; j < cardsPerPage; j++) 
 					{
-						document.Add(table);
-						table = new PdfPTable(2);
-						table.WidthPercentage = 100;
-						table.SetWidths(new float[] { 1, 1 });
+						
+					}
+
+
+
+
+
+
+
+
+
+
+
+				}
+
+
+
+
+				foreach (var flashcard in flashcards)
+				{
+					if (frontCount < cardsPerPage / 2)
+					{
+						// Print front of flashcard
+						PdfPCell frontCell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcard.TargetLanguage, flashcard.WordTarget,
+							flashcard.ExampleSentenceTarget, flashcard.Pronunciation, flashcard.Proficiency, flashcard.Id))
+						{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
+
+						frontTable.AddCell(frontCell);
+						frontCount++;
+					}
+					else
+					{
+						// Print back of flashcard
+						PdfPCell backCell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcard.SourceLanguage, flashcard.WordSource,
+							flashcard.ExampleSentenceSource, flashcard.Tips, flashcard.Proficiency, flashcard.Id))
+						{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
+
+						backTable.AddCell(backCell);
+						backCount++;
 					}
 				}
 
-				if (table.Size > 0)
-				{
-					document.Add(table);
-				}
+				// Add front pages to the document
+				document.Add(frontTable);
+
+				// Add back pages to the document
+				document.NewPage();
+				document.Add(backTable);
 
 				document.Close();
+
+
+
+
+
+
+
+
+
 
 				Response.ContentType = "application/pdf";
 				Response.AddHeader("content-disposition", "attachment;filename=Flashcards.pdf");
@@ -116,6 +153,11 @@ namespace Flashcard_Generator
 				Response.End();
 			}
 		}
+
+
+
+
+
 
 		private PdfPTable CreateFlashcardTable(Font headerFont, Font titleFont, Font textFont, Font smallFont, string language,
 			string word, string sentence, string additionalInfo, string level, int id)
