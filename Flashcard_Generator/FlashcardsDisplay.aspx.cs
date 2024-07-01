@@ -60,9 +60,9 @@ namespace Flashcard_Generator
 			string fontPath = Server.MapPath("~/Assets/NotoSansCJKsc-Regular.otf");
 			BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
 			Font unicodeFont = new Font(bf, 7, Font.NORMAL, BaseColor.BLACK);
-			Font headerFont = new Font(bf, 11, Font.BOLD, BaseColor.BLACK);
-			Font titleFont = new Font(bf, 13, Font.BOLD, BaseColor.BLACK);
-			Font textFont = new Font(bf, 17, Font.NORMAL, BaseColor.BLACK);
+			Font headerFont = new Font(bf, 9, Font.NORMAL, BaseColor.BLACK);
+			Font titleFont = new Font(bf, 11, Font.NORMAL, BaseColor.BLACK);
+			Font textFont = new Font(bf, 14, Font.NORMAL, BaseColor.BLACK);
 			Font smallFont = new Font(bf, 9, Font.NORMAL, BaseColor.BLACK);
 
 			using (MemoryStream ms = new MemoryStream())
@@ -75,45 +75,25 @@ namespace Flashcard_Generator
 				table.WidthPercentage = 100;
 				table.SetWidths(new float[] { 1, 1 });
 
-				// Adicionar flashcards lado A
+
+				// Add front and back of flashcards side by side
 				for (int i = 0; i < flashcards.Count; i++)
 				{
-					PdfPCell cell = new PdfPCell(CreateFlashcardTable(
-						headerFont, titleFont, textFont, smallFont,
-						flashcards[i].TargetLanguage, flashcards[i].WordTarget,
+					// Front of flashcard
+					PdfPCell frontCell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[i].TargetLanguage, flashcards[i].WordTarget,
 						flashcards[i].ExampleSentenceTarget, flashcards[i].Pronunciation, flashcards[i].Proficiency, flashcards[i].Id))
 					{ Border = PdfPCell.NO_BORDER };
 
-					table.AddCell(cell);
+					table.AddCell(frontCell);
 
-					if (i % 2 != 0)
-					{
-						document.Add(table);
-						table = new PdfPTable(2);
-						table.WidthPercentage = 100;
-						table.SetWidths(new float[] { 1, 1 });
-					}
-				}
-
-				if (table.Size > 0)
-				{
-					document.Add(table);
-				}
-
-				document.NewPage();
-
-				// Adicionar flashcards lado B
-				for (int i = 0; i < flashcards.Count; i++)
-				{
-					PdfPCell cell = new PdfPCell(CreateFlashcardTable(
-						headerFont, titleFont, textFont, smallFont,
-						flashcards[i].SourceLanguage, flashcards[(i + 1) % flashcards.Count].WordSource,
-						flashcards[(i + 1) % flashcards.Count].ExampleSentenceSource, flashcards[i].Tips, flashcards[i].Proficiency, flashcards[i].Id))
+					// Back of flashcard
+					PdfPCell backCell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[i].SourceLanguage, flashcards[i].WordSource,
+						flashcards[i].ExampleSentenceSource, flashcards[i].Tips, flashcards[i].Proficiency, flashcards[i].Id))
 					{ Border = PdfPCell.NO_BORDER };
 
-					table.AddCell(cell);
+					table.AddCell(backCell);
 
-					if (i % 2 != 0)
+					if ((i + 1) % 2 == 0)
 					{
 						document.Add(table);
 						table = new PdfPTable(2);
@@ -148,6 +128,7 @@ namespace Flashcard_Generator
 			PdfPCell cardContainer = new PdfPCell();
 			cardContainer.BackgroundColor = BaseColor.WHITE;
 			cardContainer.Padding = 10;
+			cardContainer.PaddingLeft = 30;
 			cardContainer.Border = PdfPCell.BOX;
 			cardContainer.BorderColor = BaseColor.BLACK;
 
@@ -156,16 +137,20 @@ namespace Flashcard_Generator
 			headerTable.WidthPercentage = 100;
 			headerTable.SetWidths(new float[] { 1, 4, 1 });
 
-			headerTable.AddCell(new PdfPCell(new Phrase(id.ToString() , headerFont)) { Border = PdfPCell.NO_BORDER, HorizontalAlignment = Element.ALIGN_LEFT });
+			headerTable.AddCell(new PdfPCell(new Phrase(id.ToString(), headerFont)) { Border = PdfPCell.NO_BORDER, HorizontalAlignment = Element.ALIGN_LEFT });
 			headerTable.AddCell(new PdfPCell(new Phrase(language, headerFont)) { Border = PdfPCell.NO_BORDER, HorizontalAlignment = Element.ALIGN_CENTER });
 			headerTable.AddCell(new PdfPCell(new Phrase(level, headerFont)) { Border = PdfPCell.NO_BORDER, HorizontalAlignment = Element.ALIGN_RIGHT });
 
 			cardContainer.AddElement(headerTable);
 
 			// Card body
-			cardContainer.AddElement(new Phrase(word, titleFont));
-			cardContainer.AddElement(new Phrase(sentence, textFont));
-			cardContainer.AddElement(new Phrase(additionalInfo, smallFont));
+			Paragraph wordParagraph = new Paragraph(word, titleFont) { Alignment = Element.ALIGN_CENTER };
+			Paragraph sentenceParagraph = new Paragraph(sentence, textFont) { Alignment = Element.ALIGN_CENTER };
+			Paragraph additionalInfoParagraph = new Paragraph(additionalInfo, smallFont) { Alignment = Element.ALIGN_CENTER };
+
+			cardContainer.AddElement(wordParagraph);
+			cardContainer.AddElement(sentenceParagraph);
+			cardContainer.AddElement(additionalInfoParagraph);
 
 			table.AddCell(cardContainer);
 

@@ -99,6 +99,7 @@ namespace Flashcard_Generator
 			return stringList.ToArray();
 		}
 
+
 		protected bool ValidateNumberOfFlashcards(int a, int b, int c, int d, int e, int f)
 		{
 			return a == b && b == c && c == d && d == e && e == f;
