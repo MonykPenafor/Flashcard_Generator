@@ -73,78 +73,80 @@ namespace Flashcard_Generator
 				PdfWriter writer = PdfWriter.GetInstance(document, ms);
 				document.Open();
 
-				PdfPTable table = new PdfPTable(2);
-				table.WidthPercentage = 100;
-				table.SetWidths(new float[] { 1, 1 });
-
 				int cardsPerPage = 16;
-				int numberOfFlashcards = flashcards.Count;
+				int tillThisFlashcard = cardsPerPage;
+				int numberOfFlashcards = flashcards.Count; // 56 fc - 8 paginas - 4f e 4b
 
-
-				for (int i = 0; i < numberOfFlashcards; i++)
+				int pages = numberOfFlashcards/cardsPerPage;    // 4 pages for each (f and b)
+				if (numberOfFlashcards % cardsPerPage != 0)
 				{
-
-					for (int j = 0; j < cardsPerPage; j++) 
-					{
-						
-					}
-
-
-
-
-
-
-
-
-
-
-
+					pages++;
 				}
 
-
-
-
-				foreach (var flashcard in flashcards)
+				for (int i = 0; i < pages; i++)
 				{
-					if (frontCount < cardsPerPage / 2)
-					{
-						// Print front of flashcard
-						PdfPCell frontCell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcard.TargetLanguage, flashcard.WordTarget,
-							flashcard.ExampleSentenceTarget, flashcard.Pronunciation, flashcard.Proficiency, flashcard.Id))
-						{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
 
-						frontTable.AddCell(frontCell);
-						frontCount++;
-					}
-					else
-					{
-						// Print back of flashcard
-						PdfPCell backCell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcard.SourceLanguage, flashcard.WordSource,
-							flashcard.ExampleSentenceSource, flashcard.Tips, flashcard.Proficiency, flashcard.Id))
-						{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
+					PdfPTable frontTable = new PdfPTable(2);
+					frontTable.WidthPercentage = 100;
+					frontTable.SetWidths(new float[] { 1, 1 });
 
-						backTable.AddCell(backCell);
-						backCount++;
+					PdfPTable backTable = new PdfPTable(2);
+					backTable.WidthPercentage = 100;
+					backTable.SetWidths(new float[] { 1, 1 });
+
+					int fromThisFlashcard = i;
+					if (i != 0)
+					{
+						fromThisFlashcard = i*cardsPerPage;
 					}
+
+					for (int j = fromThisFlashcard; j < tillThisFlashcard; j++)
+					{
+						try
+						{
+							// Print front of flashcard
+							PdfPCell cell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[j].TargetLanguage, flashcards[j].WordTarget,
+							flashcards[j].ExampleSentenceTarget, flashcards[j].Pronunciation, flashcards[j].Proficiency, flashcards[j].Id))
+							{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
+
+							frontTable.AddCell(cell);
+						}
+						catch (ArgumentOutOfRangeException)
+						{
+							break;
+						}
+					}
+
+					for (int j = fromThisFlashcard; j < tillThisFlashcard; j++)
+					{
+						try
+						{
+							// Print back of flashcard
+							PdfPCell cell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[j].SourceLanguage, flashcards[j].WordSource,
+						flashcards[j].ExampleSentenceSource, flashcards[j].Tips, flashcards[j].Proficiency, flashcards[j].Id))
+							{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
+
+							backTable.AddCell(cell);
+						}
+						catch (ArgumentOutOfRangeException)
+						{
+							break;
+						}
+					}
+
+					// Add front pages to the document
+					document.Add(frontTable);
+
+					// Add back pages to the document
+					document.NewPage();
+
+					document.Add(backTable);
+
+					tillThisFlashcard = tillThisFlashcard + cardsPerPage;
 				}
-
-				// Add front pages to the document
-				document.Add(frontTable);
-
-				// Add back pages to the document
-				document.NewPage();
-				document.Add(backTable);
+				//2 pags
 
 				document.Close();
-
-
-
-
-
-
-
-
-
 
 				Response.ContentType = "application/pdf";
 				Response.AddHeader("content-disposition", "attachment;filename=Flashcards.pdf");
@@ -153,10 +155,6 @@ namespace Flashcard_Generator
 				Response.End();
 			}
 		}
-
-
-
-
 
 
 		private PdfPTable CreateFlashcardTable(Font headerFont, Font titleFont, Font textFont, Font smallFont, string language,
