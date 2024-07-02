@@ -117,16 +117,23 @@ namespace Flashcard_Generator
 						}
 					}
 
-					for (int j = fromThisFlashcard; j < tillThisFlashcard; j++)
+					for (int j = fromThisFlashcard; j < tillThisFlashcard; j = j+2)
 					{
 						try
 						{
 							// Print back of flashcard
-							PdfPCell cell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[j].SourceLanguage, flashcards[j].WordSource,
-						flashcards[j].ExampleSentenceSource, flashcards[j].Tips, flashcards[j].Proficiency, flashcards[j].Id))
+							PdfPCell cell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[j+1].SourceLanguage, flashcards[j+1].WordSource,
+							flashcards[j+1].ExampleSentenceSource, flashcards[j+1].Tips, flashcards[j+1].Proficiency, flashcards[j+1].Id))
 							{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
 
 							backTable.AddCell(cell);
+
+							// Print back of flashcard
+							PdfPCell cell2 = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[j].SourceLanguage, flashcards[j].WordSource,
+							flashcards[j].ExampleSentenceSource, flashcards[j].Tips, flashcards[j].Proficiency, flashcards[j].Id))
+							{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
+
+							backTable.AddCell(cell2);
 						}
 						catch (ArgumentOutOfRangeException)
 						{
