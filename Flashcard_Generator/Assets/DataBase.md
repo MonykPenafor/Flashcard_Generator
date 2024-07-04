@@ -1,5 +1,3 @@
-Entendido, vamos manter o `created_at` com `DEFAULT CURRENT_TIMESTAMP` e ajustar os `TRIGGERs` apenas para atualizar o `updated_at`. Aqui está o esquema atualizado:
-
 ### Criação das Tabelas
 
 ```sql
@@ -42,7 +40,7 @@ ON USERS
 AFTER UPDATE
 AS
 BEGIN
-    SET NOCOUNT ON;
+    SET NOCOUNT ON; --evitar contagem de resultados
     UPDATE USERS
     SET updated_at = CURRENT_TIMESTAMP
     FROM inserted
@@ -67,15 +65,3 @@ BEGIN
 END;
 GO
 ```
-
-### Explicação
-
-1. **Tabelas**:
-    - `created_at` está configurado com `DEFAULT CURRENT_TIMESTAMP` para definir a data e hora atuais na criação do registro.
-    - `updated_at` também está configurado com `DEFAULT CURRENT_TIMESTAMP`, mas será atualizado pelos `TRIGGERs` durante as operações de atualização.
-
-2. **Triggers**:
-    - `trg_UpdateUserUpdatedAt`: Atualiza a coluna `updated_at` na tabela `USERS` sempre que um registro é atualizado.
-    - `trg_UpdateFlashcardUpdatedAt`: Atualiza a coluna `updated_at` na tabela `FLASHCARDS` sempre que um registro é atualizado.
-
-Com essa configuração, as colunas `created_at` e `updated_at` serão gerenciadas corretamente, com `created_at` registrando a criação inicial e `updated_at` sendo atualizado automaticamente sempre que um registro for modificado.

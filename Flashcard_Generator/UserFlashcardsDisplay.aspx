@@ -48,7 +48,8 @@
 
         <br />
 
-        <span style="justify-self: right"> <button class="btn-word" style="font-size:20px; color: blue" onclick="deleteAllFlashcards('<%=Request.QueryString["source"]%>','<%=Request.QueryString["target"]%>','<%=Request.QueryString["category"] %>' )">Delete Group Of Flashcards</button></span>
+        <span style="justify-self: right"> <button class="btn-word" style="font-size:20px; color: blue" 
+        onclick="deleteAllFlashcards('<%=HttpUtility.JavaScriptStringEncode(Request.QueryString["source"]) %>','<%=HttpUtility.JavaScriptStringEncode(Request.QueryString["target"])%>','<%=HttpUtility.JavaScriptStringEncode(Request.QueryString["category"]).Replace("\"", "&quot;")%>')">Delete Group Of Flashcards</button></span>
 
     </div>
 

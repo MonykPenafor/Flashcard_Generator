@@ -151,7 +151,6 @@ namespace Flashcard_Generator
 
 					tillThisFlashcard = tillThisFlashcard + cardsPerPage;
 				}
-				//2 pags
 
 				document.Close();
 
@@ -203,5 +202,8 @@ namespace Flashcard_Generator
 
 			return table;
 		}
+	
+	
+	
 	}
 }
