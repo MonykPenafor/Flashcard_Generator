@@ -83,8 +83,6 @@ namespace Flashcard_Generator
 
 		protected void GeneratePDF(object sender, EventArgs e)
 		{
-
-
 			User user = (User)Session["LoggedInUser"];
 			string username = user.Username;
 			string source = Request.QueryString["source"];
@@ -105,6 +103,7 @@ namespace Flashcard_Generator
 			Font smallFont = new Font(bf, 9, Font.NORMAL, BaseColor.BLACK);
 
 
+
 			using (MemoryStream ms = new MemoryStream())
 			{
 
@@ -114,9 +113,9 @@ namespace Flashcard_Generator
 
 				int cardsPerPage = 16;
 				int tillThisFlashcard = cardsPerPage;
-				int numberOfFlashcards = flashcards.Count; // 56 fc - 8 paginas - 4f e 4b
+				int numberOfFlashcards = flashcards.Count; 
 
-				int pages = numberOfFlashcards/cardsPerPage;    // 4 pages for each (f and b)
+				int pages = numberOfFlashcards/cardsPerPage;  
 				if (numberOfFlashcards % cardsPerPage != 0)
 				{
 					pages++;
@@ -156,6 +155,7 @@ namespace Flashcard_Generator
 						}
 					}
 
+
 					for (int j = fromThisFlashcard; j < tillThisFlashcard; j = j+2)
 					{
 						try
@@ -190,7 +190,6 @@ namespace Flashcard_Generator
 
 					tillThisFlashcard = tillThisFlashcard + cardsPerPage;
 				}
-				//2 pags
 
 				document.Close();
 
@@ -242,7 +241,6 @@ namespace Flashcard_Generator
 
 			return table;
 		}
-
 
 
 

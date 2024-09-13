@@ -121,14 +121,14 @@ namespace Flashcard_Generator
 					{
 						try
 						{
-							// Print back of flashcard
+							// Print back of flashcard 1°col
 							PdfPCell cell = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[j+1].SourceLanguage, flashcards[j+1].WordSource,
 							flashcards[j+1].ExampleSentenceSource, flashcards[j+1].Tips, flashcards[j+1].Proficiency, flashcards[j+1].Id))
 							{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
 
 							backTable.AddCell(cell);
 
-							// Print back of flashcard
+							// Print back of flashcard 2°col
 							PdfPCell cell2 = new PdfPCell(CreateFlashcardTable(headerFont, titleFont, textFont, smallFont, flashcards[j].SourceLanguage, flashcards[j].WordSource,
 							flashcards[j].ExampleSentenceSource, flashcards[j].Tips, flashcards[j].Proficiency, flashcards[j].Id))
 							{ Border = PdfPCell.NO_BORDER, FixedHeight = 102 };
