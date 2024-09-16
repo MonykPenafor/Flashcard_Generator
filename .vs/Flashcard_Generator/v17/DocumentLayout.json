@@ -3,11 +3,11 @@
   "WorkspaceRootPath": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardsdisplay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
-      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardsdisplay.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|c:\\users\\monyk penafor\\source\\repos\\traineeproject\\flashcard_generator\\flashcard_generator\\flashcardsdisplay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\flashcard_generator\\flashcardsdisplay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5AF82CF3-F349-4BA3-818F-D74CBD6A97FD}|Flashcard_Generator\\Flashcard_Generator.csproj|solutionrelative:flashcard_generator\\flashcardsdisplay.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,24 +22,7 @@
           "Children": [
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FlashcardsDisplay.aspx",
-              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardsDisplay.aspx",
-              "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardsDisplay.aspx",
-              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardsDisplay.aspx",
-              "RelativeToolTip": "Flashcard_Generator\\FlashcardsDisplay.aspx",
-              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
-              "WhenOpened": "2024-09-13T15:23:51.783Z",
-              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -49,9 +32,22 @@
               "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardsDisplay.aspx.cs",
               "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardsDisplay.aspx.cs",
               "RelativeToolTip": "Flashcard_Generator\\FlashcardsDisplay.aspx.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAxAAAA",
+              "ViewState": "AQIAADQAAAAAAAAAAAD4v00AAAADAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T13:17:13.68Z",
+              "WhenOpened": "2024-09-13T17:56:11.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FlashcardServices.cs",
+              "DocumentMoniker": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardServices.cs",
+              "RelativeDocumentMoniker": "Flashcard_Generator\\FlashcardServices.cs",
+              "ToolTip": "C:\\Users\\Monyk Penafor\\source\\repos\\TraineeProject\\Flashcard_Generator\\Flashcard_Generator\\FlashcardServices.cs",
+              "RelativeToolTip": "Flashcard_Generator\\FlashcardServices.cs",
+              "ViewState": "AQIAAMwAAAAAAAAAAAAAAGkCAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-13T15:36:39.157Z",
               "EditorCaption": ""
             }
           ]
