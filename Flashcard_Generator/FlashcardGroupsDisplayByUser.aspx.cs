@@ -71,7 +71,6 @@ namespace Flashcard_Generator
 		}
 
 
-
 		protected void btnNewFlashcardGroup_Click(Object sender, EventArgs e)
 		{
 			Response.Redirect($"FlashcardGenerator.aspx");

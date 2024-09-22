@@ -472,7 +472,7 @@ namespace Flashcard_Generator
 			BaseFont bf = BaseFont.CreateFont(fontPath, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
 			Font unicodeFont = new Font(bf, 7, Font.NORMAL, BaseColor.BLACK);
 			Font headerFont = new Font(bf, 9, Font.NORMAL, BaseColor.BLACK);
-			Font titleFont = new Font(bf, 9, Font.NORMAL, BaseColor.BLACK);
+			Font titleFont = new Font(bf, 14, Font.NORMAL, BaseColor.BLACK);
 			Font textFont = new Font(bf, 9, Font.NORMAL, BaseColor.BLACK);
 			Font smallFont = new Font(bf, 9, Font.NORMAL, BaseColor.BLACK);
 

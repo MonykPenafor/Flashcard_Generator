@@ -1,6 +1,5 @@
-.vs/
-
 # Ignorar diretórios de IDE
+.vs/
 .idea/
 .vscode/
 
@@ -9,12 +8,40 @@
 *.log
 *.out
 *.o
+*.dll
+*.exe
+*.pdb
 
 # Ignorar diretórios de build
 /build/
 /bin/
+*/bin/
+*/obj/
 /obj/
+
+# Ignorar diretórios de pacotes
+/packages/
+node_modules/
+
+# Ignorar arquivos de configuração específicos do usuário e ambiente
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
 # Ignorar arquivos de sistema
 .DS_Store
 Thumbs.db
+
+# Ignorar arquivos temporários
+*.tmp
+*.cache
+*.log
+*.diff
+*.patch
+*.swp
+*.sublime-workspace
+
+# Ignorar arquivos de publicação
+/Publish/

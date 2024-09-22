@@ -98,7 +98,6 @@ namespace Flashcard_Generator
 			Response.Redirect($"FlashcardsDisplay.aspx?source={Server.UrlEncode(source)}&target={Server.UrlEncode(target)}&category={Server.UrlEncode(category)}");
 		}
 
-
 		protected void btnNewFlashcardsDisplay_Click(Object sender, EventArgs e)
 		{
 			Response.Redirect($"FlashcardGenerator.aspx");
