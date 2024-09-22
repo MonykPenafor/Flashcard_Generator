@@ -1,0 +1,20 @@
+.vs/
+
+# Ignorar diretórios de IDE
+.idea/
+.vscode/
+
+# Ignorar arquivos de compilação
+*.class
+*.log
+*.out
+*.o
+
+# Ignorar diretórios de build
+/build/
+/bin/
+/obj/
+
+# Ignorar arquivos de sistema
+.DS_Store
+Thumbs.db
