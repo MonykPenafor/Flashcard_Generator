@@ -68,7 +68,6 @@ C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\Microsoft.A
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.csproj.AssemblyReference.cache
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.csproj.CoreCompileInputs.cache
-C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.csproj.CopyComplete
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.dll
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcard_Generator.pdb
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BCrypt.Net-Next.dll
@@ -172,3 +171,4 @@ C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BouncyCastl
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\itextsharp.dll
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\BouncyCastle.Cryptography.xml
 C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\bin\itextsharp.xml
+C:\GITHUB\TraineeProject\Flashcard_Generator\Flashcard_Generator\obj\Debug\Flashcar.D51893F0.Up2Date
