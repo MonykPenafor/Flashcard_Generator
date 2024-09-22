@@ -175,15 +175,15 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Site.css" />
-    <Content Include="FlashcardsDisplay.aspx" />
-    <Content Include="TableRow2.ascx" />
-    <Content Include="UserFlashcardsDisplay.aspx" />
-    <Content Include="FlashcardGenerator.aspx" />
-    <Content Include="FlashcardGroupsDisplay.aspx" />
+    <Content Include="WebForms\FlashcardsDisplay.aspx" />
+    <Content Include="UserControls\TableRow2.ascx" />
+    <Content Include="WebForms\UserFlashcardsDisplay.aspx" />
+    <Content Include="WebForms\FlashcardGenerator.aspx" />
+    <Content Include="WebForms\FlashcardGroupsDisplay.aspx" />
     <Content Include="Global.asax" />
     <Content Include="favicon.ico" />
-    <Content Include="Home.aspx" />
-    <Content Include="Login.ascx" />
+    <Content Include="WebForms\Home.aspx" />
+    <Content Include="UserControls\Login.ascx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -239,11 +239,11 @@
     <Content Include="Scripts\WebForms\WebForms.js" />
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
-    <Content Include="SignUp.ascx" />
+    <Content Include="UserControls\SignUp.ascx" />
     <Content Include="Site.Master" />
-    <Content Include="Study.aspx" />
-    <Content Include="TableRow.ascx" />
-    <Content Include="FlashcardGroupsDisplayByUser.aspx" />
+    <Content Include="WebForms\Study.aspx" />
+    <Content Include="UserControls\TableRow.ascx" />
+    <Content Include="WebForms\FlashcardGroupsDisplayByUser.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -252,67 +252,67 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="DivByLanguagesAndCategories.cs" />
-    <Compile Include="Flashcard.cs" />
-    <Compile Include="FlashcardsDisplay.aspx.cs">
+    <Compile Include="Model\DivByLanguagesAndCategories.cs" />
+    <Compile Include="Model\Flashcard.cs" />
+    <Compile Include="WebForms\FlashcardsDisplay.aspx.cs">
       <DependentUpon>FlashcardsDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FlashcardsDisplay.aspx.designer.cs">
+    <Compile Include="WebForms\FlashcardsDisplay.aspx.designer.cs">
       <DependentUpon>FlashcardsDisplay.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TableRow2.ascx.cs">
+    <Compile Include="UserControls\TableRow2.ascx.cs">
       <DependentUpon>TableRow2.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TableRow2.ascx.designer.cs">
+    <Compile Include="UserControls\TableRow2.ascx.designer.cs">
       <DependentUpon>TableRow2.ascx</DependentUpon>
     </Compile>
-    <Compile Include="UserFlashcardsDisplay.aspx.cs">
+    <Compile Include="WebForms\UserFlashcardsDisplay.aspx.cs">
       <DependentUpon>UserFlashcardsDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UserFlashcardsDisplay.aspx.designer.cs">
+    <Compile Include="WebForms\UserFlashcardsDisplay.aspx.designer.cs">
       <DependentUpon>UserFlashcardsDisplay.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FlashcardGenerator.aspx.cs">
+    <Compile Include="WebForms\FlashcardGenerator.aspx.cs">
       <DependentUpon>FlashcardGenerator.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FlashcardGenerator.aspx.designer.cs">
+    <Compile Include="WebForms\FlashcardGenerator.aspx.designer.cs">
       <DependentUpon>FlashcardGenerator.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FlashcardServices.cs" />
-    <Compile Include="FlashcardGroupsDisplay.aspx.cs">
+    <Compile Include="Services\FlashcardServices.cs" />
+    <Compile Include="WebForms\FlashcardGroupsDisplay.aspx.cs">
       <DependentUpon>FlashcardGroupsDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FlashcardGroupsDisplay.aspx.designer.cs">
+    <Compile Include="WebForms\FlashcardGroupsDisplay.aspx.designer.cs">
       <DependentUpon>FlashcardGroupsDisplay.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Home.aspx.cs">
+    <Compile Include="WebForms\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Home.aspx.designer.cs">
+    <Compile Include="WebForms\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.ascx.cs">
+    <Compile Include="UserControls\Login.ascx.cs">
       <DependentUpon>Login.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.ascx.designer.cs">
+    <Compile Include="UserControls\Login.ascx.designer.cs">
       <DependentUpon>Login.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SignUp.ascx.cs">
+    <Compile Include="UserControls\SignUp.ascx.cs">
       <DependentUpon>SignUp.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SignUp.ascx.designer.cs">
+    <Compile Include="UserControls\SignUp.ascx.designer.cs">
       <DependentUpon>SignUp.ascx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
@@ -329,29 +329,29 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
-    <Compile Include="Study.aspx.cs">
+    <Compile Include="WebForms\Study.aspx.cs">
       <DependentUpon>Study.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Study.aspx.designer.cs">
+    <Compile Include="WebForms\Study.aspx.designer.cs">
       <DependentUpon>Study.aspx</DependentUpon>
     </Compile>
-    <Compile Include="TableRow.ascx.cs">
+    <Compile Include="UserControls\TableRow.ascx.cs">
       <DependentUpon>TableRow.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="TableRow.ascx.designer.cs">
+    <Compile Include="UserControls\TableRow.ascx.designer.cs">
       <DependentUpon>TableRow.ascx</DependentUpon>
     </Compile>
-    <Compile Include="User.cs" />
-    <Compile Include="FlashcardGroupsDisplayByUser.aspx.cs">
+    <Compile Include="Model\User.cs" />
+    <Compile Include="WebForms\FlashcardGroupsDisplayByUser.aspx.cs">
       <DependentUpon>FlashcardGroupsDisplayByUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FlashcardGroupsDisplayByUser.aspx.designer.cs">
+    <Compile Include="WebForms\FlashcardGroupsDisplayByUser.aspx.designer.cs">
       <DependentUpon>FlashcardGroupsDisplayByUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UserServices.cs" />
+    <Compile Include="Services\UserServices.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
