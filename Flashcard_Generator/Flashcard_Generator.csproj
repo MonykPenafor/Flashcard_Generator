@@ -181,7 +181,7 @@
     <Content Include="WebForms\FlashcardGenerator.aspx" />
     <Content Include="WebForms\FlashcardGroupsDisplay.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="favicon.ico" />
+    <Content Include="Assets\favicon.ico" />
     <Content Include="WebForms\Home.aspx" />
     <Content Include="UserControls\Login.ascx" />
     <Content Include="Scripts\bootstrap.bundle.js" />

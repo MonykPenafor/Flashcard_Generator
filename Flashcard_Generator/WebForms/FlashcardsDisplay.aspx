@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="Display of Flashcards" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FlashcardsDisplay.aspx.cs" Inherits="Flashcard_Generator.FlashcardsDisplay" %>
-<%@ Register TagPrefix="monyk" TagName="Flashcard" Src="~/TableRow2.ascx" %>
+<%@ Register TagPrefix="monyk" TagName="Flashcard" Src="~/UserControls/TableRow2.ascx" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">

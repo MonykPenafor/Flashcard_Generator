@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Flashcard_Generator.Home" %>
 
-<%@ Register TagPrefix="reg" TagName="LoginPanel" Src="~/Login.ascx" %>
-<%@ Register TagPrefix="reg" TagName="SignUpPanel" Src="~/SignUp.ascx" %>
+<%@ Register TagPrefix="reg" TagName="LoginPanel" Src="~/UserControls/Login.ascx" %>
+<%@ Register TagPrefix="reg" TagName="SignUpPanel" Src="~/UserControls/SignUp.ascx" %>
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
