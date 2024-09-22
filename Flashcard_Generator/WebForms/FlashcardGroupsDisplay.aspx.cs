@@ -95,12 +95,12 @@ namespace Flashcard_Generator
 			string target = arguments[1];
 			string category = arguments[2];
 
-			Response.Redirect($"FlashcardsDisplay.aspx?source={Server.UrlEncode(source)}&target={Server.UrlEncode(target)}&category={Server.UrlEncode(category)}");
+			Response.Redirect($"/WebForms/FlashcardsDisplay.aspx?source={Server.UrlEncode(source)}&target={Server.UrlEncode(target)}&category={Server.UrlEncode(category)}");
 		}
 
 		protected void btnNewFlashcardsDisplay_Click(Object sender, EventArgs e)
 		{
-			Response.Redirect($"FlashcardGenerator.aspx");
+			Response.Redirect($"/WebForms/FlashcardGenerator.aspx");
 		}
 	}
 }

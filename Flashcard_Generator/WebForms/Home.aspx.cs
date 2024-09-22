@@ -37,7 +37,7 @@ namespace Flashcard_Generator
 		protected void btnLogOut_Click(object sender, EventArgs e)
 		{
 			Session["LoggedInUser"] = null;
-			Response.Redirect("WebForms/Home.aspx");
+			Response.Redirect("/WebForms/Home.aspx");
 		}
 
 	}

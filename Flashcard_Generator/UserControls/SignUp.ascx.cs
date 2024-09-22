@@ -45,7 +45,7 @@ namespace Flashcard_Generator
 			}
 			else
 			{
-				Response.Redirect("Home.aspx");
+				Response.Redirect("/WebForms/Home.aspx");
 			}
 		}
 	}

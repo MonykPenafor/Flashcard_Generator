@@ -34,7 +34,7 @@ namespace Flashcard_Generator
 			else
 			{
 				FormsAuthentication.SetAuthCookie(usernameOrEmail, false);
-				Response.Redirect("Home.aspx");
+				Response.Redirect("/WebForms/Home.aspx");
 			}
 		}
 

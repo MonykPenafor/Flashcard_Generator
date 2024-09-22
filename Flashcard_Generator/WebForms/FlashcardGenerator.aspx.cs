@@ -80,7 +80,7 @@ namespace Flashcard_Generator
 			}
 
 			lblMessage.Text = $"The Set was created";
-			Response.Redirect("FlashcardGroupsDisplayByUser.aspx");
+			Response.Redirect("/WebForms/FlashcardGroupsDisplayByUser.aspx");
 		}
 
 
