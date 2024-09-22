@@ -1,4 +1,4 @@
-### Criação das Tabelas
+### TABLES CREATION
 
 ```sql
 CREATE TABLE USERS (
@@ -30,9 +30,9 @@ CREATE TABLE FLASHCARDS (
 );
 ```
 
-### Criação dos `TRIGGERs`
+### `TRIGGERs`
 
-#### `TRIGGER` para a Tabela `USERS`
+#### `TRIGGER` FOR `USERS`
 
 ```sql
 CREATE TRIGGER trg_UpdateUserUpdatedAt
@@ -49,7 +49,7 @@ END;
 GO
 ```
 
-#### `TRIGGER` para a Tabela `FLASHCARDS`
+#### `TRIGGER` FOR `FLASHCARDS`
 
 ```sql
 CREATE TRIGGER trg_UpdateFlashcardUpdatedAt
