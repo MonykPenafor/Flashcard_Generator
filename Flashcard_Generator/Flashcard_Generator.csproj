@@ -252,8 +252,8 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Model\DivByLanguagesAndCategories.cs" />
-    <Compile Include="Model\Flashcard.cs" />
+    <Compile Include="Models\DivByLanguagesAndCategories.cs" />
+    <Compile Include="Models\Flashcard.cs" />
     <Compile Include="WebForms\FlashcardsDisplay.aspx.cs">
       <DependentUpon>FlashcardsDisplay.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -343,7 +343,7 @@
     <Compile Include="UserControls\TableRow.ascx.designer.cs">
       <DependentUpon>TableRow.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Model\User.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="WebForms\FlashcardGroupsDisplayByUser.aspx.cs">
       <DependentUpon>FlashcardGroupsDisplayByUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
