@@ -17,7 +17,7 @@
     <link href="Assets\Style.css" rel="stylesheet" type="text/css" />
     <%--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  --%>
 
-    <script src="Assets/scripts.js" type="text/javascript"></script>
+    <script src="/Assets/scripts.js" type="text/javascript"></script>
 
 </head>
 <body>
@@ -83,6 +83,6 @@
         <%: Scripts.Render("~/Scripts/bootstrap.js") %>
     </asp:PlaceHolder>
 
-    <script src="Assets/text.js" type="text/javascript"></script>
+    <script src="/Assets/text.js" type="text/javascript"></script>
 </body>
 </html>

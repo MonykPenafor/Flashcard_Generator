@@ -28,7 +28,7 @@
             <p style="font-size: 17px; margin: 0;">
                 Use this snippet
                 <button type="button" onclick="copyToClipboard()" class="td-icon" style="padding: 0; margin: 0; display: inline;">
-                    <img src="Assets/Icons/copy.png" /></button>
+                    <img src="/Assets/Icons/copy.png" /></button>
                 on Chat GPT to help you create flashcards, change the languages, level and topic at the start of the snippet to your liking. :)
             </p>
 

@@ -4,6 +4,7 @@ using System.Web.Services;
 using System.Web;
 using System.Web.UI;
 using Microsoft.Ajax.Utilities;
+using System.Linq;
 
 namespace Flashcard_Generator
 {
@@ -16,7 +17,6 @@ namespace Flashcard_Generator
 			txtWordOrPhrase.Attributes.Add("required", "required");
 			txtSimplified.Attributes.Add("required", "required");
 			txtTranslation.Attributes.Add("required", "required");
-			txtTip.Attributes.Add("required", "required");
 
 		}
 
@@ -41,14 +41,13 @@ namespace Flashcard_Generator
 
 			if (!equalNumberOfData)
 			{
-				lblMessage.Text = "The number of flashcards in the fields must be the same";
+				lblMessage.Text = $"The number of flashcards in the fields must be the same (only the tips can be empty):<br /> Right now you have {wordTarget.Length} flashcards in Voc.,<br /> {wordSource.Length} in Voc. Transl.,<br /> {exampleSentenceTarget.Length} in Ex.,<br /> {pronunciation.Length} in Ex. Simpl/Pron.,<br /> {exampleSentenceSource.Length} in Ex. Transl.,<br /> and {tips.Length} in Tips.";
 				return;
 			}
 
 			var numberOfFlashcards = wordTarget.Length;
 
 			FlashcardServices flashcardServices = new FlashcardServices();
-
 
 			try
 			{
@@ -60,7 +59,7 @@ namespace Flashcard_Generator
 						exampleSentenceSource[i],
 						exampleSentenceTarget[i],
 						pronunciation[i],
-						tips[i],
+						tips.Length > i ? tips[i] : "",
 						proficiency, isPublic
 					);
 
@@ -77,6 +76,7 @@ namespace Flashcard_Generator
 			catch (Exception ex)
 			{
 				lblMessage.Text = ex.Message;
+				return;
 			}
 
 			lblMessage.Text = $"The Set was created";
@@ -100,10 +100,20 @@ namespace Flashcard_Generator
 		}
 
 
-		protected bool ValidateNumberOfFlashcards(int a, int b, int c, int d, int e, int f)
+		protected bool ValidateNumberOfFlashcards(int a, int b, int c, int d, int tips, int f)
 		{
-			return a == b && b == c && c == d && d == e && e == f;
-		}
+			int[] counts = {a, b, c, d, f};
 
+			if (tips != 0)
+			{
+				counts = counts.Append(tips).ToArray();
+			}
+
+			bool allEqual = counts.All(x => x == counts[0]);
+			return allEqual;
+
+			// returns true if all fields has the same amount of flashcards, or all of them except for the tips (tips can be null)
+			//return (a == b && b == c && c == d && d == tips && tips == f) || (a == b && b == c && c == d && d == f && tips == 0);
+		}
 	}
 }
